@@ -14,9 +14,9 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    private Logger logger = LoggerFactory.getLogger(UserService.class);
-    private UserRepository userRepository;
-    private PasswordEncoder passwordEncoder;
+    private final Logger logger = LoggerFactory.getLogger(UserService.class);
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
@@ -33,19 +33,17 @@ public class UserService {
         return user;
     }
 
-    private boolean isUsernameAvailable(String username) {
+    private void isUsernameAvailable(String username) {
         Optional<User> user = userRepository.findUserByUsername(username);
         if (user.isPresent()) {
             throw new InvalidInputException(String.format("Username: %s not available!", username));
         }
-        return true;
     }
 
-    private boolean isEmailAvailable(String email) {
+    private void isEmailAvailable(String email) {
         Optional<User> user = userRepository.findUserByEmail(email);
         if (user.isPresent()) {
             throw new InvalidInputException(String.format("Email: %s not available!", email));
         }
-        return true;
     }
 }
