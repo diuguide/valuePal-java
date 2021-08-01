@@ -1,16 +1,15 @@
-version: 0.1
+version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Entered pre-build phase"
+      - echo Entered pre-build phase
   build:
     commands:
-      - echo "Entered build phase"
+      - echo Entered build phase
       - mvn clean package
   post_build:
     commands:
-      - echo "Entered the post-build phase"
-      - mv target/deploy ./
+      - echo build completed on 'date'
 artifacts:
   files:
-    - deploy/**/*
+    - target/valuePal-java-0.0.1-SNAPSHOT.jar
