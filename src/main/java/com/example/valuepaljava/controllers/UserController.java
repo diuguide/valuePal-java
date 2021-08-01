@@ -45,7 +45,7 @@ public class UserController {
         logger.info("Logging in...");
         try {
             response.addHeader("Authorization","Bearer " + authenticationService.authenticate(creds));
-            return ResponseEntity.ok().body(String.format("User: %s now logged in", creds.getUsername()));
+            return ResponseEntity.ok().body(String.format("User: %s now logged in DETECTING A CHANGE!!!", creds.getUsername()));
         } catch (InvalidInputException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
