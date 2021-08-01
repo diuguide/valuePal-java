@@ -10,3 +10,4 @@ phases:
 artifacts:
   files:
     - target/valuePal-java-0.0.1-SNAPSHOT.jar
+  discard-paths: yes
