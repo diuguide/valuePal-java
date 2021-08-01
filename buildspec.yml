@@ -3,16 +3,11 @@ phases:
   install:
     runtime-versions:
       java: corretto8
-  pre_build:
-    commands:
-      - echo Entered pre-build phase
   build:
     commands:
       - echo Entered build phase
-      - mvn package
-  post_build:
-    commands:
-      - echo build completed on 'date'
+      - mvn install
 artifacts:
   files:
     - target/valuePal-java-0.0.1-SNAPSHOT.jar
+  discard-paths: yes
