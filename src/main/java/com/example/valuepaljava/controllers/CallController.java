@@ -24,7 +24,7 @@ public class CallController {
     @GetMapping(value="/test")
     public String testController() {
         System.out.println("test controller works");
-        return apiConfig.getYahooHost();
+        return "test controller works!";
     }
 
 
