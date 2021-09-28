@@ -14,10 +14,8 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Component
 public class StockService {
@@ -25,6 +23,7 @@ public class StockService {
     private final Logger logger = LoggerFactory.getLogger(StockService.class);
     private final ApiConfig apiConfig;
     private final SummaryRepository summaryRepository;
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Autowired
     public StockService(ApiConfig apiConfig, SummaryRepository summaryRepository) {
@@ -32,34 +31,44 @@ public class StockService {
         this.summaryRepository = summaryRepository;
     }
 
-    public void addSummaryRecord() throws JsonProcessingException {
-        RestTemplate restTemplate = new RestTemplate();
+    public HttpEntity yahooHeaders() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         headers.set("x-rapidapi-key", apiConfig.getYahooKey());
         headers.set("x-rapidapi-host", apiConfig.getYahooHost());
-        HttpEntity request = new HttpEntity(headers);
-        ResponseEntity<String> response = restTemplate.exchange("https://" + apiConfig.getYahooHost() + "/market/v2/get-summary?region=US", HttpMethod.GET, request, String.class, 1);
-        ObjectMapper objectMapper = new ObjectMapper();
+        return new HttpEntity(headers);
+    }
+
+    public ResponseEntity<String> summaryApiCall() {
+        RestTemplate restTemplate = new RestTemplate();
+        HttpEntity request = yahooHeaders();
+
+        ResponseEntity<String> response = restTemplate.exchange(apiConfig.getYahooSummaryUrl(), HttpMethod.GET, request, String.class, 1);
+        if (response.getStatusCode() == HttpStatus.OK) {
+            logger.info("Request Successful.");
+        } else {
+            logger.info("Request Failed");
+        }
+        return response;
+    }
+
+
+
+    public void addSummaryRecord() throws JsonProcessingException {
+        ResponseEntity<String> response = summaryApiCall();
         String jsonResponse = response.getBody();
         JsonNode jsonRes = objectMapper.readTree(jsonResponse);
         String result = jsonRes.get("marketSummaryAndSparkResponse").get("result").toString();
         List<Map<String, Object>> mapped = objectMapper.readValue(result, new TypeReference<List<Map<String, Object>>>(){});
         List<SummaryObject> returnRecord = mapToObjects(mapped);
 
-
-        if (response.getStatusCode() == HttpStatus.OK) {
-            System.out.println("Request Successful.");
-
-        } else {
-            System.out.println("Request Failed");
-        }
         try {
-            System.out.println("Summary objects saved");
+            summaryRepository.deleteAll();
+            logger.info("delete all records from market table");
             for (SummaryObject obj: returnRecord) {
-                System.out.println(obj);
                 summaryRepository.save(obj);
+                logger.info("Stock data stored to db");
             }
 
         } catch (Exception e) {
@@ -79,10 +88,16 @@ public class StockService {
             List<Double> tn = (List<Double>) mp.get("close");
             newSummary.setTimestamp(ln);
             newSummary.setClose(tn);
-            System.out.println(newSummary);
             record.add(newSummary);
         }
-        return record;
+        return filterDJIData(record);
 
+    }
+
+    public List<SummaryObject> filterDJIData(List<SummaryObject> dataList) {
+        List<SummaryObject> singleObj = dataList.stream()
+                .filter(obj -> Objects.equals(obj.getFullExchangeName(), "DJI"))
+                .collect(Collectors.toList());
+        return singleObj;
     }
 }

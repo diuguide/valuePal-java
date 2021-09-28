@@ -1,12 +1,7 @@
 package com.example.valuepaljava.Yahoo;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
-
-import java.time.Duration;
 
 @Configuration
 @ConfigurationProperties(prefix="application.api")
@@ -14,6 +9,15 @@ public class ApiConfig {
 
     private String yahooKey;
     private String yahooHost;
+    private String yahooSummaryUrl = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-summary?region=BR";
+
+    public String getYahooSummaryUrl() {
+        return yahooSummaryUrl;
+    }
+
+    public void setYahooSummaryUrl(String yahooSummaryUrl) {
+        this.yahooSummaryUrl = yahooSummaryUrl;
+    }
 
     public String getYahooKey() {
         return yahooKey;
@@ -30,5 +34,7 @@ public class ApiConfig {
     public void setYahooHost(String yahooHost) {
         this.yahooHost = yahooHost;
     }
+
+
 
 }
