@@ -26,6 +26,17 @@ public class SummaryObject {
     @Column(name="close")
     private List<Double> close;
 
+    public SummaryObject() {
+    }
+
+    public SummaryObject(Integer recordId, String fullExchangeName, String exchange, List<Integer> timestamp, List<Double> close) {
+        this.recordId = recordId;
+        this.fullExchangeName = fullExchangeName;
+        this.exchange = exchange;
+        this.timestamp = timestamp;
+        this.close = close;
+    }
+
     @Override
     public String toString() {
         return "SummaryObject{" +
