@@ -95,8 +95,9 @@ public class StockService {
     }
 
     public List<SummaryObject> filterDJIData(List<SummaryObject> dataList) {
+        List<String> markets = Arrays.asList("OSA", "DJI", "HKE", "SAO", "BUE", "MEX");
         List<SummaryObject> singleObj = dataList.stream()
-                .filter(obj -> Objects.equals(obj.getFullExchangeName(), "DJI"))
+                .filter(obj -> markets.contains(obj.getExchange()))
                 .collect(Collectors.toList());
         return singleObj;
     }

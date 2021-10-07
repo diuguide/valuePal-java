@@ -23,11 +23,11 @@ public class ScheduledTasks {
         this.stockService = stockService;
     }
 
-    @Scheduled(cron = "0 5,20,35,50 * * * MON-FRI")
-    public void scheduledTaskTest() throws JsonProcessingException {
-        logger.info("Stock Data Gathered at {}", dateFormat.format(new Date()));
-        stockService.addSummaryRecord();
-    }
+//    @Scheduled(cron = "0 5,20,35,50 * * * MON-FRI")
+//    public void scheduledTaskTest() throws JsonProcessingException {
+//        logger.info("Stock Data Gathered at {}", dateFormat.format(new Date()));
+//        stockService.addSummaryRecord();
+//    }
 
 
 }
