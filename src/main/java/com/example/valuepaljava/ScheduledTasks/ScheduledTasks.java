@@ -30,5 +30,4 @@ public class ScheduledTasks {
 //        stockService.addSummaryRecord();
 //    }
 
-
 }
