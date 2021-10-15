@@ -103,6 +103,7 @@ public class StockService {
     }
 
     public String getTickerData(String... ticker){
+
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity request = yahooHeaders();
         StringBuilder uri = new StringBuilder(apiConfig.getYahooTickerURL());
