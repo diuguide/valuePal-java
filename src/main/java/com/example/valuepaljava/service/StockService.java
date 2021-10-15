@@ -101,4 +101,16 @@ public class StockService {
                 .collect(Collectors.toList());
         return singleObj;
     }
+
+    public String getTickerData(String... ticker){
+        RestTemplate restTemplate = new RestTemplate();
+        HttpEntity request = yahooHeaders();
+        StringBuilder uri = new StringBuilder(apiConfig.getYahooTickerURL());
+        uri.append("?symbols=");
+        for(String el : ticker) {
+            uri.append(el).append(",");
+        }
+        ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+        return response.getBody();
+    }
 }
