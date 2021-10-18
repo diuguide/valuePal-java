@@ -34,18 +34,14 @@ public class UserService {
         isUsernameValid(user.getUsername());
         isPasswordValid(user.getPassword());
         isEmailValid(user.getEmail());
-        return true;
-    }
-
-    public boolean checkAvailable(User user){
         isUsernameAvailable(user.getUsername());
         isEmailAvailable(user.getEmail());
         return true;
     }
 
     public User saveUser(User user) {
-        if(validateUser(user) && checkAvailable(user)) {
-            user.setPassword(encodePass(user.getPassword()));
+        if(validateUser(user)) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             User newUser = userRepository.save(user);
             logger.info(String.format("User: %s with userId: %s added to the database", newUser.getUsername(), newUser.getUserId()));
             return user;
@@ -53,22 +49,20 @@ public class UserService {
         throw new InvalidInputException("An error occurred");
     }
 
-    public String encodePass(String password) {
-        return passwordEncoder.encode(password);
-    }
-
-    public void isUsernameAvailable(String username) {
+    public boolean isUsernameAvailable(String username) {
         Optional<User> user = userRepository.findUserByUsername(username);
         if (user.isPresent()) {
             throw new InvalidInputException(String.format("Username: %s not available!", username));
         }
+        return true;
     }
 
-    public void isEmailAvailable(String email) {
+    public boolean isEmailAvailable(String email) {
         Optional<User> user = userRepository.findUserByEmail(email);
         if (user.isPresent()) {
             throw new InvalidInputException(String.format("Email: %s not available!", email));
         }
+        return true;
     }
 
     public boolean isNameValid(String firstName) {
@@ -99,7 +93,4 @@ public class UserService {
         throw new InvalidInputException("Not a valid email address!");
     }
 
-    public User updateUser(User user) {
-        return userRepository.save(user);
-    }
 }
