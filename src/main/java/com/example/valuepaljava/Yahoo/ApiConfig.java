@@ -19,6 +19,10 @@ public class ApiConfig {
         return "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-quotes";
     }
 
+    public String getYHFinanceURL() {
+        return "https://yh-finance.p.rapidapi.com/market/v2/get-quotes";
+    }
+
     public String getYahooSummaryUrl() {
         return yahooSummaryUrl;
     }

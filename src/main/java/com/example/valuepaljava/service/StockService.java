@@ -24,6 +24,7 @@ public class StockService {
     private final ApiConfig apiConfig;
     private final SummaryRepository summaryRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
+    private StringBuilder uri;
 
     @Autowired
     public StockService(ApiConfig apiConfig, SummaryRepository summaryRepository) {
@@ -102,11 +103,15 @@ public class StockService {
         return singleObj;
     }
 
-    public String getTickerData(String... ticker){
+    public String getTickerData(int api, String... ticker){
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity request = yahooHeaders();
-        StringBuilder uri = new StringBuilder(apiConfig.getYahooTickerURL());
+        if(api == 1) {
+            uri = new StringBuilder(apiConfig.getYahooTickerURL());
+        } else if (api == 2) {
+            uri = new StringBuilder(apiConfig.getYHFinanceURL());
+        }
         uri.append("?symbols=");
         for(String el : ticker) {
             uri.append(el).append(",");

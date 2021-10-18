@@ -13,9 +13,6 @@ public class User {
     @Column(name="firstName")
     private String firstName;
 
-    @Column(name="lastName")
-    private String lastName;
-
     @Column(name="username")
     private String username;
 
@@ -25,16 +22,27 @@ public class User {
     @Column(name="email")
     private String email;
 
-    public User(Integer userId, String firstName, String lastName, String username, String password, String email) {
+    @Column(name="watchlist")
+    private String watchlist;
+
+    public User(Integer userId, String firstName, String username, String password, String email, String watchlist) {
         this.userId = userId;
         this.firstName = firstName;
-        this.lastName = lastName;
         this.username = username;
         this.password = password;
         this.email = email;
+        this.watchlist = watchlist;
     }
 
     public User(){};
+
+    public String getWatchlist() {
+        return watchlist;
+    }
+
+    public void setWatchlist(String watchlist) {
+        this.watchlist = watchlist;
+    }
 
     public Integer getUserId() {
         return userId;
@@ -50,14 +58,6 @@ public class User {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getUsername() {
@@ -89,7 +89,6 @@ public class User {
         return "User{" +
                 "userId=" + userId +
                 ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
