@@ -33,7 +33,7 @@ public class UserController {
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         logger.info("Adding user to database...");
         try {
-            return ResponseEntity.ok().body(userService.validateUser(user));
+            return ResponseEntity.ok().body(userService.saveUser(user));
         } catch (InvalidInputException e) {
             logger.info(e.getMessage());
             return ResponseEntity.badRequest().body(e.getMessage());

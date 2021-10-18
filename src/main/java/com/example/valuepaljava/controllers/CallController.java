@@ -5,6 +5,7 @@ import com.example.valuepaljava.models.SummaryObject;
 import com.example.valuepaljava.repos.SummaryRepository;
 import com.example.valuepaljava.service.NewsService;
 import com.example.valuepaljava.service.StockService;
+import com.example.valuepaljava.service.WatchListService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,12 +27,14 @@ public class CallController {
     private final StockService stockService;
     private final SummaryRepository summaryRepository;
     private final NewsService newsService;
+    private final WatchListService watchListService;
 
     @Autowired
-    public CallController(NewsService newsService, StockService stockService, SummaryRepository summaryRepository) {
+    public CallController(NewsService newsService, StockService stockService, SummaryRepository summaryRepository, WatchListService watchListService) {
         this.stockService = stockService;
         this.summaryRepository = summaryRepository;
         this.newsService = newsService;
+        this.watchListService = watchListService;
     }
 
     @GetMapping(value="/summaryUpdate")
@@ -57,8 +60,14 @@ public class CallController {
 
     @PostMapping(value="/ticker")
     public String getTickerData(@RequestParam String... ticker) {
-        logger.info("Stock api called!");
-        return stockService.getTickerData(ticker);
+        logger.info("Stock api called - YahooFinance - /market/getQuote");
+        return stockService.getTickerData(1, ticker);
+    }
+
+    @PostMapping(value="/getQuoteYH")
+    public String getQuoteYH(@RequestParam String... ticker) {
+        logger.info("Stock API called - YH Finance - /market/getQuote");
+        return stockService.getTickerData(2, ticker);
     }
 
 }
