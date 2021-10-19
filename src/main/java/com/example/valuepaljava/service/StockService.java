@@ -1,6 +1,7 @@
 package com.example.valuepaljava.service;
 
 import com.example.valuepaljava.Yahoo.ApiConfig;
+import com.example.valuepaljava.Yahoo.HeaderConfig;
 import com.example.valuepaljava.models.SummaryObject;
 import com.example.valuepaljava.repos.SummaryRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -21,31 +22,23 @@ import java.util.stream.Collectors;
 public class StockService {
 
     private final Logger logger = LoggerFactory.getLogger(StockService.class);
-    private final ApiConfig apiConfig;
+    private final HeaderConfig headerConfig;
     private final SummaryRepository summaryRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private StringBuilder uri;
 
     @Autowired
-    public StockService(ApiConfig apiConfig, SummaryRepository summaryRepository) {
-        this.apiConfig = apiConfig;
+    public StockService(HeaderConfig headerConfig, SummaryRepository summaryRepository) {
+        this.headerConfig = headerConfig;
         this.summaryRepository = summaryRepository;
-    }
-
-    public HttpEntity yahooHeaders() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-        headers.set("x-rapidapi-key", apiConfig.getYahooKey());
-        headers.set("x-rapidapi-host", apiConfig.getYahooHost());
-        return new HttpEntity(headers);
     }
 
     public ResponseEntity<String> summaryApiCall() {
         RestTemplate restTemplate = new RestTemplate();
-        HttpEntity request = yahooHeaders();
-
-        ResponseEntity<String> response = restTemplate.exchange(apiConfig.getYahooSummaryUrl(), HttpMethod.GET, request, String.class, 1);
+        HttpHeaders headers = headerConfig.yahooHeaders();
+        HttpEntity<Object> request = new HttpEntity<>(headers);
+        String uri = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-summary?region=BR";
+        ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET, request, String.class, 1);
         if (response.getStatusCode() == HttpStatus.OK) {
             logger.info("Request Successful.");
         } else {
@@ -53,8 +46,6 @@ public class StockService {
         }
         return response;
     }
-
-
 
     public void addSummaryRecord() throws JsonProcessingException {
         ResponseEntity<String> response = summaryApiCall();
@@ -106,11 +97,12 @@ public class StockService {
     public String getTickerData(int api, String... ticker){
 
         RestTemplate restTemplate = new RestTemplate();
-        HttpEntity request = yahooHeaders();
+        HttpHeaders headers = headerConfig.yahooHeaders();
+        HttpEntity<Object> request = new HttpEntity<>(headers);
         if(api == 1) {
-            uri = new StringBuilder(apiConfig.getYahooTickerURL());
+            uri = new StringBuilder("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-quotes");
         } else if (api == 2) {
-            uri = new StringBuilder(apiConfig.getYHFinanceURL());
+            uri = new StringBuilder("https://yh-finance.p.rapidapi.com/market/v2/get-quotes");
         }
         uri.append("?symbols=");
         for(String el : ticker) {
