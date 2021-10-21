@@ -1,5 +1,7 @@
 package com.example.valuepaljava.controllers;
 
+import com.example.valuepaljava.auth.ApplicationUser;
+import com.example.valuepaljava.auth.ApplicationUserService;
 import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.jwt.Credentials;
 import com.example.valuepaljava.models.User;
@@ -22,11 +24,13 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
     private final AuthenticationService authenticationService;
+    private final ApplicationUserService applicationUserService;
 
     @Autowired
-    public UserController(UserService userService, AuthenticationService authenticationService) {
+    public UserController(UserService userService, AuthenticationService authenticationService, ApplicationUserService applicationUserService) {
         this.userService = userService;
         this.authenticationService = authenticationService;
+        this.applicationUserService = applicationUserService;
     }
 
     @PostMapping(value="/add", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
@@ -50,6 +54,16 @@ public class UserController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
 
+    }
+
+    @PostMapping(value="/addAppUser")
+    public ResponseEntity<?> saveAppUser(@RequestBody ApplicationUser user, HttpServletResponse response) {
+        logger.info(String.format("Saving Application User, %s", user));
+        try {
+            return ResponseEntity.ok().body(applicationUserService.saveUser(user));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Something went wrong!");
+        }
     }
 
 }
