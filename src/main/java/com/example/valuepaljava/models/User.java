@@ -1,12 +1,10 @@
 package com.example.valuepaljava.models;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.List;
 
+@Component
 @Entity
 @Table(name="users")
 public class User {
@@ -30,24 +28,20 @@ public class User {
     @Column(name="watchlist")
     private String watchlist;
 
-    public User(Integer userId, String firstName, String username, String password, String email, String watchlist) {
+    @Column(name="role")
+    private String role;
+
+    public User(Integer userId, String firstName, String username, String password, String email, String watchlist, String role) {
         this.userId = userId;
         this.firstName = firstName;
         this.username = username;
         this.password = password;
         this.email = email;
         this.watchlist = watchlist;
+        this.role = role;
     }
 
     public User(){};
-
-    public String getWatchlist() {
-        return watchlist;
-    }
-
-    public void setWatchlist(String watchlist) {
-        this.watchlist = watchlist;
-    }
 
     public Integer getUserId() {
         return userId;
@@ -87,6 +81,22 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getWatchlist() {
+        return watchlist;
+    }
+
+    public void setWatchlist(String watchlist) {
+        this.watchlist = watchlist;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override

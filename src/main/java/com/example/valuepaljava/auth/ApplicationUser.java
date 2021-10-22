@@ -1,114 +1,58 @@
 package com.example.valuepaljava.auth;
 
+import com.example.valuepaljava.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
-
-import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Collection;
 
-@Entity
-@Table(name="application_user")
+@Component
 public class ApplicationUser implements UserDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column(name="password")
-    private String password;
-    @Column(name="username")
-    private String username;
-    @Column(name="is_account_expired")
-    private boolean isAccountNonExpired = true;
-    @Column(name="is_account_non_locked")
-    private boolean isAccountNonLocked = true;
-    @Column(name="is_Credentials_non_expired")
-    private boolean isCredentialsNonExpired = true;
-    @Column(name="is_enabled")
-    private boolean isEnabled = true;
+    private User user;
 
-    public ApplicationUser(String password, String username, boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
-
-        this.password = password;
-        this.username = username;
-        this.isAccountNonExpired = isAccountNonExpired;
-        this.isAccountNonLocked = isAccountNonLocked;
-        this.isCredentialsNonExpired = isCredentialsNonExpired;
-        this.isEnabled = isEnabled;
+    @Autowired
+    public ApplicationUser(User user) {
+        this.user = user;
     }
-
-    public ApplicationUser() {
-    }
-
-//    @Override
-//    public Collection<GrantedAuthority> getAuthorities() {
-//        return grantedAuthorities;
-//    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getRole());
+        return Arrays.asList(authority);
     }
 
     @Override
     public String getPassword() {
-        return password;
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return username;
+        return user.getUsername();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return isAccountNonExpired;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return isAccountNonLocked;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return isCredentialsNonExpired;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return isEnabled;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-//    public void setGrantedAuthorities(Set<GrantedAuthority> grantedAuthorities) {
-//        this.grantedAuthorities = grantedAuthorities;
-//    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setAccountNonExpired(boolean accountNonExpired) {
-        isAccountNonExpired = accountNonExpired;
-    }
-
-    public void setAccountNonLocked(boolean accountNonLocked) {
-        isAccountNonLocked = accountNonLocked;
-    }
-
-    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
-        isCredentialsNonExpired = credentialsNonExpired;
-    }
-
-    public void setEnabled(boolean enabled) {
-        isEnabled = enabled;
+        return true;
     }
 }

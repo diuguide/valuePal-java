@@ -8,6 +8,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class ApplicationUserService implements UserDetailsService {
@@ -25,6 +27,7 @@ public class ApplicationUserService implements UserDetailsService {
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println("Fired loadUser by Username!");
+        System.out.println("Username: " + username);
         return applicationUserDao.findApplicationUserByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException(String.format("Username %s not found", username)));
     }
