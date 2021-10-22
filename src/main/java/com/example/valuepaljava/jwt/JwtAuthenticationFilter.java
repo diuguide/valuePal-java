@@ -50,7 +50,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
         String token = Jwts.builder()
                 .setSubject(authResult.getName())
-//                .claim("authorities", authResult.getAuthorities())
+                .claim("authorities", authResult.getAuthorities())
                 .setIssuedAt(new Date())
                 .setExpiration(java.sql.Date.valueOf(LocalDate.now().plusWeeks(2)))
                 .signWith(Keys.hmacShaKeyFor(key.getBytes()))

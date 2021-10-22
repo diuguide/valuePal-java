@@ -1,5 +1,8 @@
 package com.example.valuepaljava.auth;
 
+import com.example.valuepaljava.models.User;
+import com.example.valuepaljava.repos.UserRepository;
+import com.example.valuepaljava.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -8,32 +11,26 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+
 
 @Service
 @Transactional
 public class ApplicationUserService implements UserDetailsService {
 
-    private final ApplicationUserDao applicationUserDao;
+    private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public ApplicationUserService(ApplicationUserDao applicationUserDao, PasswordEncoder passwordEncoder) {
-        this.applicationUserDao = applicationUserDao;
+    public ApplicationUserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
     @Override
-
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("Fired loadUser by Username!");
-        System.out.println("Username: " + username);
-        return applicationUserDao.findApplicationUserByUsername(username)
+        User user = userRepository.findUserByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException(String.format("Username %s not found", username)));
+        return new ApplicationUser(user);
     }
 
-    public UserDetails saveUser(ApplicationUser user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return applicationUserDao.save(user);
-    }
 }

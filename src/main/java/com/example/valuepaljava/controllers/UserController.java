@@ -56,14 +56,4 @@ public class UserController {
 
     }
 
-    @PostMapping(value="/addAppUser")
-    public ResponseEntity<?> saveAppUser(@RequestBody ApplicationUser user, HttpServletResponse response) {
-        logger.info(String.format("Saving Application User, %s", user));
-        try {
-            return ResponseEntity.ok().body(applicationUserService.saveUser(user));
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Something went wrong!");
-        }
-    }
-
 }
