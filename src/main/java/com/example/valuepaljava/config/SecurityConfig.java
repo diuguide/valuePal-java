@@ -44,14 +44,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
                 .addFilterAfter(new JwtTokenVerifier(), JwtAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/**","/calls/**")
-                .permitAll()
-                .antMatchers(HttpMethod.GET, "/**")
-                    .authenticated()
-                .antMatchers(HttpMethod.POST, "/**")
-                    .authenticated()
-                .anyRequest()
-                    .authenticated();
+
+//                .antMatchers("/calls/**", "/users/**")
+//                    .hasRole("STUDENT")
+//                .antMatchers("/test")
+//                    .hasRole("TEST")
+//                .antMatchers("/testTwo")
+//                    .hasRole("TWO")
+                .antMatchers("/**/**")
+//                    .hasRole("ADMIN")
+//                .anyRequest().authenticated();
+                .permitAll();
+//                .antMatchers(HttpMethod.GET, "/**")
+//                    .hasRole("STUDENT")
+//                .antMatchers(HttpMethod.POST, "/**")
+//                    .hasRole("STUDENT")
+//                .anyRequest()
+//                    .authenticated();
 
 
     }
