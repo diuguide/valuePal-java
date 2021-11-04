@@ -111,4 +111,23 @@ public class StockService {
         ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
         return response.getBody();
     }
+
+    public String getTickerHistory(int api, String interval, String range, String... ticker) {
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = headerConfig.yahooHeaders();
+        HttpEntity<Object> request = new HttpEntity<>(headers);
+        if(api == 1) {
+            uri = new StringBuilder("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-spark");
+        } else if (api == 2) {
+            uri = new StringBuilder("https://yh-finance.p.rapidapi.com/market/get-spark");
+        }
+        uri.append("?symbols=");
+        for(String el : ticker) {
+            uri.append(el).append(",");
+        }
+        uri.append("&interval=").append(interval).append("&range=").append(range);
+        logger.info(uri.toString());
+        ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+        return response.getBody();
+    }
 }

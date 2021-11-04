@@ -70,4 +70,10 @@ public class CallController {
         return stockService.getTickerData(2, ticker);
     }
 
+    @PostMapping(value="/getHistory")
+    public String getTickerHistory(@RequestParam int api, @RequestParam String interval, @RequestParam String range, @RequestParam String... ticker) {
+        logger.info("Stock history api called");
+        return stockService.getTickerHistory(api, interval, range, ticker);
+    }
+
 }
