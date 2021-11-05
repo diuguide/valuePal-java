@@ -1,18 +1,27 @@
 package com.example.valuepaljava.controllers;
 
+import com.example.valuepaljava.service.WalletService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
-public class TestController {
+public class WalletController {
 
-    private final Logger logger = LoggerFactory.getLogger(TestController.class);
+    private final Logger logger = LoggerFactory.getLogger(WalletController.class);
+    private final WalletService walletService;
 
-    @GetMapping(value="/student")
+    @Autowired
+    public WalletController(WalletService walletService) {
+        this.walletService = walletService;
+    }
+
+    @PostMapping(value="/addStock")
     public String testStudentRole(){
         return "Test Student Route Working!";
     }
