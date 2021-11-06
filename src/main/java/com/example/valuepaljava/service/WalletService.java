@@ -28,13 +28,19 @@ public class WalletService {
 
     public Holding saveHolding(Order order) {
         Set<Holding> holding = findHolding(order.getWalletId());
-        Holding newHolding = new Holding();
         for(Holding hld : holding) {
             if(hld.getTicker().equals(order.getTicker())) {
-                System.out.println("Ticker found");
+                return holdingRepository.save(combineHoldings(hld, holdingBuilder(order)));
             }
         }
         return holdingRepository.save(holdingBuilder(order));
+    }
+
+    public Holding combineHoldings(Holding old, Holding order) {
+        old.setQuantity(old.getQuantity() + order.getQuantity());
+        old.setPrice(order.getPrice());
+        old.setTotalValue();
+        return old;
     }
 
     public Holding holdingBuilder(Order order) {
