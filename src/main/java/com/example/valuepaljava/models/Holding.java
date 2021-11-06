@@ -77,6 +77,14 @@ public class Holding {
         this.totalValue = price * quantity;
     }
 
+    public Wallet getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(Wallet wallet) {
+        this.wallet = wallet;
+    }
+
     @Override
     public String toString() {
         return "Holding{" +

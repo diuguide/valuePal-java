@@ -20,9 +20,6 @@ public class Wallet {
     @Column(name="totalValue")
     private int totalValue;
 
-    @OneToMany(mappedBy = "wallet")
-    private Set<Holding> holdings;
-
     public Wallet() {
     }
 
@@ -54,14 +51,6 @@ public class Wallet {
 
     public void setTotalValue(int totalValue) {
         this.totalValue = totalValue;
-    }
-
-    public Set<Holding> getHoldings() {
-        return holdings;
-    }
-
-    public void setHoldings(Set<Holding> holdings) {
-        this.holdings = holdings;
     }
 
     @Override

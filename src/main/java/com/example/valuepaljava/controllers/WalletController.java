@@ -23,7 +23,8 @@ public class WalletController {
     @PostMapping(value="/addStock")
     public String testStudentRole(@RequestBody Order order){
         logger.info(String.format("Purchase order for %s at $%s. Total price: %s", order.getTicker(), order.getPrice(), order.getTotalValue()));
-        return walletService.saveHolding(order);
+        walletService.saveHolding(order);
+        return "success";
     }
 
     @GetMapping(value="/extend/ball")
