@@ -11,7 +11,7 @@ public class Holding {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name="walletId")
+    @JoinColumn(name="wallet_id", nullable=false)
     private Wallet wallet;
 
     @Column(name="ticker")
@@ -73,7 +73,19 @@ public class Holding {
         return totalValue;
     }
 
-    public void setTotalValue(double totalValue) {
-        this.totalValue = totalValue;
+    public void setTotalValue() {
+        this.totalValue = price * quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Holding{" +
+                "id=" + id +
+                ", wallet=" + wallet +
+                ", ticker='" + ticker + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", totalValue=" + totalValue +
+                '}';
     }
 }

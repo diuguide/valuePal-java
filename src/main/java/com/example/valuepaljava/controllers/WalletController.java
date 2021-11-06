@@ -1,16 +1,15 @@
 package com.example.valuepaljava.controllers;
 
+import com.example.valuepaljava.models.Holding;
+import com.example.valuepaljava.models.Order;
 import com.example.valuepaljava.service.WalletService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/stock")
 public class WalletController {
 
     private final Logger logger = LoggerFactory.getLogger(WalletController.class);
@@ -22,8 +21,9 @@ public class WalletController {
     }
 
     @PostMapping(value="/addStock")
-    public String testStudentRole(){
-        return "Test Student Route Working!";
+    public String testStudentRole(@RequestBody Order order){
+        logger.info(String.format("Purchase order for %s at $%s. Total price: %s", order.getTicker(), order.getPrice(), order.getTotalValue()));
+        return walletService.saveHolding(order);
     }
 
     @GetMapping(value="/extend/ball")
