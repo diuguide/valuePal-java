@@ -2,6 +2,7 @@ package com.example.valuepaljava.service;
 
 import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.User;
+import com.example.valuepaljava.models.Wallet;
 import com.example.valuepaljava.repos.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +43,7 @@ public class UserService {
     public User saveUser(User user) {
         if(validateUser(user)) {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
+            user.setWallet(new Wallet());
             User newUser = userRepository.save(user);
             logger.info(String.format("User: %s with userId: %s added to the database", newUser.getUsername(), newUser.getUserId()));
             return user;

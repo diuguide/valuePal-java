@@ -31,6 +31,10 @@ public class User {
     @Column(name="role")
     private String role;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="walletId", referencedColumnName = "id")
+    private Wallet wallet;
+
     public User(Integer userId, String firstName, String username, String password, String email, String watchlist, String role) {
         this.userId = userId;
         this.firstName = firstName;
@@ -97,6 +101,14 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public Wallet getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(Wallet wallet) {
+        this.wallet = wallet;
     }
 
     @Override
