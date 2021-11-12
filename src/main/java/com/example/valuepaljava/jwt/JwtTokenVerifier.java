@@ -29,42 +29,34 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
                                     FilterChain filterChain) throws ServletException, IOException {
 
         String authorizationHeader = httpServletRequest.getHeader("Authorization");
-        if(authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
             filterChain.doFilter(httpServletRequest, httpServletResponse);
-
             return;
         }
-
         try {
-
-            String token = authorizationHeader.replace("Bearer ", "");
-            String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
-            Jws<Claims> claimsJws = Jwts.parser()
-                    .setSigningKey(Keys.hmacShaKeyFor(key.getBytes()))
-                    .parseClaimsJws(token);
-
-            Claims body = claimsJws.getBody();
-
+            Claims body = tokenDecoder(authorizationHeader.replace("Bearer ", ""));
             String username = body.getSubject();
-
             List<Map<String, String>> authorities = (List<Map<String, String>>) body.get("authorities");
             Set<SimpleGrantedAuthority> simpleGrantedAuthorities = authorities.stream()
                     .map(m -> new SimpleGrantedAuthority(m.get("authority")))
                     .collect(Collectors.toSet());
-
             Authentication authentication = new UsernamePasswordAuthenticationToken(
                     username,
                     null,
                     simpleGrantedAuthorities
             );
-            System.out.println("pause");
             SecurityContextHolder.getContext().setAuthentication(authentication);
-
         } catch (JwtException e) {
             throw new IllegalStateException("Token cannot be trusted!");
         }
-
         filterChain.doFilter(httpServletRequest, httpServletResponse);
+    }
 
+    public Claims tokenDecoder(String token) {
+        String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
+        Jws<Claims> claimsJws = Jwts.parser()
+                .setSigningKey(Keys.hmacShaKeyFor(key.getBytes()))
+                .parseClaimsJws(token);
+        return claimsJws.getBody();
     }
 }

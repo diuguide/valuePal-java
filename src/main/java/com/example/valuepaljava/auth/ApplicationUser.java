@@ -1,6 +1,7 @@
 package com.example.valuepaljava.auth;
 
 import com.example.valuepaljava.models.User;
+import com.example.valuepaljava.models.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

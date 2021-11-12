@@ -43,7 +43,7 @@ public class UserService {
     public User saveUser(User user) {
         if(validateUser(user)) {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-            user.setWallet(new Wallet());
+            user.setWallet(new Wallet(25000));
             User newUser = userRepository.save(user);
             logger.info(String.format("User: %s with userId: %s added to the database", newUser.getUsername(), newUser.getUserId()));
             return user;
