@@ -42,6 +42,14 @@ public class WalletService {
         logger.info(String.format("Wallet %s updated", order.getWalletId()));
     }
 
+    public Wallet entryWallet(String token) {
+        int walletId = jwtUtility(token.replace("Bearer ", ""));
+        Set<Holding> holdings = holdingRepository.findHoldingByWalletId(walletId);
+        Wallet wallet = walletRepository.getById(walletId);
+        wallet.setHoldings(holdings);
+        return wallet;
+    }
+
     public int jwtUtility(String token) {
         String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
         Jws<Claims> claimsJws = Jwts.parser()
@@ -61,16 +69,16 @@ public class WalletService {
         for(Holding hld : holding) {
             if(hld.getTicker().equals(order.getTicker())) {
                 Holding complete = holdingRepository.save(combineHoldings(hld, holdingBuilder(order)));
-                logger.info(String.format("Order Complete -- %s shares of %s for a total value of %s saved to wallet %s", order.getQuantity(), order.getTicker(), order.getTotalValue(), complete.getWallet().getWalletId()));
+                logger.info(String.format("Order Complete -- %s shares of %s for a total value of %s saved to wallet %s", order.getQuantity(), order.getTicker(), order.getTotalValue(), complete.getWallet()));
                 return;
             }
         }
         Holding complete = holdingRepository.save(holdingBuilder(order));
-        logger.info(String.format("Order Complete -- %s shares of %s for a total value of %s saved to wallet %s", order.getQuantity(), order.getTicker(), order.getTotalValue(), complete.getWallet().getWalletId()));
+        logger.info(String.format("Order Complete -- %s shares of %s for a total value of %s saved to wallet %s", order.getQuantity(), order.getTicker(), order.getTotalValue(), complete.getWallet()));
     }
 
     public Holding combineHoldings(Holding old, Holding order) {
-        logger.info(String.format("Updating holding of %s in wallet #%s", order.getTicker(), old.getWallet().getWalletId()));
+        logger.info(String.format("Updating holding of %s in wallet #%s", order.getTicker(), old.getWallet()));
         old.setQuantity(old.getQuantity() + order.getQuantity());
         old.setPrice(order.getPrice());
         old.setTotalValue();
@@ -78,19 +86,18 @@ public class WalletService {
     }
 
     public Holding holdingBuilder(Order order) {
-        Wallet currentWallet = walletRetriever(order.getWalletId());
         Holding newHolding = new Holding();
         newHolding.setTicker(order.getTicker());
         newHolding.setPrice(order.getPrice());
         newHolding.setQuantity(order.getQuantity());
         newHolding.setTotalValue();
-        newHolding.setWallet(currentWallet);
+        newHolding.setWallet(order.getWalletId());
         completePurchase(newHolding);
         return newHolding;
     }
 
     public Set<Holding> findHolding(int wallet_id) {
-        return holdingRepository.findHoldingByWallet_WalletId(wallet_id);
+        return holdingRepository.findHoldingByWalletId(wallet_id);
     }
 
     public Wallet walletRetriever(int walletId) {
@@ -105,7 +112,7 @@ public class WalletService {
     }
 
     public void completePurchase(Holding holding) {
-        Wallet wallet = holding.getWallet();
+        Wallet wallet = walletRetriever(holding.getWallet());
         wallet.setTotalCash(wallet.getTotalCash() - holding.getTotalValue());
     }
 

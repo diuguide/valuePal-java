@@ -1,7 +1,5 @@
 package com.example.valuepaljava.models;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -19,6 +17,9 @@ public class Wallet {
 
     @Column(name="totalValue")
     private double totalValue;
+
+    @Transient
+    private Set<Holding> holdings;
 
     public Wallet() {
     }
@@ -57,12 +58,21 @@ public class Wallet {
         this.totalValue = totalValue;
     }
 
+    public Set<Holding> getHoldings() {
+        return holdings;
+    }
+
+    public void setHoldings(Set<Holding> holdings) {
+        this.holdings = holdings;
+    }
+
     @Override
     public String toString() {
         return "Wallet{" +
                 "walletId=" + walletId +
                 ", totalCash=" + totalCash +
                 ", totalValue=" + totalValue +
+                ", holdings=" + holdings +
                 '}';
     }
 }
