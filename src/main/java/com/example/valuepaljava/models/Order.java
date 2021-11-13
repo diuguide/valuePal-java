@@ -7,13 +7,13 @@ public class Order {
 
     private Integer walletId;
     private String ticker;
-    private Integer price;
+    private double price;
     private Integer quantity;
 
     public Order() {
     }
 
-    public Order(Integer walletId, String ticker, Integer price, Integer quantity) {
+    public Order(Integer walletId, String ticker, double price, Integer quantity) {
         this.walletId = walletId;
         this.ticker = ticker;
         this.price = price;
@@ -36,15 +36,15 @@ public class Order {
         this.ticker = ticker;
     }
 
-    public Integer getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public Integer getTotalValue() {
+    public double getTotalValue() {
         return price * quantity;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

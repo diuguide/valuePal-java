@@ -1,5 +1,7 @@
 package com.example.valuepaljava.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,9 +12,8 @@ public class Holding {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name="wallet_id", nullable=false)
-    private Wallet wallet;
+    @Column(name="walletId")
+    private int walletId;
 
     @Column(name="ticker")
     private String ticker;
@@ -29,12 +30,11 @@ public class Holding {
     public Holding() {
     }
 
-    public Holding(Wallet wallet, String ticker, int quantity, double price) {
-        this.wallet = wallet;
+    public Holding(int walletId, String ticker, int quantity, double price) {
+        this.walletId = walletId;
         this.ticker = ticker;
         this.quantity = quantity;
         this.price = price;
-        this.totalValue = quantity * price;
     }
 
     public int getId() {
@@ -77,19 +77,19 @@ public class Holding {
         this.totalValue = price * quantity;
     }
 
-    public Wallet getWallet() {
-        return wallet;
+    public int getWallet() {
+        return walletId;
     }
 
-    public void setWallet(Wallet wallet) {
-        this.wallet = wallet;
+    public void setWallet(int wallet_id) {
+        this.walletId = wallet_id;
     }
 
     @Override
     public String toString() {
         return "Holding{" +
                 "id=" + id +
-                ", wallet=" + wallet +
+                ", wallet=" + walletId +
                 ", ticker='" + ticker + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +

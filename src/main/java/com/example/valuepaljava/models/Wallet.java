@@ -1,7 +1,5 @@
 package com.example.valuepaljava.models;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,15 +13,22 @@ public class Wallet {
     private int walletId;
 
     @Column(name="total_cash")
-    private int totalCash = 0;
+    private double totalCash = 0;
 
     @Column(name="totalValue")
-    private int totalValue;
+    private double totalValue;
+
+    @Transient
+    private Set<Holding> holdings;
 
     public Wallet() {
     }
 
-    public Wallet(int walletId, int totalCash, int totalValue) {
+    public Wallet(double startingCash) {
+        this.totalCash = startingCash;
+    }
+
+    public Wallet(int walletId, double totalCash, double totalValue) {
         this.walletId = walletId;
         this.totalCash = totalCash;
         this.totalValue = totalValue;
@@ -37,20 +42,28 @@ public class Wallet {
         this.walletId = walletId;
     }
 
-    public int getTotalCash() {
+    public double getTotalCash() {
         return totalCash;
     }
 
-    public void setTotalCash(int totalCash) {
+    public void setTotalCash(double totalCash) {
         this.totalCash = totalCash;
     }
 
-    public int getTotalValue() {
+    public double getTotalValue() {
         return totalValue;
     }
 
-    public void setTotalValue(int totalValue) {
+    public void setTotalValue(double totalValue) {
         this.totalValue = totalValue;
+    }
+
+    public Set<Holding> getHoldings() {
+        return holdings;
+    }
+
+    public void setHoldings(Set<Holding> holdings) {
+        this.holdings = holdings;
     }
 
     @Override
@@ -59,6 +72,7 @@ public class Wallet {
                 "walletId=" + walletId +
                 ", totalCash=" + totalCash +
                 ", totalValue=" + totalValue +
+                ", holdings=" + holdings +
                 '}';
     }
 }

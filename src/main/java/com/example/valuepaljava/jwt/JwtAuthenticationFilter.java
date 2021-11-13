@@ -29,7 +29,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request,
                                                 HttpServletResponse response) throws AuthenticationException {
-        System.out.println("authentication fired");
+
         try {
             Credentials credentials = new ObjectMapper().readValue(request.getInputStream(), Credentials.class);
             Authentication authentication = new UsernamePasswordAuthenticationToken(
