@@ -1,6 +1,5 @@
 package com.example.valuepaljava.service;
 
-import com.example.valuepaljava.Yahoo.ApiConfig;
 import com.example.valuepaljava.Yahoo.HeaderConfig;
 import com.example.valuepaljava.models.SummaryObject;
 import com.example.valuepaljava.repos.SummaryRepository;
@@ -66,7 +65,6 @@ public class StockService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public List<SummaryObject> mapToObjects(List<Map<String, Object>> mapped) {
@@ -105,7 +103,6 @@ public class StockService {
         }
         uri.append("?symbols=");
         for(String el : ticker) {
-            System.out.println(el);
             uri.append(el).append(",");
         }
         ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);

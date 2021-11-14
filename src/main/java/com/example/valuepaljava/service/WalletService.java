@@ -6,9 +6,6 @@ import com.example.valuepaljava.repos.HoldingRepository;
 import com.example.valuepaljava.repos.OrderRepository;
 import com.example.valuepaljava.repos.UserRepository;
 import com.example.valuepaljava.repos.WalletRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -136,15 +133,14 @@ public class WalletService {
         return wallet.getTotalCash() > order.getTotalValue();
     }
 
-    public String updateAllHoldings() throws JsonProcessingException {
+    public String updateAllHoldings() {
         Set<String> allHoldings = holdingRepository.selectAllTickers();
         String[] holdingsAsStringArray = new String[allHoldings.size()];
         int index = 0;
         for(String str : allHoldings) {
             holdingsAsStringArray[index++] = str;
         }
-        String apiResult = stockService.getTickerData(1, holdingsAsStringArray);
-        return apiResult;
+        return stockService.getTickerData(1, holdingsAsStringArray);
     }
 
     @Transactional

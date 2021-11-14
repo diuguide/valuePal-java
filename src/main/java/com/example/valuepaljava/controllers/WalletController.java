@@ -5,7 +5,7 @@ import com.example.valuepaljava.models.HoldingsUpdateDTO;
 import com.example.valuepaljava.models.Order;
 import com.example.valuepaljava.models.Wallet;
 import com.example.valuepaljava.service.WalletService;
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/stock")
@@ -48,7 +47,7 @@ public class WalletController {
     }
 
     @GetMapping(value="/updateHoldings")
-    public String updateHoldings(@RequestHeader HttpHeaders headers) throws JsonProcessingException {
+    public String updateHoldings(@RequestHeader HttpHeaders headers) {
         return walletService.updateAllHoldings();
     }
 
