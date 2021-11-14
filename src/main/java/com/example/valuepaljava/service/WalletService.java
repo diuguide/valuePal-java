@@ -1,14 +1,14 @@
 package com.example.valuepaljava.service;
 
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
-import com.example.valuepaljava.models.Holding;
-import com.example.valuepaljava.models.Order;
-import com.example.valuepaljava.models.User;
-import com.example.valuepaljava.models.Wallet;
+import com.example.valuepaljava.models.*;
 import com.example.valuepaljava.repos.HoldingRepository;
 import com.example.valuepaljava.repos.OrderRepository;
 import com.example.valuepaljava.repos.UserRepository;
 import com.example.valuepaljava.repos.WalletRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -18,9 +18,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class WalletService {
@@ -30,13 +30,15 @@ public class WalletService {
     private final WalletRepository walletRepository;
     private final UserRepository userRepository;
     private final OrderRepository orderRepository;
+    private final StockService stockService;
 
     @Autowired
-    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository) {
+    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository, StockService stockService) {
         this.holdingRepository = holdingRepository;
         this.walletRepository = walletRepository;
         this.userRepository = userRepository;
         this.orderRepository = orderRepository;
+        this.stockService = stockService;
     }
 
     public Order entryPoint(Order order, String token) {
@@ -132,6 +134,41 @@ public class WalletService {
     public boolean checkExistingBalance(Order order) {
         Wallet wallet = walletRetriever(order.getWalletId());
         return wallet.getTotalCash() > order.getTotalValue();
+    }
+
+    public String updateAllHoldings() throws JsonProcessingException {
+        Set<String> allHoldings = holdingRepository.selectAllTickers();
+        String[] holdingsAsStringArray = new String[allHoldings.size()];
+        int index = 0;
+        for(String str : allHoldings) {
+            holdingsAsStringArray[index++] = str;
+        }
+        String apiResult = stockService.getTickerData(1, holdingsAsStringArray);
+        return apiResult;
+    }
+
+    @Transactional
+    public void updateHoldingsTable(List<HoldingsUpdateDTO> holdings) {
+        for(HoldingsUpdateDTO holding : holdings) {
+            logger.info(String.format("Updating %s with current price %s", holding.getTicker(), holding.getPrice()));
+            holdingRepository.updateTickerPrices(holding.getPrice(), holding.getChange(), holding.getTicker());
+        }
+        List<Holding> allHoldings = holdingRepository.findAll();
+        for(Holding hld : allHoldings) {
+            hld.setTotalValue();
+            logger.info(String.format("Updating total value of %s - %s", hld.getTicker(), hld.getTotalValue()));
+            holdingRepository.updateTotalValue(hld.getTotalValue(), hld.getTicker());
+        }
+        updateAllWallets();
+    }
+
+    public void updateAllWallets() {
+        List<Wallet> allWallets = walletRepository.findAll();
+        for(Wallet wallet : allWallets) {
+            Optional<Double> newTotal = holdingRepository.findTotalValue(wallet.getWalletId());
+            wallet.setTotalValue(newTotal.get());
+            walletRepository.save(wallet);
+        }
     }
 
 

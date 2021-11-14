@@ -95,7 +95,6 @@ public class StockService {
     }
 
     public String getTickerData(int api, String... ticker){
-
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = headerConfig.yahooHeaders();
         HttpEntity<Object> request = new HttpEntity<>(headers);
@@ -106,6 +105,7 @@ public class StockService {
         }
         uri.append("?symbols=");
         for(String el : ticker) {
+            System.out.println(el);
             uri.append(el).append(",");
         }
         ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
