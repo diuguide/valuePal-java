@@ -162,7 +162,7 @@ public class WalletService {
         List<Wallet> allWallets = walletRepository.findAll();
         for(Wallet wallet : allWallets) {
             Optional<Double> newTotal = holdingRepository.findTotalValue(wallet.getWalletId());
-            wallet.setTotalValue(newTotal.get());
+            newTotal.ifPresent(wallet::setTotalValue);
             walletRepository.save(wallet);
         }
     }
