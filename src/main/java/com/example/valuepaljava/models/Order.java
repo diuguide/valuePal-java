@@ -2,13 +2,30 @@ package com.example.valuepaljava.models;
 
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.persistence.*;
+
+@Entity
+@Table(name="orders")
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name="walletId")
     private Integer walletId;
+
+    @Column(name="ticker")
     private String ticker;
+
+    @Column(name="price")
     private double price;
+
+    @Column(name="quantity")
     private Integer quantity;
+
+    @Column(name="status")
+    private String status;
 
     public Order() {
     }
@@ -18,6 +35,14 @@ public class Order {
         this.ticker = ticker;
         this.price = price;
         this.quantity = quantity;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Integer getWalletId() {
@@ -54,6 +79,14 @@ public class Order {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

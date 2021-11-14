@@ -24,6 +24,9 @@ public class Holding {
     @Column(name="price")
     private double price;
 
+    @Column(name="change")
+    private double change;
+
     @Column(name="totalValue")
     private double totalValue;
 
@@ -35,6 +38,14 @@ public class Holding {
         this.ticker = ticker;
         this.quantity = quantity;
         this.price = price;
+    }
+
+    public double getChange() {
+        return change;
+    }
+
+    public void setChange(double change) {
+        this.change = change;
     }
 
     public int getId() {

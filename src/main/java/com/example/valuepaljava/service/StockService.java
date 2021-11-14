@@ -1,6 +1,5 @@
 package com.example.valuepaljava.service;
 
-import com.example.valuepaljava.Yahoo.ApiConfig;
 import com.example.valuepaljava.Yahoo.HeaderConfig;
 import com.example.valuepaljava.models.SummaryObject;
 import com.example.valuepaljava.repos.SummaryRepository;
@@ -66,7 +65,6 @@ public class StockService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public List<SummaryObject> mapToObjects(List<Map<String, Object>> mapped) {
@@ -95,7 +93,6 @@ public class StockService {
     }
 
     public String getTickerData(int api, String... ticker){
-
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = headerConfig.yahooHeaders();
         HttpEntity<Object> request = new HttpEntity<>(headers);

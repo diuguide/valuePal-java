@@ -1,10 +1,9 @@
 package com.example.valuepaljava.service;
 
-import com.example.valuepaljava.models.Holding;
-import com.example.valuepaljava.models.Order;
-import com.example.valuepaljava.models.User;
-import com.example.valuepaljava.models.Wallet;
+import com.example.valuepaljava.exceptions.InsufficientFundsException;
+import com.example.valuepaljava.models.*;
 import com.example.valuepaljava.repos.HoldingRepository;
+import com.example.valuepaljava.repos.OrderRepository;
 import com.example.valuepaljava.repos.UserRepository;
 import com.example.valuepaljava.repos.WalletRepository;
 import io.jsonwebtoken.Claims;
@@ -16,9 +15,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class WalletService {
@@ -27,30 +26,43 @@ public class WalletService {
     private final HoldingRepository holdingRepository;
     private final WalletRepository walletRepository;
     private final UserRepository userRepository;
+    private final OrderRepository orderRepository;
+    private final StockService stockService;
 
     @Autowired
-    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository) {
+    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository, StockService stockService) {
         this.holdingRepository = holdingRepository;
         this.walletRepository = walletRepository;
         this.userRepository = userRepository;
+        this.orderRepository = orderRepository;
+        this.stockService = stockService;
     }
 
-    public void entryPoint(Order order, String token) {
-        order.setWalletId(jwtUtility(token));
-        saveHolding(order);
-        updateWallet(order);
-        logger.info(String.format("Wallet %s updated", order.getWalletId()));
+    public Order entryPoint(Order order, String token) {
+        order.setWalletId(jwtUtility(token).getWallet().getWalletId());
+        if(checkExistingBalance(order)) {
+            saveHolding(order);
+            updateWallet(order);
+            order.setStatus("FILLED");
+            orderRepository.save(order);
+            logger.info(String.format("Wallet %s updated", order.getWalletId()));
+            return order;
+        }
+        order.setStatus("INSUFFICIENT FUNDS");
+        orderRepository.save(order);
+        throw new InsufficientFundsException(String.format("Insufficient funds! $%s is needed to complete this order.", order.getTotalValue()));
+
     }
 
     public Wallet entryWallet(String token) {
-        int walletId = jwtUtility(token.replace("Bearer ", ""));
+        int walletId = jwtUtility(token.replace("Bearer ", "")).getWallet().getWalletId();
         Set<Holding> holdings = holdingRepository.findHoldingByWalletId(walletId);
         Wallet wallet = walletRepository.getById(walletId);
         wallet.setHoldings(holdings);
         return wallet;
     }
 
-    public int jwtUtility(String token) {
+    public User jwtUtility(String token) {
         String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
         Jws<Claims> claimsJws = Jwts.parser()
                 .setSigningKey(Keys.hmacShaKeyFor(key.getBytes()))
@@ -59,7 +71,7 @@ public class WalletService {
         Optional<User> newUser = userRepository.findUserByUsername(body.getSubject());
         if(newUser.isPresent()) {
             User user = newUser.get();
-            return user.getWallet().getWalletId();
+            return user;
         }
         throw new UsernameNotFoundException("User name not found!");
     }
@@ -114,6 +126,45 @@ public class WalletService {
     public void completePurchase(Holding holding) {
         Wallet wallet = walletRetriever(holding.getWallet());
         wallet.setTotalCash(wallet.getTotalCash() - holding.getTotalValue());
+    }
+
+    public boolean checkExistingBalance(Order order) {
+        Wallet wallet = walletRetriever(order.getWalletId());
+        return wallet.getTotalCash() > order.getTotalValue();
+    }
+
+    public String updateAllHoldings() {
+        Set<String> allHoldings = holdingRepository.selectAllTickers();
+        String[] holdingsAsStringArray = new String[allHoldings.size()];
+        int index = 0;
+        for(String str : allHoldings) {
+            holdingsAsStringArray[index++] = str;
+        }
+        return stockService.getTickerData(1, holdingsAsStringArray);
+    }
+
+    @Transactional
+    public void updateHoldingsTable(List<HoldingsUpdateDTO> holdings) {
+        for(HoldingsUpdateDTO holding : holdings) {
+            logger.info(String.format("Updating %s with current price %s", holding.getTicker(), holding.getPrice()));
+            holdingRepository.updateTickerPrices(holding.getPrice(), holding.getChange(), holding.getTicker());
+        }
+        List<Holding> allHoldings = holdingRepository.findAll();
+        for(Holding hld : allHoldings) {
+            hld.setTotalValue();
+            logger.info(String.format("Updating total value of %s - %s", hld.getTicker(), hld.getTotalValue()));
+            holdingRepository.updateTotalValue(hld.getTotalValue(), hld.getTicker());
+        }
+        updateAllWallets();
+    }
+
+    public void updateAllWallets() {
+        List<Wallet> allWallets = walletRepository.findAll();
+        for(Wallet wallet : allWallets) {
+            Optional<Double> newTotal = holdingRepository.findTotalValue(wallet.getWalletId());
+            wallet.setTotalValue(newTotal.get());
+            walletRepository.save(wallet);
+        }
     }
 
 
