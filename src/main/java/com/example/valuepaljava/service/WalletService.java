@@ -63,6 +63,7 @@ public class WalletService {
     }
 
     public User jwtUtility(String token) {
+
         String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
         Jws<Claims> claimsJws = Jwts.parser()
                 .setSigningKey(Keys.hmacShaKeyFor(key.getBytes()))
@@ -119,7 +120,7 @@ public class WalletService {
     public void updateWallet(Order order) {
         Optional<Double> newTotal = holdingRepository.findTotalValue(order.getWalletId());
         Wallet wallet = walletRepository.getById(order.getWalletId());
-        wallet.setTotalValue(newTotal.get());
+        newTotal.ifPresent(wallet::setTotalValue);
         walletRepository.save(wallet);
     }
 
@@ -153,7 +154,7 @@ public class WalletService {
         for(Holding hld : allHoldings) {
             hld.setTotalValue();
             logger.info(String.format("Updating total value of %s - %s", hld.getTicker(), hld.getTotalValue()));
-            holdingRepository.updateTotalValue(hld.getTotalValue(), hld.getTicker());
+            holdingRepository.updateTotalValue(hld.getTotalValue(), hld.getTicker(), hld.getWallet());
         }
         updateAllWallets();
     }

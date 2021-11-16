@@ -18,7 +18,7 @@ public class Order {
     @Column(name="ticker")
     private String ticker;
 
-    @Column(name="price")
+    @Column(name="price", precision=10, scale=2)
     private double price;
 
     @Column(name="quantity")

@@ -25,8 +25,8 @@ public interface HoldingRepository extends JpaRepository<Holding, Integer> {
     void updateTickerPrices(@Param("new_price") double new_price, @Param("change")double change, @Param("ticker")String ticker);
 
     @Modifying
-    @Query(value = "UPDATE holdings SET total_value = :new_total_value WHERE ticker = :ticker", nativeQuery = true)
-    void updateTotalValue(@Param("new_total_value") double new_total_value, @Param("ticker")String ticker);
+    @Query(value = "UPDATE holdings SET total_value = :new_total_value WHERE ticker = :ticker AND wallet_id = :wallet_id", nativeQuery = true)
+    void updateTotalValue(@Param("new_total_value") double new_total_value, @Param("ticker")String ticker, @Param("wallet_id")int wallet_id);
 
 
 

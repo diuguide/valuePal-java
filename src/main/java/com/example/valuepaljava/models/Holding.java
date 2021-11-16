@@ -1,7 +1,5 @@
 package com.example.valuepaljava.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 
 @Entity
@@ -21,13 +19,13 @@ public class Holding {
     @Column(name="quantity")
     private int quantity;
 
-    @Column(name="price")
+    @Column(name="price", precision=10, scale=2)
     private double price;
 
-    @Column(name="change")
+    @Column(name="change", precision=6, scale=2)
     private double change;
 
-    @Column(name="totalValue")
+    @Column(name="totalValue", precision=10, scale=2)
     private double totalValue;
 
     public Holding() {

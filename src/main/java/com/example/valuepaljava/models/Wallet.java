@@ -12,10 +12,10 @@ public class Wallet {
     @Column(name="id")
     private int walletId;
 
-    @Column(name="total_cash")
+    @Column(name="total_cash", precision=10, scale=2)
     private double totalCash = 0;
 
-    @Column(name="totalValue")
+    @Column(name="totalValue", precision=10, scale=2)
     private double totalValue;
 
     @Transient
