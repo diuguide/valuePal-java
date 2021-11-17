@@ -141,7 +141,7 @@ public class WalletService {
         for(String str : allHoldings) {
             holdingsAsStringArray[index++] = str;
         }
-        return stockService.getTickerData(1, holdingsAsStringArray);
+        return stockService.getTickerData(2, holdingsAsStringArray);
     }
 
     @Transactional
