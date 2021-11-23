@@ -62,6 +62,42 @@ public class WalletService {
         return wallet;
     }
 
+    public Order entryPointSell(Order order, String token) throws InsufficientFundsException{
+        User currentUser = jwtUtility(token);
+        order.setWalletId(currentUser.getWallet().getWalletId());
+        Optional<Holding> existingHolding = checkForHolding(order);
+        if(existingHolding.isPresent()) {
+            if(existingHolding.get().getQuantity() >= order.getQuantity()) {
+                existingHolding.get().setQuantity(existingHolding.get().getQuantity() - order.getQuantity());
+                if(existingHolding.get().getQuantity() == 0) {
+                    holdingRepository.delete(existingHolding.get());
+                    logger.info(String.format("[SELL] Entire holding of %s sold and holding entry removed.", order.getTicker()));
+                } else {
+                    existingHolding.get().setTotalValue();
+                    Holding newHolding = holdingRepository.save(existingHolding.get());
+                    logger.info(String.format("[SELL] Holding Updated: Wallet ID: %s updated with %s shares of %s", newHolding.getWallet(), newHolding.getQuantity(), newHolding.getTicker()));
+                }
+                currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() + order.getTotalValue());
+                Wallet newWallet = walletRepository.save(currentUser.getWallet());
+                logger.info(String.format("[SELL] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
+                order.setStatus("Filled");
+                Order filledOrder = orderRepository.save(order);
+                logger.info(String.format("[SELL] Order #%s has been filled", filledOrder.getId()));
+                return filledOrder;
+            } else {
+                order.setStatus("Rejected");
+                orderRepository.save(order);
+                logger.info(String.format("Order #%s has been rejected. Not enough stock in wallet to fill order.", order.getId()));
+                throw new InsufficientFundsException(String.format("You do not own enough %s stock to complete this order!", order.getTicker()));
+            }
+        } else {
+            order.setStatus("Rejected");
+            orderRepository.save(order);
+            logger.info(String.format("Order #%s has been rejected. Not enough stock in wallet to fill order.", order.getId()));
+            throw new InsufficientFundsException(String.format("You do not own any %s", order.getTicker()));
+        }
+    }
+
     public User jwtUtility(String token) {
 
         String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
@@ -134,6 +170,10 @@ public class WalletService {
         return wallet.getTotalCash() > order.getTotalValue();
     }
 
+    public Optional<Holding> checkForHolding(Order order) {
+        return holdingRepository.findHoldingByWalletAndAndTicker(order.getTicker(), order.getWalletId());
+    }
+
     public String updateAllHoldings() {
         Set<String> allHoldings = holdingRepository.selectAllTickers();
         String[] holdingsAsStringArray = new String[allHoldings.size()];
@@ -146,26 +186,34 @@ public class WalletService {
 
     @Transactional
     public void updateHoldingsTable(List<HoldingsUpdateDTO> holdings) {
+        long startTime = System.currentTimeMillis();
+        long duration = 0L;
         for(HoldingsUpdateDTO holding : holdings) {
-            logger.info(String.format("Updating %s with current price %s", holding.getTicker(), holding.getPrice()));
             holdingRepository.updateTickerPrices(holding.getPrice(), holding.getChange(), holding.getTicker());
         }
         List<Holding> allHoldings = holdingRepository.findAll();
         for(Holding hld : allHoldings) {
             hld.setTotalValue();
-            logger.info(String.format("Updating total value of %s - %s", hld.getTicker(), hld.getTotalValue()));
             holdingRepository.updateTotalValue(hld.getTotalValue(), hld.getTicker(), hld.getWallet());
         }
+        long endTime = System.currentTimeMillis();
+        duration = endTime - startTime;
+        logger.info(String.format("[UPDATE] Updated holding information.  %s records updated in %s ms", allHoldings.size(), duration));
         updateAllWallets();
     }
 
     public void updateAllWallets() {
+        long startTime = System.currentTimeMillis();
+        long duration = 0L;
         List<Wallet> allWallets = walletRepository.findAll();
         for(Wallet wallet : allWallets) {
             Optional<Double> newTotal = holdingRepository.findTotalValue(wallet.getWalletId());
             newTotal.ifPresent(wallet::setTotalValue);
             walletRepository.save(wallet);
         }
+        long endTime = System.currentTimeMillis();
+        duration = endTime - startTime;
+        logger.info(String.format("[UPDATE] Updated wallets.  %s records updated in %s ms", allWallets.size(), duration));
     }
 
 

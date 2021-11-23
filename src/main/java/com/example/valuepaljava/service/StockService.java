@@ -105,6 +105,7 @@ public class StockService {
         for(String el : ticker) {
             uri.append(el).append(",");
         }
+        logger.info(uri.toString());
         ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
         return response.getBody();
     }
