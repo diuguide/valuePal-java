@@ -1,6 +1,7 @@
 package com.example.valuepaljava.controllers;
 
 
+import com.example.valuepaljava.exceptions.InsufficientFundsException;
 import com.example.valuepaljava.models.HoldingsUpdateDTO;
 import com.example.valuepaljava.models.Order;
 import com.example.valuepaljava.models.Wallet;
@@ -55,6 +56,17 @@ public class WalletController {
     public String saveWallet(@RequestHeader HttpHeaders headers, @RequestBody List<HoldingsUpdateDTO> holdings) {
         walletService.updateHoldingsTable(holdings);
         return "Success";
+    }
+
+    @PostMapping(value="/sellStock")
+    public ResponseEntity<Object> sellHoldingOrder(@RequestHeader HttpHeaders headers, @RequestBody Order order) {
+        logger.info(String.format("Sell order for %s at $%s. Has been initiated", order.getTicker(), order.getPrice()));
+        try {
+            Order completedOrder = walletService.entryPointSell(order, headers.getFirst("Authorization"));
+            return ResponseEntity.ok().body(completedOrder);
+        } catch (InsufficientFundsException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
 
