@@ -22,6 +22,9 @@ public class Holding {
     @Column(name="price", precision=10, scale=2)
     private double price;
 
+    @Column(name="avg_purchase_price", precision=10, scale=2)
+    private double avg_price;
+
     @Column(name="change", precision=6, scale=2)
     private double change;
 
