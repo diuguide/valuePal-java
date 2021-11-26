@@ -37,13 +37,13 @@ public class StockService {
         HttpHeaders headers = headerConfig.yahooHeaders();
         HttpEntity<Object> request = new HttpEntity<>(headers);
         String uri = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-summary?region=BR";
-        ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET, request, String.class, 1);
-        if (response.getStatusCode() == HttpStatus.OK) {
-            logger.info("Request Successful.");
-        } else {
-            logger.info("Request Failed");
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET, request, String.class, 1);
+            return response;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return response;
+        return ResponseEntity.badRequest().body("An Error has occurred!");
     }
 
     public void addSummaryRecord() throws JsonProcessingException {
@@ -86,10 +86,9 @@ public class StockService {
 
     public List<SummaryObject> filterDJIData(List<SummaryObject> dataList) {
         List<String> markets = Arrays.asList("OSA", "DJI", "HKE", "SAO", "BUE", "MEX");
-        List<SummaryObject> singleObj = dataList.stream()
+        return dataList.stream()
                 .filter(obj -> markets.contains(obj.getExchange()))
                 .collect(Collectors.toList());
-        return singleObj;
     }
 
     public String getTickerData(int api, String... ticker){
@@ -106,8 +105,13 @@ public class StockService {
             uri.append(el).append(",");
         }
         logger.info(uri.toString());
-        ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-        return response.getBody();
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+            return response.getBody();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "An error has occurred!";
     }
 
     public String getTickerHistory(int api, String interval, String range, String... ticker) {
@@ -125,7 +129,13 @@ public class StockService {
         }
         uri.append("&interval=").append(interval).append("&range=").append(range);
         logger.info(uri.toString());
-        ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-        return response.getBody();
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+            return response.getBody();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "An Error has occurred!";
     }
 }
