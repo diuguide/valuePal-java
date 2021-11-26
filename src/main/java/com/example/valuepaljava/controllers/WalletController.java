@@ -32,6 +32,7 @@ public class WalletController {
     @PostMapping(value="/addStock")
     public ResponseEntity<Object> testStudentRole(@RequestHeader HttpHeaders headers, @RequestBody Order order){
         logger.info(String.format("Purchase order for %s at $%s. Total price: %s", order.getTicker(), order.getPrice(), order.getTotalValue()));
+
         try {
             walletService.entryPoint(order, headers.getFirst("Authorization"));
         } catch (Exception e) {

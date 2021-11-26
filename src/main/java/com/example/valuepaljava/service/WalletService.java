@@ -44,6 +44,7 @@ public class WalletService {
             saveHolding(order);
             updateWallet(order);
             order.setStatus("FILLED");
+            order.setOrderType('B');
             orderRepository.save(order);
             logger.info(String.format("Wallet %s updated", order.getWalletId()));
             return order;
@@ -81,6 +82,7 @@ public class WalletService {
                 Wallet newWallet = walletRepository.save(currentUser.getWallet());
                 logger.info(String.format("[SELL] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
                 order.setStatus("Filled");
+                order.setOrderType('S');
                 Order filledOrder = orderRepository.save(order);
                 logger.info(String.format("[SELL] Order #%s has been filled", filledOrder.getId()));
                 return filledOrder;
