@@ -109,9 +109,9 @@ public class StockService {
         }
         logger.info(uri.toString());
         try {
-            ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-            jsonUtil.processJson(response.getBody());
-            return response.getBody();
+            ResponseEntity<String> quoteResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+            jsonUtil.jsonParser(quoteResponse.getBody());
+            return quoteResponse.getBody();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -134,8 +134,9 @@ public class StockService {
         uri.append("&interval=").append(interval).append("&range=").append(range);
         logger.info(uri.toString());
         try {
-            ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-            return response.getBody();
+            ResponseEntity<String> historyResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+            System.out.println("history response: " + historyResponse.getBody());
+            return historyResponse.getBody();
         } catch (Exception e) {
             e.printStackTrace();
         }
