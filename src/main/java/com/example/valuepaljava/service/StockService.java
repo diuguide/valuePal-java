@@ -3,6 +3,7 @@ package com.example.valuepaljava.service;
 import com.example.valuepaljava.Yahoo.HeaderConfig;
 import com.example.valuepaljava.models.SummaryObject;
 import com.example.valuepaljava.repos.SummaryRepository;
+import com.example.valuepaljava.util.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -25,11 +26,13 @@ public class StockService {
     private final SummaryRepository summaryRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private StringBuilder uri;
+    private final JsonUtil jsonUtil;
 
     @Autowired
-    public StockService(HeaderConfig headerConfig, SummaryRepository summaryRepository) {
+    public StockService(HeaderConfig headerConfig, SummaryRepository summaryRepository, JsonUtil jsonUtil) {
         this.headerConfig = headerConfig;
         this.summaryRepository = summaryRepository;
+        this.jsonUtil = jsonUtil;
     }
 
     public ResponseEntity<String> summaryApiCall() {
@@ -107,6 +110,7 @@ public class StockService {
         logger.info(uri.toString());
         try {
             ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+            jsonUtil.processJson(response.getBody());
             return response.getBody();
         } catch (Exception e) {
             e.printStackTrace();
