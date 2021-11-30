@@ -89,7 +89,7 @@ public class WalletService {
             updateWallet(currentUser.getWallet().getWalletId());
             logger.info(String.format("[BUY] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
             order.setStatus("Filled");
-            order.setOrderType('S');
+            order.setOrderType('B');
             Order filledOrder = orderRepository.save(order);
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
