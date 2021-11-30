@@ -31,14 +31,14 @@ public class WalletController {
 
     @PostMapping(value="/addStock")
     public ResponseEntity<Object> testStudentRole(@RequestHeader HttpHeaders headers, @RequestBody Order order){
-        logger.info(String.format("Purchase order for %s at $%s. Total price: %s", order.getTicker(), order.getPrice(), order.getTotalValue()));
+        logger.info(String.format("[BUY] Purchase order for %s at $%s. Total price: %s", order.getTicker(), order.getPrice(), order.getTotalValue()));
+
         try {
-            walletService.entryPoint(order, headers.getFirst("Authorization"));
+            return ResponseEntity.ok().body(walletService.entryPointBuy(order, headers.getFirst("Authorization")));
         } catch (Exception e) {
             logger.info(String.format("[INSUFFICIENT FUNDS] %s order failed due to insufficient funds", walletService.jwtUtility(Objects.requireNonNull(headers.getFirst("Authorization"))).getUsername()));
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-        return ResponseEntity.ok().body(order);
     }
 
     @GetMapping(value="/retrieve")
@@ -60,7 +60,7 @@ public class WalletController {
 
     @PostMapping(value="/sellStock")
     public ResponseEntity<Object> sellHoldingOrder(@RequestHeader HttpHeaders headers, @RequestBody Order order) {
-        logger.info(String.format("Sell order for %s at $%s. Has been initiated", order.getTicker(), order.getPrice()));
+        logger.info(String.format("[SELL] Sell order for %s at $%s. Has been initiated", order.getTicker(), order.getPrice()));
         try {
             Order completedOrder = walletService.entryPointSell(order, headers.getFirst("Authorization"));
             return ResponseEntity.ok().body(completedOrder);

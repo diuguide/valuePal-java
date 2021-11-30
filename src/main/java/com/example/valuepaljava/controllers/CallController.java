@@ -5,18 +5,13 @@ import com.example.valuepaljava.models.SummaryObject;
 import com.example.valuepaljava.repos.SummaryRepository;
 import com.example.valuepaljava.service.NewsService;
 import com.example.valuepaljava.service.StockService;
-import com.example.valuepaljava.service.WatchListService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -30,14 +25,12 @@ public class CallController {
     private final StockService stockService;
     private final SummaryRepository summaryRepository;
     private final NewsService newsService;
-    private final WatchListService watchListService;
 
     @Autowired
-    public CallController(NewsService newsService, StockService stockService, SummaryRepository summaryRepository, WatchListService watchListService) {
+    public CallController(NewsService newsService, StockService stockService, SummaryRepository summaryRepository) {
         this.stockService = stockService;
         this.summaryRepository = summaryRepository;
         this.newsService = newsService;
-        this.watchListService = watchListService;
     }
 
     @GetMapping(value="/summaryUpdate")

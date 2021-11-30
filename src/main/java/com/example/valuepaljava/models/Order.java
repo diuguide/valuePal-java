@@ -27,6 +27,11 @@ public class Order {
     @Column(name="status")
     private String status;
 
+    @Column(name="type")
+    private char orderType;
+
+
+
     public Order() {
     }
 
@@ -35,6 +40,14 @@ public class Order {
         this.ticker = ticker;
         this.price = price;
         this.quantity = quantity;
+    }
+
+    public char getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(char orderType) {
+        this.orderType = orderType;
     }
 
     public String getStatus() {

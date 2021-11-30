@@ -3,6 +3,7 @@ package com.example.valuepaljava.service;
 import com.example.valuepaljava.Yahoo.HeaderConfig;
 import com.example.valuepaljava.models.SummaryObject;
 import com.example.valuepaljava.repos.SummaryRepository;
+import com.example.valuepaljava.util.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -25,11 +26,13 @@ public class StockService {
     private final SummaryRepository summaryRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private StringBuilder uri;
+    private final JsonUtil jsonUtil;
 
     @Autowired
-    public StockService(HeaderConfig headerConfig, SummaryRepository summaryRepository) {
+    public StockService(HeaderConfig headerConfig, SummaryRepository summaryRepository, JsonUtil jsonUtil) {
         this.headerConfig = headerConfig;
         this.summaryRepository = summaryRepository;
+        this.jsonUtil = jsonUtil;
     }
 
     public ResponseEntity<String> summaryApiCall() {
@@ -37,13 +40,13 @@ public class StockService {
         HttpHeaders headers = headerConfig.yahooHeaders();
         HttpEntity<Object> request = new HttpEntity<>(headers);
         String uri = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-summary?region=BR";
-        ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET, request, String.class, 1);
-        if (response.getStatusCode() == HttpStatus.OK) {
-            logger.info("Request Successful.");
-        } else {
-            logger.info("Request Failed");
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET, request, String.class, 1);
+            return response;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return response;
+        return ResponseEntity.badRequest().body("An Error has occurred!");
     }
 
     public void addSummaryRecord() throws JsonProcessingException {
@@ -86,10 +89,9 @@ public class StockService {
 
     public List<SummaryObject> filterDJIData(List<SummaryObject> dataList) {
         List<String> markets = Arrays.asList("OSA", "DJI", "HKE", "SAO", "BUE", "MEX");
-        List<SummaryObject> singleObj = dataList.stream()
+        return dataList.stream()
                 .filter(obj -> markets.contains(obj.getExchange()))
                 .collect(Collectors.toList());
-        return singleObj;
     }
 
     public String getTickerData(int api, String... ticker){
@@ -106,8 +108,16 @@ public class StockService {
             uri.append(el).append(",");
         }
         logger.info(uri.toString());
-        ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-        return response.getBody();
+        try {
+            ResponseEntity<String> quoteResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+            System.out.println("quote response: " + quoteResponse.getBody());
+            jsonUtil.jsonParser(quoteResponse.getBody());
+            return quoteResponse.getBody();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+        return "An error has occurred!";
     }
 
     public String getTickerHistory(int api, String interval, String range, String... ticker) {
@@ -125,7 +135,15 @@ public class StockService {
         }
         uri.append("&interval=").append(interval).append("&range=").append(range);
         logger.info(uri.toString());
-        ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-        return response.getBody();
+        try {
+            ResponseEntity<String> historyResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+            System.out.println("history response: " + historyResponse.getBody());
+            return historyResponse.getBody();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+        return "An Error has occurred!";
     }
 }

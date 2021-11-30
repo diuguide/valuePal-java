@@ -22,6 +22,9 @@ public class Holding {
     @Column(name="price", precision=10, scale=2)
     private double price;
 
+    @Column(name="avg_purchase_price", precision=10, scale=2)
+    private Double avg_purchase_price;
+
     @Column(name="change", precision=6, scale=2)
     private double change;
 
@@ -31,11 +34,24 @@ public class Holding {
     public Holding() {
     }
 
-    public Holding(int walletId, String ticker, int quantity, double price) {
+    public Holding(int walletId, String ticker, int quantity, double price, double totalValue) {
         this.walletId = walletId;
         this.ticker = ticker;
         this.quantity = quantity;
         this.price = price;
+        this.totalValue = totalValue;
+    }
+
+    public Double getAvg_price() {
+        return avg_purchase_price;
+    }
+
+    public void setAvg_price(Double avg_price) {
+        this.avg_purchase_price = avg_price;
+    }
+
+    public void setTotalValue(double totalValue) {
+        this.totalValue = totalValue;
     }
 
     public double getChange() {
