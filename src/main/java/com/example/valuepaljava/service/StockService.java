@@ -110,10 +110,12 @@ public class StockService {
         logger.info(uri.toString());
         try {
             ResponseEntity<String> quoteResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
+            System.out.println("quote response: " + quoteResponse.getBody());
             jsonUtil.jsonParser(quoteResponse.getBody());
             return quoteResponse.getBody();
         } catch (Exception e) {
             e.printStackTrace();
+
         }
         return "An error has occurred!";
     }
@@ -139,6 +141,7 @@ public class StockService {
             return historyResponse.getBody();
         } catch (Exception e) {
             e.printStackTrace();
+
         }
 
         return "An Error has occurred!";
