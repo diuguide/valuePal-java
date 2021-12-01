@@ -38,30 +38,6 @@ public class WalletService {
         this.stockService = stockService;
     }
 
-//    public Order entryPoint(Order order, String token) {
-//        long startTime = System.currentTimeMillis();
-//        long duration = 0L;
-//        User user = jwtUtility(token);
-//        order.setWalletId(user.getWallet().getWalletId());
-//        if(checkExistingBalance(order)) {
-//            saveHolding(order);
-//            updateWallet(order);
-//            order.setStatus("FILLED");
-//            order.setOrderType('B');
-//            orderRepository.save(order);
-//            long endTime = System.currentTimeMillis();
-//            duration = endTime - startTime;
-//            logger.info(String.format("[BUY] Order complete, Wallet %s updated. Duration: %s/ms", order.getWalletId(), duration));
-//            return order;
-//        }
-//        order.setStatus("INSUFFICIENT FUNDS");
-//        orderRepository.save(order);
-//        long endTime = System.currentTimeMillis();
-//        duration = endTime - startTime;
-//        logger.info(String.format("[BUY] Order failed! Insufficient funds, duration: %s", duration));
-//        throw new InsufficientFundsException(String.format("Insufficient funds! $%s is needed to complete this order.", order.getTotalValue()));
-//    }
-
     public Order entryPointBuy(Order order, String token) {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
@@ -174,42 +150,6 @@ public class WalletService {
         throw new UsernameNotFoundException("User name not found!");
     }
 
-//    public void saveHolding(Order order) {
-//        Set<Holding> holding = findHolding(order.getWalletId());
-//        for(Holding hld : holding) {
-//            if(hld.getTicker().equals(order.getTicker())) {
-//                Holding complete = holdingRepository.save(combineHoldings(hld, holdingBuilder(order)));
-//                logger.info(String.format("Order Complete -- %s shares of %s for a total value of %s saved to wallet %s", order.getQuantity(), order.getTicker(), order.getTotalValue(), complete.getWallet()));
-//                return;
-//            }
-//        }
-//        Holding complete = holdingRepository.save(holdingBuilder(order));
-//        logger.info(String.format("Order Complete -- %s shares of %s for a total value of %s saved to wallet %s", order.getQuantity(), order.getTicker(), order.getTotalValue(), complete.getWallet()));
-//    }
-//
-//    public Holding combineHoldings(Holding old, Holding order) {
-//        logger.info(String.format("Updating holding of %s in wallet #%s", order.getTicker(), old.getWallet()));
-//        old.setQuantity(old.getQuantity() + order.getQuantity());
-//        old.setPrice(order.getPrice());
-//        old.setTotalValue();
-//        return old;
-//    }
-//
-//    public Holding holdingBuilder(Order order) {
-//        Holding newHolding = new Holding();
-//        newHolding.setTicker(order.getTicker());
-//        newHolding.setPrice(order.getPrice());
-//        newHolding.setQuantity(order.getQuantity());
-//        newHolding.setTotalValue();
-//        newHolding.setWallet(order.getWalletId());
-//        completePurchase(newHolding);
-//        return newHolding;
-//    }
-
-//    public Set<Holding> findHolding(int wallet_id) {
-//        return holdingRepository.findHoldingByWalletId(wallet_id);
-//    }
-
     public Wallet walletRetriever(int walletId) {
         return walletRepository.getById(walletId);
     }
@@ -220,11 +160,6 @@ public class WalletService {
         newTotal.ifPresent(wallet::setTotalValue);
         walletRepository.save(wallet);
     }
-//
-//    public void completePurchase(Holding holding) {
-//        Wallet wallet = walletRetriever(holding.getWallet());
-//        wallet.setTotalCash(wallet.getTotalCash() - holding.getTotalValue());
-//    }
 
     public boolean checkExistingBalance(Order order) {
         Wallet wallet = walletRetriever(order.getWalletId());
