@@ -95,6 +95,8 @@ public class StockService {
     }
 
     public String getTickerData(int api, String... ticker){
+        long startTime = System.currentTimeMillis();
+        long duration = 0L;
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = headerConfig.yahooHeaders();
         HttpEntity<Object> request = new HttpEntity<>(headers);
@@ -112,6 +114,9 @@ public class StockService {
             ResponseEntity<String> quoteResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
             System.out.println("quote response: " + quoteResponse.getBody());
             jsonUtil.jsonParser(quoteResponse.getBody());
+            long endTime = System.currentTimeMillis();
+            duration = endTime - startTime;
+            logger.info(String.format("[API] getTickerData called: duration %s/ms", duration));
             return quoteResponse.getBody();
         } catch (Exception e) {
             e.printStackTrace();
@@ -121,6 +126,8 @@ public class StockService {
     }
 
     public String getTickerHistory(int api, String interval, String range, String... ticker) {
+        long startTime = System.currentTimeMillis();
+        long duration = 0L;
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = headerConfig.yahooHeaders();
         HttpEntity<Object> request = new HttpEntity<>(headers);
@@ -138,6 +145,9 @@ public class StockService {
         try {
             ResponseEntity<String> historyResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
             System.out.println("history response: " + historyResponse.getBody());
+            long endTime = System.currentTimeMillis();
+            duration = endTime - startTime;
+            logger.info(String.format("[API] getTickerHistory called: duration %s/ms", duration));
             return historyResponse.getBody();
         } catch (Exception e) {
             e.printStackTrace();
