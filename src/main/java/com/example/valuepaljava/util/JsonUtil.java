@@ -23,7 +23,7 @@ public class JsonUtil {
     private final Logger logger = LoggerFactory.getLogger(JsonUtil.class);
 
     public void processJson(String jsonString) throws IOException {
-        System.out.println("JSON: " + jsonString);
+
         JsonFactory f = new MappingJsonFactory();
         JsonParser jp = f.createParser(jsonString);
         JsonToken current;
@@ -34,10 +34,10 @@ public class JsonUtil {
         }
         while (jp.nextToken() != JsonToken.END_OBJECT) {
             String fieldName = jp.getCurrentName();
-            System.out.println("Current Field: " + fieldName);
+
             // move from field name to field value
             current = jp.nextToken();
-            System.out.println("next token: " + jp.getCurrentName());
+
             if (fieldName.equals("quoteResponse")) {
 //                if (current == JsonToken.START_ARRAY) {
                     // For each of the records in the array
@@ -68,7 +68,7 @@ public class JsonUtil {
         JSONObject quoteResponse = (JSONObject) jsonObject.get("quoteResponse");
         JSONArray result = (JSONArray) quoteResponse.get("result");
         for (Object o : result) {
-            System.out.println(o);
+
             JSONObject current = (JSONObject) o;
             Quote currentQuote = new Quote(
                     (String) current.get("symbol"),
@@ -77,7 +77,7 @@ public class JsonUtil {
                     (double) current.get("regularMarketChange"),
                     (double) current.get("regularMarketChangePercent"),
                     (long) current.get("regularMarketTime"));
-            System.out.println("currentQuote: " + currentQuote);
+
         }
     }
 
