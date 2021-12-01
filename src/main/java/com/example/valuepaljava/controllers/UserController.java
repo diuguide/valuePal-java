@@ -1,11 +1,7 @@
 package com.example.valuepaljava.controllers;
 
-import com.example.valuepaljava.auth.ApplicationUser;
-import com.example.valuepaljava.auth.ApplicationUserService;
 import com.example.valuepaljava.exceptions.InvalidInputException;
-import com.example.valuepaljava.jwt.Credentials;
 import com.example.valuepaljava.models.User;
-import com.example.valuepaljava.service.AuthenticationService;
 import com.example.valuepaljava.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +18,6 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
 
-
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
@@ -30,7 +25,6 @@ public class UserController {
 
     @PostMapping(value="/add", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity<?> registerUser(@RequestBody User user) {
-        logger.info("Adding user to database...");
         try {
             return ResponseEntity.ok().body(userService.saveUser(user));
         } catch (InvalidInputException e) {

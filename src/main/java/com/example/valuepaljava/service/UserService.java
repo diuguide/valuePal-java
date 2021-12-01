@@ -45,7 +45,7 @@ public class UserService {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             user.setWallet(new Wallet(25000));
             User newUser = userRepository.save(user);
-            logger.info(String.format("User: %s with userId: %s added to the database", newUser.getUsername(), newUser.getUserId()));
+            logger.info(String.format("[REGISTER] User: %s with userId: %s has been registered", newUser.getUsername(), newUser.getUserId()));
             return user;
         };
         throw new InvalidInputException("An error occurred");

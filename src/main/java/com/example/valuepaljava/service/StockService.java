@@ -42,7 +42,6 @@ public class StockService {
         logger.info(uri.toString());
         try {
             ResponseEntity<String> quoteResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-            System.out.println("quote response: " + quoteResponse.getBody());
             jsonUtil.jsonParser(quoteResponse.getBody());
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
@@ -74,7 +73,6 @@ public class StockService {
         logger.info(uri.toString());
         try {
             ResponseEntity<String> historyResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-            System.out.println("history response: " + historyResponse.getBody());
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
             logger.info(String.format("[API] getTickerHistory called: duration %s/ms", duration));
