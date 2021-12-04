@@ -38,6 +38,7 @@ public class WalletService {
         this.stockService = stockService;
     }
 
+
     public Order entryPointBuy(Order order, String token) {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
@@ -62,11 +63,12 @@ public class WalletService {
             }
             currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() - order.getTotalValue());
             Wallet newWallet = walletRepository.save(currentUser.getWallet());
-            updateWallet(currentUser.getWallet().getWalletId());
+//            updateWallet(currentUser.getWallet().getWalletId());
             logger.info(String.format("[BUY] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
             order.setStatus("Filled");
             order.setOrderType('B');
             Order filledOrder = orderRepository.save(order);
+            System.out.println("function sql" + holdingRepository.updateAvgPrice());
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
             logger.info(String.format("[BUY] Order #%s has been filled, Duration: %s/ms", filledOrder.getId(), duration));
