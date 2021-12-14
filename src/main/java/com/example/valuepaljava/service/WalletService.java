@@ -109,9 +109,10 @@ public class WalletService {
                     logger.info(String.format("[SELL] Holding Updated: Wallet ID: %s updated with %s shares of %s", newHolding.getWallet(), newHolding.getQuantity(), newHolding.getTicker()));
                 }
                 currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() + order.getTotalValue());
-                Wallet newWallet = walletRepository.save(currentUser.getWallet());
-                updateWallet(currentUser.getWallet().getWalletId());
-                logger.info(String.format("[SELL] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
+//                Wallet newWallet = walletRepository.save(currentUser.getWallet());
+//                updateWallet(currentUser.getWallet().getWalletId());
+                System.out.println("function sql" + holdingRepository.updateAvgPrice());
+//                logger.info(String.format("[SELL] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
                 order.setStatus("Filled");
                 order.setOrderType('S');
                 Order filledOrder = orderRepository.save(order);
