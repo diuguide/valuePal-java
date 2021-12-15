@@ -1,11 +1,16 @@
 package com.example.valuepaljava.controllers;
 
+import com.example.valuepaljava.models.Quote;
 import com.example.valuepaljava.service.StockService;
+import com.example.valuepaljava.util.JsonUtil;
+import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Set;
 
 @RestController
 @RequestMapping("/calls")
@@ -13,10 +18,12 @@ public class CallController {
 
     private final Logger logger = LoggerFactory.getLogger(CallController.class);
     private final StockService stockService;
+    private final JsonUtil jsonUtil;
 
     @Autowired
-    public CallController(StockService stockService) {
+    public CallController(StockService stockService, JsonUtil jsonUtil) {
         this.stockService = stockService;
+        this.jsonUtil = jsonUtil;
     }
 
     @PostMapping(value="/ticker")
@@ -26,9 +33,9 @@ public class CallController {
     }
 
     @PostMapping(value="/getQuoteYH")
-    public String getQuoteYH(@RequestParam String... ticker) {
+    public Set<Quote> getQuoteYH(@RequestParam String... ticker) throws ParseException {
         logger.info("Stock API called - YH Finance - /market/getQuote");
-        return stockService.getTickerData(2, ticker);
+        return jsonUtil.jsonParser(stockService.getTickerData(2, ticker));
     }
 
     @PostMapping(value="/getHistory")
