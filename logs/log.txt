@@ -462,3 +462,8 @@ The dependencies of some of the beans in the application context form a cycle:
 2021-12-14 22:27:20.641  INFO 2488 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='BKTPF', longName='Cruz Battery Metals Corp.', price=0.18275, change=-0.008059993, changePercent=-4.224094, time='1639515514'}
 2021-12-14 22:27:20.641  INFO 2488 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 31/ms
 2021-12-14 22:27:20.700  INFO 2488 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [UPDATE] Updated holding information.  Updated in 58 ms
+2021-12-14 22:27:59.131  INFO 2488 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : Stock API called - YH Finance - /market/getQuote
+2021-12-14 22:27:59.135  INFO 2488 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=AMC,
+2021-12-14 22:27:59.846  INFO 2488 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 714/ms
+2021-12-14 22:27:59.849  INFO 2488 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='AMC', longName='AMC Entertainment Holdings, Inc.', price=24.5, change=1.2600002, changePercent=5.4216876, time='1639515601'}
+2021-12-14 22:27:59.850  INFO 2488 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 3/ms
