@@ -3,7 +3,6 @@ package com.example.valuepaljava.controllers;
 
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
 import com.example.valuepaljava.models.Order;
-import com.example.valuepaljava.models.Wallet;
 import com.example.valuepaljava.service.WalletService;
 
 import com.example.valuepaljava.util.JsonUtil;
@@ -43,25 +42,11 @@ public class WalletController {
         }
     }
 
-//    @GetMapping(value="/retrieve")
-//    public Wallet retrieveWallet(@RequestHeader HttpHeaders headers){
-//
-//        return walletService.entryWallet(Objects.requireNonNull(headers.getFirst("Authorization")));
-//    }
-
     @GetMapping(value="/updateHoldings")
     public String updateHoldings() throws ParseException {
-
         walletService.updateHoldingsTable(jsonUtil.jsonParser(walletService.updateAllHoldings()));
-
         return "SUCCESS";
     }
-
-//    @PostMapping(value="/saveWallet")
-//    public String saveWallet(@RequestHeader HttpHeaders headers, @RequestBody List<HoldingsUpdateDTO> holdings) {
-//        walletService.updateHoldingsTable(holdings);
-//        return "Success";
-//    }
 
     @PostMapping(value="/sellStock")
     public ResponseEntity<Object> sellHoldingOrder(@RequestHeader HttpHeaders headers, @RequestBody Order order) {

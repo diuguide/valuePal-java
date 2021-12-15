@@ -149,26 +149,9 @@ public class WalletService {
         return wallet.getTotalCash() > order.getTotalValue();
     }
 
-//    public Wallet entryWallet(String token) {
-//        int walletId = jwtUtility(token.replace("Bearer ", "")).getWallet().getWalletId();
-//        Set<Holding> holdings = holdingRepository.findHoldingByWalletId(walletId);
-//        Wallet wallet = walletRepository.getById(walletId);
-//        wallet.setHoldings(holdings);
-//        return wallet;
-//    }
-
     public Wallet walletRetriever(int walletId) {
         return walletRepository.getById(walletId);
     }
-
-//    public void updateWallet(int walletID) {
-//        Optional<Double> newTotal = holdingRepository.findTotalValue(walletID);
-//        Wallet wallet = walletRepository.getById(walletID);
-//        newTotal.ifPresent(wallet::setTotalValue);
-//        walletRepository.save(wallet);
-//    }
-
-
 
     public Optional<Holding> checkForHolding(Order order) {
         return holdingRepository.findHoldingByWalletAndAndTicker(order.getTicker(), order.getWalletId());
