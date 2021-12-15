@@ -195,3 +195,107 @@
 2021-12-14 20:57:26.697  INFO 12184 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='GME', longName='GameStop Corp.', price=147.69, change=10.809998, changePercent=7.897426, time='1639515602'}
 2021-12-14 20:57:26.697  INFO 12184 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 10/ms
 2021-12-14 20:57:26.697  INFO 12184 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1097/ms
+2021-12-14 21:46:06.702  INFO 12184 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-14 21:46:06.706  INFO 12184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2021-12-14 21:46:06.741  INFO 12184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2021-12-14 21:46:11.142  INFO 3080 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 3080 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2021-12-14 21:46:11.144  INFO 3080 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2021-12-14 21:46:11.774  INFO 3080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-14 21:46:11.834  INFO 3080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 4 JPA repository interfaces.
+2021-12-14 21:46:12.098  INFO 3080 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@36bc415e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-14 21:46:12.103  INFO 3080 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-14 21:46:12.282  INFO 3080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-14 21:46:12.289  INFO 3080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-14 21:46:12.290  INFO 3080 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-12-14 21:46:12.380  INFO 3080 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-14 21:46:12.380  INFO 3080 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1191 ms
+2021-12-14 21:46:12.420  INFO 3080 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2021-12-14 21:46:12.705  INFO 3080 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2021-12-14 21:46:12.712  INFO 3080 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepal'
+2021-12-14 21:46:12.830  INFO 3080 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-14 21:46:12.863  INFO 3080 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-14 21:46:13.022  INFO 3080 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-14 21:46:13.105  INFO 3080 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2021-12-14 21:46:13.880  INFO 3080 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-14 21:46:13.889  INFO 3080 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-14 21:46:14.392  WARN 3080 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduledTasks' defined in file [C:\Users\evere\Desktop\webDev\valuePal-java\target\classes\com\example\valuepaljava\ScheduledTasks\ScheduledTasks.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockService' defined in file [C:\Users\evere\Desktop\webDev\valuePal-java\target\classes\com\example\valuepaljava\service\StockService.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'walletService' defined in file [C:\Users\evere\Desktop\webDev\valuePal-java\target\classes\com\example\valuepaljava\service\WalletService.class]: Unsatisfied dependency expressed through constructor parameter 4; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'stockService': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2021-12-14 21:46:14.393  INFO 3080 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-14 21:46:14.396  INFO 3080 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2021-12-14 21:46:14.399  INFO 3080 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2021-12-14 21:46:14.403  INFO 3080 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-12-14 21:46:14.417  INFO 3080 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-12-14 21:46:14.436 ERROR 3080 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   scheduledTasks defined in file [C:\Users\evere\Desktop\webDev\valuePal-java\target\classes\com\example\valuepaljava\ScheduledTasks\ScheduledTasks.class]
+┌─────┐
+|  stockService defined in file [C:\Users\evere\Desktop\webDev\valuePal-java\target\classes\com\example\valuepaljava\service\StockService.class]
+↑     ↓
+|  walletService defined in file [C:\Users\evere\Desktop\webDev\valuePal-java\target\classes\com\example\valuepaljava\service\WalletService.class]
+└─────┘
+
+
+2021-12-14 21:50:48.276  INFO 1524 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 1524 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2021-12-14 21:50:48.279  INFO 1524 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2021-12-14 21:50:48.899  INFO 1524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-14 21:50:48.966  INFO 1524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2021-12-14 21:50:49.204  INFO 1524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6d367020' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-14 21:50:49.208  INFO 1524 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-14 21:50:49.388  INFO 1524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-14 21:50:49.394  INFO 1524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-14 21:50:49.394  INFO 1524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-12-14 21:50:49.500  INFO 1524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-14 21:50:49.500  INFO 1524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1187 ms
+2021-12-14 21:50:49.533  INFO 1524 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2021-12-14 21:50:49.807  INFO 1524 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2021-12-14 21:50:49.811  INFO 1524 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepal'
+2021-12-14 21:50:49.949  INFO 1524 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-14 21:50:49.987  INFO 1524 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-14 21:50:50.139  INFO 1524 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-14 21:50:50.222  INFO 1524 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2021-12-14 21:50:50.960  INFO 1524 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-14 21:50:50.962  INFO 1524 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-14 21:50:51.296  WARN 1524 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-14 21:50:51.556  INFO 1524 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2021-12-14 21:50:51.592  INFO 1524 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5238896f, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c16677c, org.springframework.security.web.header.HeaderWriterFilter@49e479da, org.springframework.web.filter.CorsFilter@74a85515, org.springframework.security.web.authentication.logout.LogoutFilter@5c5f0edc, com.example.valuepaljava.jwt.JwtAuthenticationFilter@4a2e1e52, com.example.valuepaljava.jwt.JwtTokenVerifier@3dfe92ef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fd751de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1231a1be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b9b17ce, org.springframework.security.web.session.SessionManagementFilter@30dd00b6, org.springframework.security.web.access.ExceptionTranslationFilter@4e2cdc51, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@44b9c7c4]
+2021-12-14 21:50:51.973  INFO 1524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-14 21:50:51.981  INFO 1524 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 4.063 seconds (JVM running for 4.647)
+2021-12-14 21:51:07.555  INFO 1524 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-14 21:51:07.555  INFO 1524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-14 21:51:07.555  INFO 1524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-12-14 21:51:07.755  INFO 1524 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=USB,AAPL,PALI,XOM,HLLPF,AABB,MLFB,GME,PHIL,DPLS,TSLA,CWBHF,ARDX,TIVC,COIN,RQHTF,NEPT,FB,CFVIW,CSRNF,DIS,CTXR,BKTPF,
+2021-12-14 21:51:09.396  INFO 1524 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1658/ms
+2021-12-14 21:51:09.454  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='USB', longName='U.S. Bancorp', price=57.31, change=0.49000168, changePercent=0.8623754, time='1639515602'}
+2021-12-14 21:51:09.456  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='AAPL', longName='Apple Inc.', price=174.33, change=-1.4100037, changePercent=-0.8023237, time='1639515603'}
+2021-12-14 21:51:09.457  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='PALI', longName='Palisade Bio, Inc.', price=1.87, change=-0.13, changePercent=-6.5, time='1639515604'}
+2021-12-14 21:51:09.458  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='XOM', longName='Exxon Mobil Corporation', price=61.54, change=-0.09000015, changePercent=-0.14603302, time='1639515761'}
+2021-12-14 21:51:09.458  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='HLLPF', longName='Hello Pal International Inc.', price=0.36, change=0.01000002, changePercent=2.8571486, time='1639515273'}
+2021-12-14 21:51:09.459  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='AABB', longName='Asia Broadband, Inc.', price=0.195, change=-0.006000012, changePercent=-2.9850805, time='1639515600'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='MLFB', longName='Major League Football, Inc.', price=0.013, change=-0.0013999995, changePercent=-9.7222185, time='1639515343'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='GME', longName='GameStop Corp.', price=147.69, change=10.809998, changePercent=7.897426, time='1639515602'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='PHIL', longName='PHI Group, Inc.', price=0.0052, change=-2.9999996E-4, changePercent=-5.4545445, time='1639515597'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='DPLS', longName='DarkPulse, Inc.', price=0.072, change=0.0020390004, changePercent=2.9144816, time='1639515594'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='TSLA', longName='Tesla, Inc.', price=958.51, change=-7.8999634, changePercent=-0.8174547, time='1639515603'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='CWBHF', longName='Charlotte's Web Holdings, Inc.', price=1.05, change=-0.055000067, changePercent=-4.9773817, time='1639515599'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='ARDX', longName='Ardelyx, Inc.', price=1.24, change=-0.13, changePercent=-9.489051, time='1639515604'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='TIVC', longName='Tivic Health Systems, Inc.', price=4.59, change=0.11000013, changePercent=2.4553602, time='1639515602'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='COIN', longName='Coinbase Global, Inc.', price=255.86, change=4.4900055, changePercent=1.7862138, time='1639515602'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='RQHTF', longName='Reliq Health Technologies Inc.', price=0.80717, change=-0.03673005, changePercent=-4.352417, time='1639515563'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='NEPT', longName='Neptune Wellness Solutions Inc.', price=0.4, change=-0.009000003, changePercent=-2.2004898, time='1639515584'}
+2021-12-14 21:51:09.460  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='FB', longName='Meta Platforms, Inc.', price=333.74, change=-0.75, changePercent=-0.22422196, time='1639515604'}
+2021-12-14 21:51:09.467  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='CFVIW', longName='CF Acquisition Corp. VI', price=2.65, change=-0.3699999, changePercent=-12.251652, time='1639515542'}
+2021-12-14 21:51:09.468  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='CSRNF', longName='Canstar Resources Inc.', price=0.2, change=0.010000005, changePercent=5.2631607, time='1639514036'}
+2021-12-14 21:51:09.469  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='DIS', longName='The Walt Disney Company', price=149.1, change=-1.3299866, changePercent=-0.88412327, time='1639515770'}
+2021-12-14 21:51:09.470  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='CTXR', longName='Citius Pharmaceuticals, Inc.', price=1.66, change=-0.07000005, changePercent=-4.0462456, time='1639515604'}
+2021-12-14 21:51:09.470  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='BKTPF', longName='Cruz Battery Metals Corp.', price=0.18275, change=-0.008059993, changePercent=-4.224094, time='1639515514'}
+2021-12-14 21:51:09.471  INFO 1524 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 74/ms
+2021-12-14 21:51:09.551  INFO 1524 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [UPDATE] Updated holding information.  Updated in 71 ms
