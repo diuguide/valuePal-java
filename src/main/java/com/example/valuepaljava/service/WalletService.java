@@ -174,38 +174,9 @@ public class WalletService {
         for(Quote q : quotes) {
             holdingRepository.updateTickerPrices(q.getPrice(), q.getChange(), q.getSymbol());
         }
-//        List<Holding> allHoldings = holdingRepository.findAll();
-//        for(Holding hld : allHoldings) {
-//            hld.setTotalValue();
-//            holdingRepository.updateTotalValue(hld.getTotalValue(), hld.getTicker(), hld.getWallet());
-//        }
         long endTime = System.currentTimeMillis();
         duration = endTime - startTime;
         logger.info(String.format("[UPDATE] Updated holding information.  Updated in %s ms", duration));
-        //updateAllWallets();
     }
-
-    public void updateAllWallets() {
-        long startTime = System.currentTimeMillis();
-        long duration = 0L;
-        List<Wallet> allWallets = walletRepository.findAll();
-        for(Wallet wallet : allWallets) {
-            Optional<Double> newTotal = holdingRepository.findTotalValue(wallet.getWalletId());
-            newTotal.ifPresent(wallet::setTotalValue);
-            walletRepository.save(wallet);
-        }
-        long endTime = System.currentTimeMillis();
-        duration = endTime - startTime;
-        logger.info(String.format("[UPDATE] Updated wallets.  %s records updated in %s ms", allWallets.size(), duration));
-    }
-
-
-
-
-
-
-
-
-
 
 }
