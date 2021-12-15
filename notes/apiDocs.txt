@@ -1,0 +1,51 @@
+POST .../login
+- username String
+- password String
+
+POST .../logout
+
+POST .../users/add
+- username String
+- password String
+- firstName String
+- email
+- role
+- watchlist
+
+GET  .../users/getUserInfo
+- headers HttpHeaders
+
+POST .../calls/ticker
+- ticker Array<String>
+
+POST .../calls/getQuoteYH
+- ticker Array<String>
+
+POST .../calls/getHistory
+- api choice(deprecated) int
+- interval String
+- range String
+- ticker Array<String>
+
+POST .../stock/addStock
+- Order:
+	- walletId int
+	- ticker String
+	- price double
+	- quantity int
+	- status String
+	- type char
+- headers HttpHeaders
+
+GET  .../stock/retrieve
+- headers HttpHeaders
+
+GET  .../stock/updateHoldings
+- none
+
+POST .../stock/saveWallet
+- holdings List<HoldingsUpdateDTO>
+
+POST .../stock/sellStock
+- headers HttpHeaders
+- order Order

@@ -14,7 +14,6 @@ public class CallController {
     private final Logger logger = LoggerFactory.getLogger(CallController.class);
     private final StockService stockService;
 
-
     @Autowired
     public CallController(StockService stockService) {
         this.stockService = stockService;
