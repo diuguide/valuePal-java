@@ -1,8 +1,10 @@
 package com.example.valuepaljava.service;
 
 import com.example.valuepaljava.exceptions.InvalidInputException;
+import com.example.valuepaljava.models.Holding;
 import com.example.valuepaljava.models.User;
 import com.example.valuepaljava.models.Wallet;
+import com.example.valuepaljava.repos.HoldingRepository;
 import com.example.valuepaljava.repos.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 @Service
@@ -19,15 +22,27 @@ public class UserService {
     private final Logger logger = LoggerFactory.getLogger(UserService.class);
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final WalletService walletService;
+    private final HoldingRepository holdingRepository;
     private final Pattern nameValidation = Pattern.compile("^[a-zA-z]+$");
     private final Pattern userNamePattern = Pattern.compile("[A-Za-z0-9_]+");
     private final Pattern passwordPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
     private final Pattern emailPattern = Pattern.compile("^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
 
     @Autowired
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, WalletService walletService, HoldingRepository holdingRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.walletService = walletService;
+        this.holdingRepository = holdingRepository;
+    }
+
+    public User getUserInfo(String token) {
+        User userInfo = walletService.jwtUtility(token);
+        Set<Holding> holdings = holdingRepository.findHoldingByWalletId(userInfo.getWallet().getWalletId());
+        userInfo.getWallet().setHoldings(holdings);
+        userInfo.setPassword(null);
+        return userInfo;
     }
 
     public boolean validateUser(User user) {

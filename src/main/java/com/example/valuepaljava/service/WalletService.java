@@ -38,59 +38,6 @@ public class WalletService {
         this.stockService = stockService;
     }
 
-
-    public Order entryPointBuy(Order order, String token) {
-        long startTime = System.currentTimeMillis();
-        long duration = 0L;
-        User currentUser = jwtUtility(token);
-        order.setWalletId(currentUser.getWallet().getWalletId());
-        if(checkExistingBalance(order)) {
-            Optional<Holding> existingHolding = checkForHolding(order);
-            if(existingHolding.isPresent()) {
-                existingHolding.get().setQuantity(order.getQuantity()+existingHolding.get().getQuantity());
-                existingHolding.get().setTotalValue();
-                holdingRepository.save(existingHolding.get());
-            } else {
-                Holding newHolding = new Holding(
-                        order.getWalletId(),
-                        order.getTicker(),
-                        order.getQuantity(),
-                        order.getPrice(),
-                        order.getTotalValue()
-                );
-                Holding savedHolding = holdingRepository.save(newHolding);
-                logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWallet(), savedHolding.getId()));
-            }
-            currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() - order.getTotalValue());
-            Wallet newWallet = walletRepository.save(currentUser.getWallet());
-//            updateWallet(currentUser.getWallet().getWalletId());
-            logger.info(String.format("[BUY] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
-            order.setStatus("Filled");
-            order.setOrderType('B');
-            Order filledOrder = orderRepository.save(order);
-            System.out.println("function sql" + holdingRepository.updateAvgPrice());
-            long endTime = System.currentTimeMillis();
-            duration = endTime - startTime;
-            logger.info(String.format("[BUY] Order #%s has been filled, Duration: %s/ms", filledOrder.getId(), duration));
-            return filledOrder;
-        } else {
-            order.setStatus("Rejected");
-            orderRepository.save(order);
-            long endTime = System.currentTimeMillis();
-            duration = endTime - startTime;
-            logger.info(String.format("[BUY] Order failed! Insufficient funds, duration: %s", duration));
-            throw new InsufficientFundsException(String.format("Insufficient funds! $%s is needed to complete this order.", order.getTotalValue()));
-        }
-    }
-
-    public Wallet entryWallet(String token) {
-        int walletId = jwtUtility(token.replace("Bearer ", "")).getWallet().getWalletId();
-        Set<Holding> holdings = holdingRepository.findHoldingByWalletId(walletId);
-        Wallet wallet = walletRepository.getById(walletId);
-        wallet.setHoldings(holdings);
-        return wallet;
-    }
-
     public Order entryPointSell(Order order, String token) throws InsufficientFundsException{
         long startTime = System.currentTimeMillis();
         long duration = 0L;
@@ -138,6 +85,50 @@ public class WalletService {
         }
     }
 
+    public Order entryPointBuy(Order order, String token) {
+        long startTime = System.currentTimeMillis();
+        long duration = 0L;
+        User currentUser = jwtUtility(token);
+        order.setWalletId(currentUser.getWallet().getWalletId());
+        if(checkExistingBalance(order)) {
+            Optional<Holding> existingHolding = checkForHolding(order);
+            if(existingHolding.isPresent()) {
+                existingHolding.get().setQuantity(order.getQuantity()+existingHolding.get().getQuantity());
+                existingHolding.get().setTotalValue();
+                holdingRepository.save(existingHolding.get());
+            } else {
+                Holding newHolding = new Holding(
+                        order.getWalletId(),
+                        order.getTicker(),
+                        order.getQuantity(),
+                        order.getPrice(),
+                        order.getTotalValue()
+                );
+                Holding savedHolding = holdingRepository.save(newHolding);
+                logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWallet(), savedHolding.getId()));
+            }
+            currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() - order.getTotalValue());
+            Wallet newWallet = walletRepository.save(currentUser.getWallet());
+//            updateWallet(currentUser.getWallet().getWalletId());
+            logger.info(String.format("[BUY] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
+            order.setStatus("Filled");
+            order.setOrderType('B');
+            Order filledOrder = orderRepository.save(order);
+            System.out.println("function sql" + holdingRepository.updateAvgPrice());
+            long endTime = System.currentTimeMillis();
+            duration = endTime - startTime;
+            logger.info(String.format("[BUY] Order #%s has been filled, Duration: %s/ms", filledOrder.getId(), duration));
+            return filledOrder;
+        } else {
+            order.setStatus("Rejected");
+            orderRepository.save(order);
+            long endTime = System.currentTimeMillis();
+            duration = endTime - startTime;
+            logger.info(String.format("[BUY] Order failed! Insufficient funds, duration: %s", duration));
+            throw new InsufficientFundsException(String.format("Insufficient funds! $%s is needed to complete this order.", order.getTotalValue()));
+        }
+    }
+
     public User jwtUtility(String token) {
 
         String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
@@ -153,20 +144,13 @@ public class WalletService {
         throw new UsernameNotFoundException("User name not found!");
     }
 
-    public Wallet walletRetriever(int walletId) {
-        return walletRepository.getById(walletId);
-    }
-
-    public void updateWallet(int walletID) {
-        Optional<Double> newTotal = holdingRepository.findTotalValue(walletID);
-        Wallet wallet = walletRepository.getById(walletID);
-        newTotal.ifPresent(wallet::setTotalValue);
-        walletRepository.save(wallet);
-    }
-
     public boolean checkExistingBalance(Order order) {
         Wallet wallet = walletRetriever(order.getWalletId());
         return wallet.getTotalCash() > order.getTotalValue();
+    }
+
+    public Wallet walletRetriever(int walletId) {
+        return walletRepository.getById(walletId);
     }
 
     public Optional<Holding> checkForHolding(Order order) {
@@ -184,42 +168,15 @@ public class WalletService {
     }
 
     @Transactional
-    public void updateHoldingsTable(List<HoldingsUpdateDTO> holdings) {
+    public void updateHoldingsTable(Set<Quote> quotes) {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
-        for(HoldingsUpdateDTO holding : holdings) {
-            holdingRepository.updateTickerPrices(holding.getPrice(), holding.getChange(), holding.getTicker());
-        }
-        List<Holding> allHoldings = holdingRepository.findAll();
-        for(Holding hld : allHoldings) {
-            hld.setTotalValue();
-            holdingRepository.updateTotalValue(hld.getTotalValue(), hld.getTicker(), hld.getWallet());
+        for(Quote q : quotes) {
+            holdingRepository.updateTickerPrices(q.getPrice(), q.getChange(), q.getSymbol());
         }
         long endTime = System.currentTimeMillis();
         duration = endTime - startTime;
-        logger.info(String.format("[UPDATE] Updated holding information.  %s records updated in %s ms", allHoldings.size(), duration));
-        updateAllWallets();
+        logger.info(String.format("[UPDATE] Updated holding information.  Updated in %s ms", duration));
     }
-
-    public void updateAllWallets() {
-        long startTime = System.currentTimeMillis();
-        long duration = 0L;
-        List<Wallet> allWallets = walletRepository.findAll();
-        for(Wallet wallet : allWallets) {
-            Optional<Double> newTotal = holdingRepository.findTotalValue(wallet.getWalletId());
-            newTotal.ifPresent(wallet::setTotalValue);
-            walletRepository.save(wallet);
-        }
-        long endTime = System.currentTimeMillis();
-        duration = endTime - startTime;
-        logger.info(String.format("[UPDATE] Updated wallets.  %s records updated in %s ms", allWallets.size(), duration));
-    }
-
-
-
-
-
-
-
 
 }

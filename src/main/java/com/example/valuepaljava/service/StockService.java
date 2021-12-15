@@ -1,7 +1,6 @@
 package com.example.valuepaljava.service;
 
 import com.example.valuepaljava.Yahoo.HeaderConfig;
-import com.example.valuepaljava.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +13,11 @@ public class StockService {
 
     private final Logger logger = LoggerFactory.getLogger(StockService.class);
     private final HeaderConfig headerConfig;
-
     private StringBuilder uri;
-    private final JsonUtil jsonUtil;
 
     @Autowired
-    public StockService(HeaderConfig headerConfig, JsonUtil jsonUtil) {
+    public StockService(HeaderConfig headerConfig) {
         this.headerConfig = headerConfig;
-        this.jsonUtil = jsonUtil;
     }
 
     public String getTickerData(int api, String... ticker){
@@ -42,14 +38,12 @@ public class StockService {
         logger.info(uri.toString());
         try {
             ResponseEntity<String> quoteResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
-            jsonUtil.jsonParser(quoteResponse.getBody());
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
             logger.info(String.format("[API] getTickerData called: duration %s/ms", duration));
             return quoteResponse.getBody();
         } catch (Exception e) {
             e.printStackTrace();
-
         }
         return "An error has occurred!";
     }
@@ -84,4 +78,7 @@ public class StockService {
 
         return "An Error has occurred!";
     }
+
+
+
 }

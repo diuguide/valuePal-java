@@ -2,11 +2,11 @@ package com.example.valuepaljava.controllers;
 
 
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
-import com.example.valuepaljava.models.HoldingsUpdateDTO;
 import com.example.valuepaljava.models.Order;
-import com.example.valuepaljava.models.Wallet;
 import com.example.valuepaljava.service.WalletService;
 
+import com.example.valuepaljava.util.JsonUtil;
+import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Objects;
 
 @RestController
@@ -23,10 +22,12 @@ public class WalletController {
 
     private final Logger logger = LoggerFactory.getLogger(WalletController.class);
     private final WalletService walletService;
+    private final JsonUtil jsonUtil;
 
     @Autowired
-    public WalletController(WalletService walletService) {
+    public WalletController(WalletService walletService, JsonUtil jsonUtil) {
         this.walletService = walletService;
+        this.jsonUtil = jsonUtil;
     }
 
     @PostMapping(value="/addStock")
@@ -41,21 +42,10 @@ public class WalletController {
         }
     }
 
-    @GetMapping(value="/retrieve")
-    public Wallet retrieveWallet(@RequestHeader HttpHeaders headers){
-
-        return walletService.entryWallet(Objects.requireNonNull(headers.getFirst("Authorization")));
-    }
-
     @GetMapping(value="/updateHoldings")
-    public String updateHoldings(@RequestHeader HttpHeaders headers) {
-        return walletService.updateAllHoldings();
-    }
-
-    @PostMapping(value="/saveWallet")
-    public String saveWallet(@RequestHeader HttpHeaders headers, @RequestBody List<HoldingsUpdateDTO> holdings) {
-        walletService.updateHoldingsTable(holdings);
-        return "Success";
+    public String updateHoldings() throws ParseException {
+        walletService.updateHoldingsTable(jsonUtil.jsonParser(walletService.updateAllHoldings()));
+        return "SUCCESS";
     }
 
     @PostMapping(value="/sellStock")
