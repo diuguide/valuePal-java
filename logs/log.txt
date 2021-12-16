@@ -67,3 +67,113 @@
 2021-12-16 00:18:58.122  INFO 9964 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1713.99. Total price: 3427.98
 2021-12-16 00:18:58.840  INFO 9964 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of INFY
 2021-12-16 00:18:58.867  INFO 9964 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #6 has been filled, Duration: 730/ms
+2021-12-16 00:26:03.587  INFO 9964 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $3.99. Total price: 199.5
+2021-12-16 00:26:03.612  INFO 9964 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of INFY
+2021-12-16 00:26:03.616  INFO 9964 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #7 has been filled, Duration: 29/ms
+2021-12-16 00:40:03.972  INFO 9964 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 00:40:03.974  INFO 9964 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2021-12-16 00:40:03.977  INFO 9964 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2021-12-16 00:40:07.067  INFO 9764 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 9764 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2021-12-16 00:40:07.069  INFO 9764 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2021-12-16 00:40:07.762  INFO 9764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-16 00:40:07.834  INFO 9764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 4 JPA repository interfaces.
+2021-12-16 00:40:08.131  INFO 9764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ac97b84' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-16 00:40:08.134  INFO 9764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-16 00:40:08.325  INFO 9764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-16 00:40:08.334  INFO 9764 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-16 00:40:08.334  INFO 9764 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-12-16 00:40:08.450  INFO 9764 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-16 00:40:08.450  INFO 9764 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1340 ms
+2021-12-16 00:40:08.483  INFO 9764 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2021-12-16 00:40:08.974  INFO 9764 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2021-12-16 00:40:08.980  INFO 9764 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaltest'
+2021-12-16 00:40:09.117  INFO 9764 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-16 00:40:09.152  INFO 9764 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-16 00:40:09.326  INFO 9764 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-16 00:40:09.404  INFO 9764 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2021-12-16 00:40:10.254  INFO 9764 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-16 00:40:10.261  INFO 9764 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 00:40:10.603  WARN 9764 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-16 00:40:10.826  INFO 9764 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2021-12-16 00:40:10.856  INFO 9764 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5896cb9c, org.springframework.security.web.context.SecurityContextPersistenceFilter@6182ffef, org.springframework.security.web.header.HeaderWriterFilter@58739e5e, org.springframework.web.filter.CorsFilter@44b9c7c4, org.springframework.security.web.authentication.logout.LogoutFilter@690df641, com.example.valuepaljava.jwt.JwtAuthenticationFilter@674184d, com.example.valuepaljava.jwt.JwtTokenVerifier@3611153f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d24cdd9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a9869a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5835e24a, org.springframework.security.web.session.SessionManagementFilter@2969a9a6, org.springframework.security.web.access.ExceptionTranslationFilter@58e03769, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@149d7cc6]
+2021-12-16 00:40:11.223  INFO 9764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-16 00:40:11.232  INFO 9764 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 4.551 seconds (JVM running for 5.194)
+2021-12-16 00:40:15.528  INFO 9764 --- [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-16 00:40:15.531  INFO 9764 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-16 00:40:15.534  INFO 9764 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-12-16 00:40:15.836  INFO 9764 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1.99. Total price: 99.5
+2021-12-16 00:40:16.507  WARN 9764 --- [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 42703
+2021-12-16 00:40:16.507 ERROR 9764 --- [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: record "new" has no field "avg_price"
+  Where: PL/pgSQL function updateavgprice2() line 3 at assignment
+2021-12-16 00:40:16.536  INFO 9764 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [INSUFFICIENT FUNDS] diuguid order failed due to insufficient funds
+2021-12-16 00:40:59.037  INFO 9764 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1.99. Total price: 99.5
+2021-12-16 00:40:59.072  INFO 9764 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of INFY
+2021-12-16 00:40:59.097  INFO 9764 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Order #8 has been filled, Duration: 60/ms
+2021-12-16 00:42:10.253  INFO 9764 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 00:42:10.255  INFO 9764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2021-12-16 00:42:10.256  INFO 9764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2021-12-16 00:42:13.296  INFO 3360 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 3360 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2021-12-16 00:42:13.298  INFO 3360 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2021-12-16 00:42:13.921  INFO 3360 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-16 00:42:13.984  INFO 3360 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2021-12-16 00:42:14.228  INFO 3360 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2e3a5237' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-16 00:42:14.234  INFO 3360 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-16 00:42:14.402  INFO 3360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-16 00:42:14.411  INFO 3360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-16 00:42:14.415  INFO 3360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-12-16 00:42:14.527  INFO 3360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-16 00:42:14.527  INFO 3360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1190 ms
+2021-12-16 00:42:14.559  INFO 3360 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2021-12-16 00:42:14.835  INFO 3360 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2021-12-16 00:42:14.837  INFO 3360 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaltest'
+2021-12-16 00:42:14.979  INFO 3360 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-16 00:42:15.021  INFO 3360 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-16 00:42:15.165  INFO 3360 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-16 00:42:15.248  INFO 3360 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2021-12-16 00:42:16.029  INFO 3360 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-16 00:42:16.030  INFO 3360 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 00:42:16.384  WARN 3360 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-16 00:42:16.589  INFO 3360 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2021-12-16 00:42:16.634  INFO 3360 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5896cb9c, org.springframework.security.web.context.SecurityContextPersistenceFilter@6182ffef, org.springframework.security.web.header.HeaderWriterFilter@58739e5e, org.springframework.web.filter.CorsFilter@44b9c7c4, org.springframework.security.web.authentication.logout.LogoutFilter@690df641, com.example.valuepaljava.jwt.JwtAuthenticationFilter@674184d, com.example.valuepaljava.jwt.JwtTokenVerifier@3611153f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d24cdd9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a9869a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5835e24a, org.springframework.security.web.session.SessionManagementFilter@2969a9a6, org.springframework.security.web.access.ExceptionTranslationFilter@58e03769, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@149d7cc6]
+2021-12-16 00:42:16.993  INFO 3360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-16 00:42:16.999  INFO 3360 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 4.066 seconds (JVM running for 4.665)
+2021-12-16 00:42:24.096  INFO 3360 --- [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-16 00:42:24.097  INFO 3360 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-16 00:42:24.099  INFO 3360 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-16 00:42:24.232  INFO 3360 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1.99. Total price: 99.5
+2021-12-16 00:42:24.559  INFO 3360 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of INFY
+2021-12-16 00:42:24.591  INFO 3360 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #9 has been filled, Duration: 353/ms
+2021-12-16 00:45:51.342  INFO 3360 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1.99. Total price: 99.5
+2021-12-16 00:45:51.365  INFO 3360 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of INFY
+2021-12-16 00:45:51.369  INFO 3360 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #10 has been filled, Duration: 27/ms
+2021-12-16 00:47:00.764  INFO 3360 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1.99. Total price: 99.5
+2021-12-16 00:47:00.807  INFO 3360 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of INFY
+2021-12-16 00:47:00.811  INFO 3360 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #11 has been filled, Duration: 46/ms
+2021-12-16 00:49:37.750  INFO 3360 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1.99. Total price: 99.5
+2021-12-16 00:49:37.777  INFO 3360 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of INFY
+2021-12-16 00:49:37.781  INFO 3360 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Order #12 has been filled, Duration: 30/ms
+2021-12-16 00:50:06.985  INFO 3360 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $1.99. Total price: 99.5
+2021-12-16 00:50:07.001  INFO 3360 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 2
+2021-12-16 00:50:07.005  INFO 3360 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of AAPL
+2021-12-16 00:50:07.009  INFO 3360 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #13 has been filled, Duration: 24/ms
+2021-12-16 00:51:27.100  INFO 3360 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $1.99. Total price: 99.5
+2021-12-16 00:51:27.122  INFO 3360 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of AAPL
+2021-12-16 00:51:27.125  INFO 3360 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #14 has been filled, Duration: 24/ms
+2021-12-16 00:54:14.550  INFO 3360 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $1.99. Total price: 99.5
+2021-12-16 00:54:14.576  INFO 3360 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of AAPL
+2021-12-16 00:54:14.581  INFO 3360 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #15 has been filled, Duration: 31/ms
+2021-12-16 01:21:00.221  INFO 3360 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $1.99. Total price: 99.5
+2021-12-16 01:21:00.245  INFO 3360 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of AAPL
+2021-12-16 01:21:00.247  INFO 3360 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #16 has been filled, Duration: 25/ms
+2021-12-16 01:22:10.661  INFO 3360 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $15.99. Total price: 799.5
+2021-12-16 01:22:10.676  INFO 3360 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of AAPL
+2021-12-16 01:22:10.677  INFO 3360 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #17 has been filled, Duration: 16/ms
+2021-12-16 01:22:50.244  INFO 3360 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $150.99. Total price: 1509.9
+2021-12-16 01:22:50.281  INFO 3360 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of AAPL
+2021-12-16 01:22:50.285  INFO 3360 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #18 has been filled, Duration: 34/ms
+2021-12-16 01:23:44.807  INFO 3360 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $1250.99. Total price: 1250.99
+2021-12-16 01:23:44.824  INFO 3360 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after sale of AAPL
+2021-12-16 01:23:44.827  INFO 3360 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #19 has been filled, Duration: 20/ms
+2021-12-16 01:25:45.904  INFO 3360 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 01:25:45.907  INFO 3360 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2021-12-16 01:25:45.910  INFO 3360 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.

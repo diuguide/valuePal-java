@@ -49,4 +49,22 @@ return NEW;
 END
 $updateavgpricesingleholding$ LANGUAGE plpgsql;
 
+DROP TRIGGER updateavgpricesingleholding on valuepaltest.holdings;
+CREATE TRIGGER updateavgpricesingleholding
+    BEFORE INSERT OR UPDATE
+                         ON valuepaltest.holdings
+                         FOR EACH ROW
+                         EXECUTE PROCEDURE valuepaltest.updateavgprice2();
+
+CREATE OR REPLACE FUNCTION valuepaltest.updateavgprice2()
+RETURNS TRIGGER as $updateavgpricesingleholding$
+BEGIN
+	RAISE NOTICE 'Hello World!!!! % %', NEW.ticker, NEW.wallet_id;
+	NEW.avg_purchase_price := (select avg(price) from valuepaltest.orders
+	where ticker = NEW.ticker
+	and wallet_id = NEW.wallet_id);
+return NEW;
+END
+$updateavgpricesingleholding$ LANGUAGE plpgsql;
+
 
