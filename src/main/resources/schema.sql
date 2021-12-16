@@ -32,4 +32,21 @@ BEGIN
 END;
 $$
 
+CREATE TRIGGER updateavgpricesingleholding
+    AFTER INSERT OR UPDATE
+                        ON valuepaltest.holdings
+                        EXECUTE PROCEDURE valuepaltest.updateavgprice2();
+
+CREATE OR REPLACE FUNCTION valuepaltest.updateavgprice2()
+RETURNS TRIGGER as $updateavgpricesingleholding$
+DECLARE
+avg_price numeric;
+BEGIN
+select avg(price) into avg_price from valuepaltest.orders
+where ticker = NEW.ticker
+  and wallet_id = NEW.wallet_id;
+return NEW;
+END
+$updateavgpricesingleholding$ LANGUAGE plpgsql;
+
 

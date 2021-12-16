@@ -58,7 +58,7 @@ public class WalletService {
                 currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() + order.getTotalValue());
 //                Wallet newWallet = walletRepository.save(currentUser.getWallet());
 //                updateWallet(currentUser.getWallet().getWalletId());
-                System.out.println("function sql" + holdingRepository.updateAvgPrice());
+                //System.out.println("function sql" + holdingRepository.updateAvgPrice());
 //                logger.info(String.format("[SELL] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
                 order.setStatus("Filled");
                 order.setOrderType('S');
@@ -114,7 +114,7 @@ public class WalletService {
             order.setStatus("Filled");
             order.setOrderType('B');
             Order filledOrder = orderRepository.save(order);
-            System.out.println("function sql" + holdingRepository.updateAvgPrice());
+            //System.out.println("function sql" + holdingRepository.updateAvgPrice());
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
             logger.info(String.format("[BUY] Order #%s has been filled, Duration: %s/ms", filledOrder.getId(), duration));
