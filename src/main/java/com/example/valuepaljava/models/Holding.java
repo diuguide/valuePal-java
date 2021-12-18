@@ -34,12 +34,13 @@ public class Holding {
     public Holding() {
     }
 
-    public Holding(int walletId, String ticker, int quantity, double price, double totalValue) {
+    public Holding(int walletId, String ticker, int quantity, double price, double totalValue, Double avg_purchase_price) {
         this.walletId = walletId;
         this.ticker = ticker;
         this.quantity = quantity;
         this.price = price;
         this.totalValue = totalValue;
+        this.avg_purchase_price = avg_purchase_price;
     }
 
     public Double getAvg_price() {
@@ -119,6 +120,7 @@ public class Holding {
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", totalValue=" + totalValue +
+                ", avg_purchase_price=" + avg_purchase_price +
                 '}';
     }
 }

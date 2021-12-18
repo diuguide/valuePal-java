@@ -58,11 +58,19 @@ CREATE TRIGGER updateavgpricesingleholding
 
 CREATE OR REPLACE FUNCTION valuepaltest.updateavgprice2()
 RETURNS TRIGGER as $updateavgpricesingleholding$
+DECLARE
+rec_count int;
 BEGIN
-	RAISE NOTICE 'Hello World!!!! % %', NEW.ticker, NEW.wallet_id;
-	NEW.avg_purchase_price := (select avg(price) from valuepaltest.orders
-	where ticker = NEW.ticker
-	and wallet_id = NEW.wallet_id);
+select count(*) into rec_count from valuepaltest.orders
+where ticker = NEW.ticker
+  and wallet_id = NEW.wallet_id;
+IF(rec_count > 0) THEN
+		NEW.avg_purchase_price := (select avg(price) from valuepaltest.orders
+		where ticker = NEW.ticker
+		and wallet_id = NEW.wallet_id);
+ELSE
+		NEW.avg_purachase_price:=NEW.price;
+END IF;
 return NEW;
 END
 $updateavgpricesingleholding$ LANGUAGE plpgsql;
