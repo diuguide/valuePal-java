@@ -97,13 +97,16 @@ public class WalletService {
                 existingHolding.get().setTotalValue();
                 holdingRepository.save(existingHolding.get());
             } else {
+                System.out.println("order.price " + order.getPrice());
                 Holding newHolding = new Holding(
                         order.getWalletId(),
                         order.getTicker(),
                         order.getQuantity(),
                         order.getPrice(),
-                        order.getTotalValue()
+                        order.getTotalValue(),
+                        order.getPrice()
                 );
+                System.out.println("New Holding: " + newHolding);
                 Holding savedHolding = holdingRepository.save(newHolding);
                 logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWallet(), savedHolding.getId()));
             }
