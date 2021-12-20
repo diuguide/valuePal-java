@@ -43,6 +43,8 @@ public class WalletService {
         long duration = 0L;
         User currentUser = jwtUtility(token);
         order.setWalletId(currentUser.getWallet().getWalletId());
+        order.setStatus("Pending");
+        orderRepository.save(order);
         Optional<Holding> existingHolding = checkForHolding(order);
         if(existingHolding.isPresent()) {
             if(existingHolding.get().getQuantity() >= order.getQuantity()) {
@@ -90,6 +92,8 @@ public class WalletService {
         long duration = 0L;
         User currentUser = jwtUtility(token);
         order.setWalletId(currentUser.getWallet().getWalletId());
+        order.setStatus("Pending");
+        orderRepository.save(order);
         if(checkExistingBalance(order)) {
             Optional<Holding> existingHolding = checkForHolding(order);
             if(existingHolding.isPresent()) {
