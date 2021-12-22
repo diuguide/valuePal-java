@@ -40,8 +40,6 @@ public class StockService {
         try {
             ResponseEntity<String> quoteResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
             long endTime = System.currentTimeMillis();
-            ObjectMapper mapper = new ObjectMapper();
-            System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(quoteResponse.getBody()));
             duration = endTime - startTime;
             logger.info(String.format("[API] getTickerData called: duration %s/ms", duration));
             return quoteResponse.getBody();
