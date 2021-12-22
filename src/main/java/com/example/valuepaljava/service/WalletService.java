@@ -43,8 +43,6 @@ public class WalletService {
         long duration = 0L;
         User currentUser = jwtUtility(token);
         order.setWalletId(currentUser.getWallet().getWalletId());
-        order.setStatus("Pending");
-        orderRepository.save(order);
         Optional<Holding> existingHolding = checkForHolding(order);
         if(existingHolding.isPresent()) {
             if(existingHolding.get().getQuantity() >= order.getQuantity()) {
@@ -92,8 +90,6 @@ public class WalletService {
         long duration = 0L;
         User currentUser = jwtUtility(token);
         order.setWalletId(currentUser.getWallet().getWalletId());
-        order.setStatus("Pending");
-        orderRepository.save(order);
         if(checkExistingBalance(order)) {
             Optional<Holding> existingHolding = checkForHolding(order);
             if(existingHolding.isPresent()) {
@@ -117,7 +113,7 @@ public class WalletService {
             currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() - order.getTotalValue());
             Wallet newWallet = walletRepository.save(currentUser.getWallet());
 //            updateWallet(currentUser.getWallet().getWalletId());
-            logger.info(String.format("[BUY] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
+            logger.info(String.format("[BUY] Wallet ID: %s updated after purchase of %s", newWallet.getWalletId(), order.getTicker()));
             order.setStatus("Filled");
             order.setOrderType('B');
             Order filledOrder = orderRepository.save(order);

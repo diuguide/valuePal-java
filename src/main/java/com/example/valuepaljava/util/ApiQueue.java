@@ -7,14 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
-import java.util.List;
 
 @Service
 public class ApiQueue {
 
     private final Logger logger = LoggerFactory.getLogger(ApiQueue.class);
     private static ApiQueue apiQueue = null;
-    private static LinkedList<ResponseEntity<String>> queue = new LinkedList<ResponseEntity<String>>();
+    private static final LinkedList<ResponseEntity<String>> queue = new LinkedList<>();
 
     public static ApiQueue getInstance() {
         if(apiQueue == null) {
