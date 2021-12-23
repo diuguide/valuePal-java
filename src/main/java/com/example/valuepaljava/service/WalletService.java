@@ -94,6 +94,7 @@ public class WalletService {
             Optional<Holding> existingHolding = checkForHolding(order);
             if(existingHolding.isPresent()) {
                 existingHolding.get().setQuantity(order.getQuantity()+existingHolding.get().getQuantity());
+                existingHolding.get().setPrice(order.getPrice());
                 existingHolding.get().setTotalValue();
                 holdingRepository.save(existingHolding.get());
             } else {
