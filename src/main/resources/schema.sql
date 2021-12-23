@@ -84,9 +84,11 @@ where ticker = NEW.ticker
   and wallet_id = NEW.wallet_id;
 IF(rec_count > 0) THEN
 		NEW.avg_purchase_price := valuepaltest.calcavgprice(NEW.price, NEW.wallet_id, NEW.ticker);
+return NEW;
 ELSE
 		NEW.avg_purchase_price:=NEW.price;
-END IF;
 return NEW;
+END IF;
 END
 $updateavgpricesingleholding$ LANGUAGE plpgsql;
+	
