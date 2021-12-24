@@ -1,5 +1,6 @@
 package com.example.valuepaljava.util;
 
+import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.Quote;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -25,22 +26,27 @@ public class JsonUtil {
         JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonString);
         JSONObject quoteResponse = (JSONObject) jsonObject.get("quoteResponse");
         JSONArray result = (JSONArray) quoteResponse.get("result");
-        for (Object o : result) {
-            JSONObject current = (JSONObject) o;
-            Quote currentQuote = new Quote(
-                    (String) current.get("symbol"),
-                    (String) current.get("longName"),
-                    (double) current.get("regularMarketPrice"),
-                    (double) current.get("regularMarketChange"),
-                    (double) current.get("regularMarketChangePercent"),
-                    (long) current.get("regularMarketTime"));
-            quotes.add(currentQuote);
-            logger.info(String.format("Parsed String %s", currentQuote));
+        if(result.size() > 0) {
+            for (Object o : result) {
+                JSONObject current = (JSONObject) o;
+                Quote currentQuote = new Quote(
+                        (String) current.get("symbol"),
+                        (String) current.get("longName"),
+                        (double) current.get("regularMarketPrice"),
+                        (double) current.get("regularMarketChange"),
+                        (double) current.get("regularMarketChangePercent"),
+                        (long) current.get("regularMarketTime"));
+                quotes.add(currentQuote);
+                logger.info(String.format("Parsed String %s", currentQuote));
+            }
+            long endTime = System.currentTimeMillis();
+            duration = endTime - startTime;
+            logger.info(String.format("[PARSE] JSON String parsed, duration %s/ms", duration));
+            return quotes;
+        } else {
+            throw new InvalidInputException("Stock data not available!");
         }
-        long endTime = System.currentTimeMillis();
-        duration = endTime - startTime;
-        logger.info(String.format("[PARSE] JSON String parsed, duration %s/ms", duration));
-        return quotes;
+
     }
 
 }
