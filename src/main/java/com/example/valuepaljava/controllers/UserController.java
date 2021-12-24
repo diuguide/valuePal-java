@@ -46,4 +46,9 @@ public class UserController {
                 .body(userService.getUserInfo(Objects.requireNonNull(headers.getFirst("Authorization"))));
     }
 
+    @GetMapping(value="/getUserOrders")
+    public ResponseEntity<?> getUserOrders(@RequestHeader HttpHeaders headers) {
+        return ResponseEntity.ok().body(walletService.getUserOrders(Objects.requireNonNull(headers.getFirst("Authorization"))));
+    }
+
 }

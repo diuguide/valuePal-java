@@ -183,4 +183,14 @@ public class WalletService {
         logger.info(String.format("[UPDATE] Updated holding information.  Updated in %s ms", duration));
     }
 
+    public Set<Order> getUserOrders(String token) {
+        long startTime = System.currentTimeMillis();
+        long duration = 0L;
+        User currentUser = jwtUtility(token);
+        long endTime = System.currentTimeMillis();
+        duration = endTime - startTime;
+        return orderRepository.getOrdersByWalletId(currentUser.getWallet().getWalletId());
+
+    }
+
 }

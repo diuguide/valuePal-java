@@ -42,7 +42,6 @@ public class CallController {
         } catch(InvalidInputException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
     }
 
     @PostMapping(value="/getHistory")
@@ -53,7 +52,6 @@ public class CallController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
     }
 
 }
