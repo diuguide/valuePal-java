@@ -1,6 +1,7 @@
 package com.example.valuepaljava.service;
 
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
+import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.*;
 import com.example.valuepaljava.repos.HoldingRepository;
 import com.example.valuepaljava.repos.OrderRepository;
@@ -189,8 +190,12 @@ public class WalletService {
         User currentUser = jwtUtility(token);
         long endTime = System.currentTimeMillis();
         duration = endTime - startTime;
-        return orderRepository.getOrdersByWalletId(currentUser.getWallet().getWalletId());
-
+        Set<Order> orders = orderRepository.getOrdersByWalletId(currentUser.getWallet().getWalletId());
+        if(orders.size() > 0) {
+            logger.info(String.format("[DATA] %s retrieved all orders. Duration %s ms", currentUser.getUsername(), duration));
+            return orders;
+        }
+        throw new InvalidInputException("No orders found!");
     }
 
 }
