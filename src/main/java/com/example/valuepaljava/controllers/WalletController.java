@@ -1,6 +1,7 @@
 package com.example.valuepaljava.controllers;
 
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
+import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.Order;
 import com.example.valuepaljava.service.WalletService;
 
@@ -32,13 +33,15 @@ public class WalletController {
     @PostMapping(value="/addStock")
     public ResponseEntity<Object> testStudentRole(@RequestHeader HttpHeaders headers, @RequestBody Order order){
         logger.info(String.format("[BUY] Purchase order for %s at $%s. Total price: %s", order.getTicker(), order.getPrice(), order.getTotalValue()));
-
-        try {
-            return ResponseEntity.ok().body(walletService.entryPointBuy(order, headers.getFirst("Authorization")));
-        } catch (Exception e) {
-            logger.info(String.format("[INSUFFICIENT FUNDS] %s order failed due to insufficient funds", walletService.jwtUtility(Objects.requireNonNull(headers.getFirst("Authorization"))).getUsername()));
-            return ResponseEntity.badRequest().body(e.getMessage());
+        if(headers.getFirst("Authorization") != null) {
+            try {
+                return ResponseEntity.ok().body(walletService.entryPointBuy(order, headers.getFirst("Authorization")));
+            } catch (Exception e) {
+                logger.info(String.format("[INSUFFICIENT FUNDS] %s order failed due to insufficient funds", walletService.jwtUtility(Objects.requireNonNull(headers.getFirst("Authorization"))).getUsername()));
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
         }
+        return ResponseEntity.badRequest().body("403: Forbidden");
     }
 
     @GetMapping(value="/updateHoldings")

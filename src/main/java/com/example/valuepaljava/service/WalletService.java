@@ -57,10 +57,6 @@ public class WalletService {
                     logger.info(String.format("[SELL] Holding Updated: Wallet ID: %s updated with %s shares of %s", newHolding.getWallet(), newHolding.getQuantity(), newHolding.getTicker()));
                 }
                 currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() + order.getTotalValue());
-//                Wallet newWallet = walletRepository.save(currentUser.getWallet());
-//                updateWallet(currentUser.getWallet().getWalletId());
-                //System.out.println("function sql" + holdingRepository.updateAvgPrice());
-//                logger.info(String.format("[SELL] Wallet ID: %s updated after sale of %s", newWallet.getWalletId(), order.getTicker()));
                 order.setStatus("Filled");
                 order.setOrderType('S');
                 Order filledOrder = orderRepository.save(order);
@@ -114,12 +110,10 @@ public class WalletService {
             }
             currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() - order.getTotalValue());
             Wallet newWallet = walletRepository.save(currentUser.getWallet());
-//            updateWallet(currentUser.getWallet().getWalletId());
             logger.info(String.format("[BUY] Wallet ID: %s updated after purchase of %s", newWallet.getWalletId(), order.getTicker()));
             order.setStatus("Filled");
             order.setOrderType('B');
             Order filledOrder = orderRepository.save(order);
-            //System.out.println("function sql" + holdingRepository.updateAvgPrice());
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
             logger.info(String.format("[BUY] Order #%s has been filled, Duration: %s/ms", filledOrder.getId(), duration));
@@ -135,18 +129,22 @@ public class WalletService {
     }
 
     public User jwtUtility(String token) {
-
         String key = "securesecuresecuresecureecuresecuresecuresecureecuresecuresecuresecureecuresecuresecuresecure";
-        Jws<Claims> claimsJws = Jwts.parser()
-                .setSigningKey(Keys.hmacShaKeyFor(key.getBytes()))
-                .parseClaimsJws(token.replace("Bearer ", ""));
-        Claims body = claimsJws.getBody();
-        Optional<User> newUser = userRepository.findUserByUsername(body.getSubject());
-        if(newUser.isPresent()) {
-            User user = newUser.get();
-            return user;
+        if(token != null) {
+            Jws<Claims> claimsJws = Jwts.parser()
+                    .setSigningKey(Keys.hmacShaKeyFor(key.getBytes()))
+                    .parseClaimsJws(token.replace("Bearer ", ""));
+            Claims body = claimsJws.getBody();
+            Optional<User> newUser = userRepository.findUserByUsername(body.getSubject());
+            if(newUser.isPresent()) {
+                User user = newUser.get();
+                return user;
+            }
+            throw new UsernameNotFoundException("User name not found!");
         }
-        throw new UsernameNotFoundException("User name not found!");
+        throw new InvalidInputException("403: Forbidden");
+
+
     }
 
     public boolean checkExistingBalance(Order order) {
