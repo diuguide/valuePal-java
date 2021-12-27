@@ -41,13 +41,17 @@ public class UserController {
 
     @GetMapping(value="/getUserInfo")
     public ResponseEntity<?> getUserInfo(@RequestHeader HttpHeaders headers) {
-        try {
-            return ResponseEntity
-                    .ok()
-                    .body(userService.getUserInfo(Objects.requireNonNull(headers.getFirst("Authorization"))));
-        } catch (InvalidInputException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+        if(headers.getFirst("Authorization") != null) {
+            try {
+                return ResponseEntity
+                        .ok()
+                        .body(userService.getUserInfo(Objects.requireNonNull(headers.getFirst("Authorization"))));
+            } catch (InvalidInputException e) {
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
         }
+        return ResponseEntity.badRequest().body("403: Forbidden");
+
 
     }
 
