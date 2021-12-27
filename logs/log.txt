@@ -290,3 +290,6 @@ com.example.valuepaljava.exceptions.InvalidInputException: 403: Forbidden
 2021-12-25 22:30:00.697  INFO 15496 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-12-25 22:30:00.698  INFO 15496 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2021-12-25 22:30:00.828  INFO 15496 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for HD at $80.0. Total price: 320.0
+2021-12-25 23:12:31.688  INFO 15496 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 23:12:31.690  INFO 15496 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2021-12-25 23:12:31.693  INFO 15496 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.

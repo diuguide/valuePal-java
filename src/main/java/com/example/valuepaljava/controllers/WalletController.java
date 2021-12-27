@@ -46,8 +46,13 @@ public class WalletController {
 
     @GetMapping(value="/updateHoldings")
     public String updateHoldings() throws ParseException {
-        walletService.updateHoldingsTable(jsonUtil.jsonParser(walletService.updateAllHoldings()));
-        return "SUCCESS";
+        try {
+            walletService.updateHoldingsTable(jsonUtil.jsonParser(walletService.updateAllHoldings()));
+            return "SUCCESS";
+        } catch (Exception e) {
+            return "Something went wrong...";
+        }
+
     }
 
     @PostMapping(value="/sellStock")
