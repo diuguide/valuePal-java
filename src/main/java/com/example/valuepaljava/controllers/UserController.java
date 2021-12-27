@@ -31,12 +31,15 @@ public class UserController {
 
     @PostMapping(value="/add", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity<?> registerUser(@RequestBody User user) {
-        try {
-            return ResponseEntity.ok().body(userService.saveUser(user));
-        } catch (InvalidInputException e) {
-            logger.info(e.getMessage());
-            return ResponseEntity.badRequest().body(e.getMessage());
+        if(user != null) {
+            try {
+                return ResponseEntity.ok().body(userService.saveUser(user));
+            } catch (InvalidInputException e) {
+                logger.info(e.getMessage());
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
         }
+        return ResponseEntity.badRequest().body("Request is empty");
     }
 
     @GetMapping(value="/getUserInfo")
@@ -50,7 +53,7 @@ public class UserController {
                 return ResponseEntity.badRequest().body(e.getMessage());
             }
         }
-        return ResponseEntity.badRequest().body("403: Forbidden");
+        return ResponseEntity.status(403).body("403: Forbidden");
     }
 
     @GetMapping(value="/getUserOrders")
@@ -62,6 +65,6 @@ public class UserController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-      return ResponseEntity.badRequest().body("403: Forbidden");
+      return ResponseEntity.status(403).body("403: Forbidden");
     }
 }
