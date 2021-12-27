@@ -41,9 +41,14 @@ public class UserController {
 
     @GetMapping(value="/getUserInfo")
     public ResponseEntity<?> getUserInfo(@RequestHeader HttpHeaders headers) {
-        return ResponseEntity
-                .ok()
-                .body(userService.getUserInfo(Objects.requireNonNull(headers.getFirst("Authorization"))));
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(userService.getUserInfo(Objects.requireNonNull(headers.getFirst("Authorization"))));
+        } catch (InvalidInputException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+
     }
 
     @GetMapping(value="/getUserOrders")

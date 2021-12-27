@@ -1,7 +1,6 @@
 package com.example.valuepaljava.controllers;
 
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
-import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.Order;
 import com.example.valuepaljava.service.WalletService;
 
