@@ -12,7 +12,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
+
 
 @RestController
 @RequestMapping("/calls")
@@ -30,7 +30,7 @@ public class CallController {
 
     @PostMapping(value="/ticker")
     public String getTickerData(@RequestParam String... ticker) {
-        logger.info("Stock api called - YahooFinance - /market/getQuote");
+        logger.info("[API] Ticker api called - YahooFinance - /market/getQuote");
         try {
             return stockService.getTickerData(1, ticker);
         } catch (Exception e) {
@@ -40,7 +40,7 @@ public class CallController {
 
     @PostMapping(value="/getQuoteYH")
     public ResponseEntity<Object> getQuoteYH(@RequestParam String... ticker) throws ParseException {
-        logger.info("Stock API called - YH Finance - /market/getQuote");
+        logger.info("[API] Ticker api called - YH Finance - /market/getQuote");
         try {
             return ResponseEntity.ok().body(jsonUtil.jsonParser(stockService.getTickerData(2, ticker)));
         } catch(InvalidInputException e) {
@@ -50,7 +50,7 @@ public class CallController {
 
     @PostMapping(value="/getHistory")
     public ResponseEntity<Object> getTickerHistory(@RequestHeader HttpHeaders headers, @RequestParam int api, @RequestParam String interval, @RequestParam String range, @RequestParam String... ticker) {
-        logger.info("Stock history api called");
+        logger.info("[API] Ticker history api called");
         try {
             return ResponseEntity.ok().body(stockService.getTickerHistory(api, interval, range, ticker));
         } catch (Exception e) {
