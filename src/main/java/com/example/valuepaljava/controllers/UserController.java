@@ -51,19 +51,17 @@ public class UserController {
             }
         }
         return ResponseEntity.badRequest().body("403: Forbidden");
-
-
     }
 
     @GetMapping(value="/getUserOrders")
     public ResponseEntity<?> getUserOrders(@RequestHeader HttpHeaders headers) {
-
+    if(headers.getFirst("Authorization") != null) {
         try {
             return ResponseEntity.ok().body(walletService.getUserOrders(Objects.requireNonNull(headers.getFirst("Authorization"))));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
     }
-
+      return ResponseEntity.badRequest().body("403: Forbidden");
+    }
 }
