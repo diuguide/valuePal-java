@@ -1,7 +1,6 @@
 package com.example.valuepaljava.controllers;
 
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
-import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.Order;
 import com.example.valuepaljava.service.WalletService;
 
@@ -46,8 +45,13 @@ public class WalletController {
 
     @GetMapping(value="/updateHoldings")
     public String updateHoldings() throws ParseException {
-        walletService.updateHoldingsTable(jsonUtil.jsonParser(walletService.updateAllHoldings()));
-        return "SUCCESS";
+        try {
+            walletService.updateHoldingsTable(jsonUtil.jsonParser(walletService.updateAllHoldings()));
+            return "SUCCESS";
+        } catch (Exception e) {
+            return "Something went wrong...";
+        }
+
     }
 
     @PostMapping(value="/sellStock")

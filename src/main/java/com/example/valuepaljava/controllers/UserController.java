@@ -31,30 +31,40 @@ public class UserController {
 
     @PostMapping(value="/add", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity<?> registerUser(@RequestBody User user) {
-        try {
-            return ResponseEntity.ok().body(userService.saveUser(user));
-        } catch (InvalidInputException e) {
-            logger.info(e.getMessage());
-            return ResponseEntity.badRequest().body(e.getMessage());
+        if(user != null) {
+            try {
+                return ResponseEntity.ok().body(userService.saveUser(user));
+            } catch (InvalidInputException e) {
+                logger.info(e.getMessage());
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
         }
+        return ResponseEntity.badRequest().body("Request is empty");
     }
 
     @GetMapping(value="/getUserInfo")
     public ResponseEntity<?> getUserInfo(@RequestHeader HttpHeaders headers) {
-        return ResponseEntity
-                .ok()
-                .body(userService.getUserInfo(Objects.requireNonNull(headers.getFirst("Authorization"))));
+        if(headers.getFirst("Authorization") != null) {
+            try {
+                return ResponseEntity
+                        .ok()
+                        .body(userService.getUserInfo(Objects.requireNonNull(headers.getFirst("Authorization"))));
+            } catch (InvalidInputException e) {
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
+        }
+        return ResponseEntity.status(403).body("403: Forbidden");
     }
 
     @GetMapping(value="/getUserOrders")
     public ResponseEntity<?> getUserOrders(@RequestHeader HttpHeaders headers) {
-
+    if(headers.getFirst("Authorization") != null) {
         try {
             return ResponseEntity.ok().body(walletService.getUserOrders(Objects.requireNonNull(headers.getFirst("Authorization"))));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
     }
-
+      return ResponseEntity.status(403).body("403: Forbidden");
+    }
 }

@@ -31,7 +31,11 @@ public class CallController {
     @PostMapping(value="/ticker")
     public String getTickerData(@RequestParam String... ticker) {
         logger.info("Stock api called - YahooFinance - /market/getQuote");
-        return stockService.getTickerData(1, ticker);
+        try {
+            return stockService.getTickerData(1, ticker);
+        } catch (Exception e) {
+            return "Something went wrong...";
+        }
     }
 
     @PostMapping(value="/getQuoteYH")
