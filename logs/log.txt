@@ -38,3 +38,39 @@
 2022-01-12 22:42:23.355  INFO 9516 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for HD at $120.0. Total price: 480.0
 2022-01-12 22:42:23.372  INFO 9516 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 5 updated after purchase of HD
 2022-01-12 22:42:23.377  INFO 9516 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #76 has been filled, Duration: 21/ms
+2022-01-12 22:56:10.313  WARN 9516 --- [valuepal housekeeper] com.zaxxer.hikari.pool.HikariPool        : valuepal - Thread starvation or clock leap detected (housekeeper delta=1m39s48ms325µs900ns).
+2022-01-12 23:02:22.132  INFO 9516 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-01-12 23:02:22.135  INFO 9516 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-01-12 23:02:22.138  INFO 9516 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2022-01-12 23:33:49.696  INFO 1404 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 1404 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-01-12 23:33:49.700  INFO 1404 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-01-12 23:33:50.383  INFO 1404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-12 23:33:50.447  INFO 1404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 4 JPA repository interfaces.
+2022-01-12 23:33:50.685  INFO 1404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2e3a5237' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-12 23:33:50.689  INFO 1404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-12 23:33:50.877  INFO 1404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-12 23:33:50.889  INFO 1404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-12 23:33:50.890  INFO 1404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-01-12 23:33:50.998  INFO 1404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-12 23:33:50.999  INFO 1404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1252 ms
+2022-01-12 23:33:51.024  INFO 1404 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-01-12 23:33:51.315  INFO 1404 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-01-12 23:33:51.319  INFO 1404 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-01-12 23:33:51.446  INFO 1404 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-12 23:33:51.473  INFO 1404 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-01-12 23:33:51.686  INFO 1404 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-12 23:33:51.763  INFO 1404 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-01-12 23:33:52.406  INFO 1404 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-12 23:33:52.413  INFO 1404 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-12 23:33:52.759  WARN 1404 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-12 23:33:52.977  INFO 1404 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-01-12 23:33:53.008  INFO 1404 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5896cb9c, org.springframework.security.web.context.SecurityContextPersistenceFilter@6182ffef, org.springframework.security.web.header.HeaderWriterFilter@58739e5e, org.springframework.web.filter.CorsFilter@44b9c7c4, org.springframework.security.web.authentication.logout.LogoutFilter@690df641, com.example.valuepaljava.jwt.JwtAuthenticationFilter@674184d, com.example.valuepaljava.jwt.JwtTokenVerifier@3611153f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d24cdd9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a9869a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5835e24a, org.springframework.security.web.session.SessionManagementFilter@2969a9a6, org.springframework.security.web.access.ExceptionTranslationFilter@58e03769, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@149d7cc6]
+2022-01-12 23:33:53.329  INFO 1404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-12 23:33:53.336  INFO 1404 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 4.03 seconds (JVM running for 4.669)
+2022-01-12 23:39:06.252  INFO 1404 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-12 23:39:06.253  INFO 1404 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-12 23:39:06.254  INFO 1404 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-12 23:39:06.560  INFO 1404 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for HD at $120.0. Total price: 1200.0
+2022-01-12 23:40:12.178  INFO 1404 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-01-12 23:40:12.186  INFO 1404 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-01-12 23:40:12.196  INFO 1404 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
