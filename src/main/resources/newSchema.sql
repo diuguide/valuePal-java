@@ -1,4 +1,4 @@
-CREATE TRIGGER valuepaldev.updateavgpricesingleholding
+CREATE TRIGGER updateavgpricesingleholding1
     AFTER
         INSERT
         OR
@@ -60,4 +60,4 @@ ELSE
 RETURN NEW;
 END IF;
 END
-$valuepaldev.updateavgpricesingleholding$ LANGUAGE plpgsql;
+$updateavgpricesingleholding1$ LANGUAGE plpgsql;
