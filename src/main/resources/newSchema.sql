@@ -34,7 +34,7 @@ END;
 $$
 
 CREATE OR REPLACE FUNCTION valuepaldev.updateavgprice2()
-RETURNS TRIGGER AS $updateavgpricesingleholding$
+RETURNS TRIGGER AS $$
 DECLARE
 rec_count int;
 BEGIN
@@ -60,4 +60,4 @@ ELSE
 RETURN NEW;
 END IF;
 END
-$updateavgpricesingleholding1$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql;
