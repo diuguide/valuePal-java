@@ -67,3 +67,34 @@
 2022-01-14 22:55:11.981  INFO 14320 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-01-14 22:55:11.982  INFO 14320 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-01-14 22:55:11.983  INFO 14320 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-14 23:00:58.268  INFO 14320 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $100.0. Total price: 1000.0
+2022-01-14 23:00:58.413  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-01-14 23:00:58.437  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #11 has been filled, Duration: 169/ms
+2022-01-14 23:00:58.657  INFO 14320 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $100.0. Total price: 1000.0
+2022-01-14 23:00:58.672  INFO 14320 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-01-14 23:00:58.675  INFO 14320 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #12 has been filled, Duration: 18/ms
+2022-01-14 23:08:06.642  INFO 14320 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $100.0. Total price: 1000.0
+2022-01-14 23:08:06.666  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-01-14 23:08:06.669  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #13 has been filled, Duration: 26/ms
+2022-01-14 23:10:58.744  INFO 14320 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $10.0. Total price: 100.0
+2022-01-14 23:10:58.767  INFO 14320 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-01-14 23:10:58.770  INFO 14320 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Order #14 has been filled, Duration: 26/ms
+2022-01-14 23:13:11.110  INFO 14320 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $50.0. Total price: 500.0
+2022-01-14 23:13:11.125  INFO 14320 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-01-14 23:13:11.130  INFO 14320 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Order #15 has been filled, Duration: 19/ms
+2022-01-14 23:14:35.689  INFO 14320 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $5.0. Total price: 50.0
+2022-01-14 23:14:35.707  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-01-14 23:14:35.711  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #16 has been filled, Duration: 21/ms
+2022-01-14 23:18:41.232  INFO 14320 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1.0. Total price: 10.0
+2022-01-14 23:18:41.249  INFO 14320 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-01-14 23:18:41.254  INFO 14320 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #17 has been filled, Duration: 22/ms
+2022-01-14 23:20:15.128  INFO 14320 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for INFY at $1.0. Total price: 10.0
+2022-01-14 23:20:15.138  INFO 14320 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-01-14 23:20:15.140  INFO 14320 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #18 has been filled, Duration: 11/ms
+2022-01-14 23:21:42.191  INFO 14320 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $100.0. Total price: 1000.0
+2022-01-14 23:21:42.202  INFO 14320 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 4
+2022-01-14 23:21:42.203  INFO 14320 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of AAPL
+2022-01-14 23:21:42.205  INFO 14320 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #19 has been filled, Duration: 13/ms
+2022-01-14 23:25:19.961  INFO 14320 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for AAPL at $10.0. Total price: 100.0
+2022-01-14 23:25:20.001  INFO 14320 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of AAPL
+2022-01-14 23:25:20.003  INFO 14320 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #20 has been filled, Duration: 34/ms

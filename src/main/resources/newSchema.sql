@@ -1,11 +1,16 @@
+
+
 CREATE TRIGGER updateavgpricesingleholding1
-    AFTER
+    BEFORE
         INSERT
         OR
 UPDATE
     ON
     valuepaldev.holdings
+    FOR EACH ROW
     EXECUTE PROCEDURE valuepaldev.updateavgprice2();
+
+DROP TRIGGER updateavgpricesingleholding1 on valuepaldev.holdings;
 
 CREATE OR REPLACE FUNCTION valuepaldev.calcavgprice(
 	p_newprice valuepaldev.holdings.price%TYPE,
@@ -36,7 +41,7 @@ $$
 CREATE OR REPLACE FUNCTION valuepaldev.updateavgprice2()
 RETURNS TRIGGER AS $$
 DECLARE
-rec_count int;
+rec_count integer;
 BEGIN
 SELECT
     count(*)
@@ -50,8 +55,8 @@ WHERE
 
 IF(rec_count > 0) THEN
 		NEW.avg_purchase_price := valuepaldev.calcavgprice(NEW.price,
-NEW.wallet_id,
-NEW.ticker);
+		NEW.wallet_id,
+		NEW.ticker);
 
 RETURN NEW;
 ELSE
