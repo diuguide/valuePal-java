@@ -90,6 +90,7 @@ public class WalletService {
         if(checkExistingBalance(order)) {
             Optional<Holding> existingHolding = checkForHolding(order);
             if(existingHolding.isPresent()) {
+                existingHolding.get().setLast_cost(order.getPrice(), order.getQuantity());
                 existingHolding.get().setQuantity(order.getQuantity()+existingHolding.get().getQuantity());
                 existingHolding.get().setPrice(order.getPrice());
                 existingHolding.get().setTotalValue();

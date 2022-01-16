@@ -108,10 +108,14 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "walletId=" + walletId +
+                "id=" + id +
+                ", walletId=" + walletId +
                 ", ticker='" + ticker + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
+                ", status='" + status + '\'' +
+                ", orderType=" + orderType +
+                ", total_cost=" + total_cost +
                 '}';
     }
 }
