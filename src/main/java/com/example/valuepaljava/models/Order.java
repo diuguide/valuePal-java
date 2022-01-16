@@ -1,7 +1,5 @@
 package com.example.valuepaljava.models;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 @Entity
