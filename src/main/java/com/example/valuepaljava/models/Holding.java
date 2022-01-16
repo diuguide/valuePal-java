@@ -31,6 +31,11 @@ public class Holding {
     @Column(name="totalValue", precision=10, scale=2)
     private double totalValue;
 
+    @Column(name="last_cost", precision=10, scale=2)
+    private Double last_cost;
+
+
+
     public Holding() {
     }
 
@@ -111,16 +116,26 @@ public class Holding {
         this.walletId = wallet_id;
     }
 
+    public Double getLast_cost() {
+        return last_cost;
+    }
+
+    public void setLast_cost(double price, double quantity) {
+        this.last_cost = price * quantity;
+    }
+
     @Override
     public String toString() {
         return "Holding{" +
                 "id=" + id +
-                ", wallet=" + walletId +
+                ", walletId=" + walletId +
                 ", ticker='" + ticker + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                ", totalValue=" + totalValue +
                 ", avg_purchase_price=" + avg_purchase_price +
+                ", change=" + change +
+                ", totalValue=" + totalValue +
+                ", last_cost=" + last_cost +
                 '}';
     }
 }

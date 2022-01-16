@@ -1,7 +1,5 @@
 package com.example.valuepaljava.models;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 @Entity
@@ -30,7 +28,8 @@ public class Order {
     @Column(name="type")
     private char orderType;
 
-
+    @Column(name="total_cost", precision=10, scale=2)
+    private double total_cost;
 
     public Order() {
     }
@@ -82,6 +81,8 @@ public class Order {
         return price * quantity;
     }
 
+    public void setTotal_cost() { this.total_cost = price * quantity;}
+
     public void setPrice(double price) {
         this.price = price;
     }
@@ -105,10 +106,14 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "walletId=" + walletId +
+                "id=" + id +
+                ", walletId=" + walletId +
                 ", ticker='" + ticker + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
+                ", status='" + status + '\'' +
+                ", orderType=" + orderType +
+                ", total_cost=" + total_cost +
                 '}';
     }
 }

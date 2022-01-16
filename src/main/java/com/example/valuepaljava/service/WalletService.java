@@ -90,9 +90,11 @@ public class WalletService {
         if(checkExistingBalance(order)) {
             Optional<Holding> existingHolding = checkForHolding(order);
             if(existingHolding.isPresent()) {
+                existingHolding.get().setLast_cost(order.getPrice(), order.getQuantity());
                 existingHolding.get().setQuantity(order.getQuantity()+existingHolding.get().getQuantity());
                 existingHolding.get().setPrice(order.getPrice());
                 existingHolding.get().setTotalValue();
+                logger.info(existingHolding.get().toString());
                 holdingRepository.save(existingHolding.get());
             } else {
                 System.out.println("order.price " + order.getPrice());
@@ -113,6 +115,7 @@ public class WalletService {
             logger.info(String.format("[BUY] Wallet ID: %s updated after purchase of %s", newWallet.getWalletId(), order.getTicker()));
             order.setStatus("Filled");
             order.setOrderType('B');
+            order.setTotal_cost();
             Order filledOrder = orderRepository.save(order);
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
