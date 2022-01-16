@@ -30,7 +30,8 @@ public class Order {
     @Column(name="type")
     private char orderType;
 
-
+    @Column(name="total_cost", precision=10, scale=2)
+    private double total_cost;
 
     public Order() {
     }
@@ -81,6 +82,8 @@ public class Order {
     public double getTotalValue() {
         return price * quantity;
     }
+
+    public void setTotal_cost() { this.total_cost = price * quantity;}
 
     public void setPrice(double price) {
         this.price = price;
