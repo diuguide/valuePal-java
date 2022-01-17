@@ -1362,3 +1362,6 @@ java.lang.IllegalArgumentException: Can not set char field com.example.valuepalj
 2022-01-16 23:21:33.740  INFO 3388 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='GME', longName='GameStop Corp.', price=116.65, change=-5.830002, changePercent=-4.759962, time='1642194002'}
 2022-01-16 23:21:33.740  INFO 3388 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
 2022-01-16 23:21:33.751  INFO 3388 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [UPDATE] Updated holding information.  Updated in 1 ms
+2022-01-16 23:35:46.246  INFO 3388 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-01-16 23:35:46.258  INFO 3388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-01-16 23:35:46.266  INFO 3388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.

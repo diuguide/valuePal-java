@@ -1,6 +1,7 @@
 package com.example.valuepaljava.models;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="holdings")
@@ -36,6 +37,17 @@ public class Holding {
 
     @Column(name="process_flag")
     private char process_flag = 'H';
+
+    @Column(name="timestamp")
+    private Date timestamp;
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
 
     public char getProcess_flag() {
         return process_flag;
