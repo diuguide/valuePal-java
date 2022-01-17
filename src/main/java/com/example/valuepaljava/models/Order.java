@@ -1,6 +1,7 @@
 package com.example.valuepaljava.models;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="orders")
@@ -31,14 +32,32 @@ public class Order {
     @Column(name="total_cost", precision=10, scale=2)
     private double total_cost;
 
-    public Order() {
-    }
+    @Column(name="timestamp")
+    private Date timestamp;
 
     public Order(Integer walletId, String ticker, double price, Integer quantity) {
         this.walletId = walletId;
         this.ticker = ticker;
         this.price = price;
         this.quantity = quantity;
+    }
+    public Order() {
+    }
+
+    public double getTotal_cost() {
+        return total_cost;
+    }
+
+    public void setTotal_cost(double total_cost) {
+        this.total_cost = total_cost;
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     public char getOrderType() {

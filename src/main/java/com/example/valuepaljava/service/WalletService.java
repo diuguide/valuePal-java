@@ -59,6 +59,7 @@ public class WalletService {
                 currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() + order.getTotalValue());
                 order.setStatus("Filled");
                 order.setOrderType('S');
+                order.setTimestamp(new Date());
                 Order filledOrder = orderRepository.save(order);
                 long endTime = System.currentTimeMillis();
                 duration = endTime - startTime;
@@ -116,6 +117,7 @@ public class WalletService {
             order.setStatus("Filled");
             order.setOrderType('B');
             order.setTotal_cost();
+            order.setTimestamp(new Date());
             Order filledOrder = orderRepository.save(order);
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;

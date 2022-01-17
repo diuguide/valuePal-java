@@ -1,455 +1,71 @@
-2022-01-15 00:00:55.937  INFO 14320 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase order for GOOG at $50.0. Total price: 250.0
-2022-01-15 00:00:55.969  INFO 14320 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 6
-2022-01-15 00:00:55.971  INFO 14320 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of GOOG
-2022-01-15 00:00:55.973  INFO 14320 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Order #24 has been filled, Duration: 25/ms
-2022-01-15 00:00:57.107  WARN 14320 --- [valuepal housekeeper] com.zaxxer.hikari.pool.HikariPool        : valuepal - Thread starvation or clock leap detected (housekeeper delta=3m24s903ms926µs200ns).
-2022-01-15 00:01:24.509  INFO 14320 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase order for GOOG at $100.0. Total price: 1000.0
-2022-01-15 00:01:24.530  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of GOOG
-2022-01-15 00:01:24.534  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #25 has been filled, Duration: 25/ms
-2022-01-15 00:02:42.259  INFO 14320 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [BUY] Purchase order for GOOG at $100.0. Total price: 1000.0
-2022-01-15 00:02:42.279  INFO 14320 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of GOOG
-2022-01-15 00:02:42.283  INFO 14320 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Order #26 has been filled, Duration: 21/ms
-2022-01-15 00:04:10.210  INFO 14320 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for F at $10.0. Total price: 50.0
-2022-01-15 00:04:10.219  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 7
-2022-01-15 00:04:10.229  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of F
-2022-01-15 00:04:10.239  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #27 has been filled, Duration: 29/ms
-2022-01-15 00:05:17.961  INFO 14320 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase order for F at $20.0. Total price: 100.0
-2022-01-15 00:05:17.985  INFO 14320 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of F
-2022-01-15 00:05:17.988  INFO 14320 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Order #28 has been filled, Duration: 22/ms
-2022-01-15 00:05:48.113  INFO 14320 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase order for HLPF at $10.0. Total price: 50.0
-2022-01-15 00:05:48.128  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 8
-2022-01-15 00:05:48.135  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of HLPF
-2022-01-15 00:05:48.137  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #29 has been filled, Duration: 24/ms
-2022-01-15 00:06:21.191  INFO 14320 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for HLPF at $20.0. Total price: 200.0
-2022-01-15 00:06:21.203  INFO 14320 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of HLPF
-2022-01-15 00:06:21.207  INFO 14320 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #30 has been filled, Duration: 16/ms
-2022-01-15 00:32:54.661  INFO 14320 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for PROG at $10.0. Total price: 50.0
-2022-01-15 00:32:54.682  INFO 14320 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 9
-2022-01-15 00:32:54.684  INFO 14320 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of PROG
-2022-01-15 00:32:54.687  INFO 14320 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #31 has been filled, Duration: 25/ms
-2022-01-15 00:33:24.511  INFO 14320 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for PROG at $20.0. Total price: 200.0
-2022-01-15 00:33:24.523  INFO 14320 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of PROG
-2022-01-15 00:33:24.524  INFO 14320 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #32 has been filled, Duration: 13/ms
-2022-01-15 00:33:40.550  INFO 14320 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for PROG at $20.0. Total price: 200.0
-2022-01-15 00:33:40.559  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of PROG
-2022-01-15 00:33:40.560  INFO 14320 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #33 has been filled, Duration: 10/ms
-2022-01-15 00:34:23.096  INFO 14320 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for PROG at $200.0. Total price: 2000.0
-2022-01-15 00:34:23.104  INFO 14320 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of PROG
-2022-01-15 00:34:23.106  INFO 14320 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #34 has been filled, Duration: 10/ms
-2022-01-15 00:41:10.326  INFO 14320 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase order for LCLP at $20.0. Total price: 200.0
-2022-01-15 00:41:10.338  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 10
-2022-01-15 00:41:10.343  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of LCLP
-2022-01-15 00:41:10.346  INFO 14320 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #35 has been filled, Duration: 20/ms
-2022-01-15 00:41:35.604  INFO 14320 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for LCLP at $40.0. Total price: 400.0
-2022-01-15 00:41:35.620  INFO 14320 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of LCLP
-2022-01-15 00:41:35.622  INFO 14320 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #36 has been filled, Duration: 18/ms
-2022-01-15 00:42:39.615  INFO 14320 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for LCLP at $5.0. Total price: 150.0
-2022-01-15 00:42:39.622  INFO 14320 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of LCLP
-2022-01-15 00:42:39.623  INFO 14320 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #37 has been filled, Duration: 8/ms
-2022-01-15 01:25:37.577  INFO 14320 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 01:25:37.586  INFO 14320 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
-2022-01-15 01:25:37.599  INFO 14320 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
-2022-01-15 16:14:27.597  INFO 14416 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 14416 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
-2022-01-15 16:14:27.601  INFO 14416 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
-2022-01-15 16:14:28.337  INFO 14416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-01-15 16:14:28.405  INFO 14416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
-2022-01-15 16:14:28.668  INFO 14416 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4ebadd3d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 16:14:28.672  INFO 14416 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 16:14:28.867  INFO 14416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-01-15 16:14:28.874  INFO 14416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-15 16:14:28.875  INFO 14416 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2022-01-15 16:14:28.991  INFO 14416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-15 16:14:28.991  INFO 14416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1347 ms
-2022-01-15 16:14:29.028  INFO 14416 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
-2022-01-15 16:14:29.378  INFO 14416 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
-2022-01-15 16:14:29.384  INFO 14416 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
-2022-01-15 16:14:29.529  INFO 14416 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-01-15 16:14:29.580  INFO 14416 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2022-01-15 16:14:29.808  INFO 14416 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-01-15 16:14:29.913  INFO 14416 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2022-01-15 16:14:30.740  INFO 14416 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-01-15 16:14:30.748  INFO 14416 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 16:14:31.097  WARN 14416 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-01-15 16:14:31.344  INFO 14416 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
-2022-01-15 16:14:31.378  INFO 14416 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f8659d0, org.springframework.security.web.context.SecurityContextPersistenceFilter@7893c715, org.springframework.security.web.header.HeaderWriterFilter@6bd7439d, org.springframework.web.filter.CorsFilter@278fe428, org.springframework.security.web.authentication.logout.LogoutFilter@5bb7a59, com.example.valuepaljava.jwt.JwtAuthenticationFilter@3b4bd341, com.example.valuepaljava.jwt.JwtTokenVerifier@1d4cc7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@690df641, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9c0d0bd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d28cdcd, org.springframework.security.web.session.SessionManagementFilter@1231a1be, org.springframework.security.web.access.ExceptionTranslationFilter@f849027, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@333d44f6]
-2022-01-15 16:14:31.741  INFO 14416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-01-15 16:14:31.752  INFO 14416 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 4.662 seconds (JVM running for 5.823)
-2022-01-15 16:21:02.920  INFO 14416 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-15 16:21:02.920  INFO 14416 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-15 16:21:02.922  INFO 14416 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-01-15 16:21:03.047  INFO 14416 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for GVP at $100.0. Total price: 1000.0
-2022-01-15 16:21:03.395  INFO 14416 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 13
-2022-01-15 16:21:03.407  INFO 14416 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of GVP
-2022-01-15 16:21:03.412  INFO 14416 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #43 has been filled, Duration: 360/ms
-2022-01-15 16:23:55.059  INFO 14416 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for GVP at $50.0. Total price: 500.0
-2022-01-15 16:23:55.070  INFO 14416 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of GVP
-2022-01-15 16:23:55.072  INFO 14416 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #44 has been filled, Duration: 13/ms
-2022-01-15 16:25:26.257  INFO 14416 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [BUY] Purchase order for GVP at $10.0. Total price: 100.0
-2022-01-15 16:25:26.271  INFO 14416 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of GVP
-2022-01-15 16:25:26.273  INFO 14416 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Order #45 has been filled, Duration: 15/ms
-2022-01-15 16:56:41.266  WARN 14416 --- [valuepal housekeeper] com.zaxxer.hikari.pool.HikariPool        : valuepal - Thread starvation or clock leap detected (housekeeper delta=1m11s177ms683µs800ns).
-2022-01-15 19:26:23.915  WARN 14416 --- [valuepal housekeeper] com.zaxxer.hikari.pool.HikariPool        : valuepal - Thread starvation or clock leap detected (housekeeper delta=1h14m11s430ms488µs100ns).
-2022-01-15 19:40:03.507  INFO 14416 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase order for IMV at $100.0. Total price: 1000.0
-2022-01-15 19:40:03.546  INFO 14416 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 14
-2022-01-15 19:40:03.549  INFO 14416 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of IMV
-2022-01-15 19:40:03.551  INFO 14416 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #46 has been filled, Duration: 42/ms
-2022-01-15 19:40:21.875  INFO 14416 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for IMV at $50.0. Total price: 500.0
-2022-01-15 19:40:21.887  INFO 14416 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of IMV
-2022-01-15 19:40:21.889  INFO 14416 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #47 has been filled, Duration: 13/ms
-2022-01-15 19:40:30.709  INFO 14416 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for IMV at $10.0. Total price: 100.0
-2022-01-15 19:40:30.719  INFO 14416 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of IMV
-2022-01-15 19:40:30.721  INFO 14416 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #48 has been filled, Duration: 11/ms
-2022-01-15 19:43:17.997  INFO 14416 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for INKW at $100.0. Total price: 1000.0
-2022-01-15 19:43:18.002  INFO 14416 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 15
-2022-01-15 19:43:18.004  INFO 14416 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INKW
-2022-01-15 19:43:18.005  INFO 14416 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #49 has been filled, Duration: 8/ms
-2022-01-15 19:43:26.025  INFO 14416 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase order for INKW at $50.0. Total price: 500.0
-2022-01-15 19:43:26.047  WARN 14416 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 22021
-2022-01-15 19:43:26.047 ERROR 14416 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: invalid byte sequence for encoding "UTF8": 0x00
-2022-01-15 19:43:26.074  INFO 14416 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [INSUFFICIENT FUNDS] tobyTest order failed due to insufficient funds
-2022-01-15 19:50:55.274  INFO 14416 --- [http-nio-8080-exec-9] c.e.v.controllers.UserController         : Username: tobyTest not available!
-2022-01-15 19:51:07.535  INFO 14416 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.UserService     : [REGISTER] User: stanTest with userId: 2 has been registered
-2022-01-15 19:51:40.453  INFO 14416 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for INKW at $100.0. Total price: 1000.0
-2022-01-15 19:51:40.464  INFO 14416 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 16
-2022-01-15 19:51:40.466  INFO 14416 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of INKW
-2022-01-15 19:51:40.467  INFO 14416 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #50 has been filled, Duration: 14/ms
-2022-01-15 19:51:53.775  INFO 14416 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [BUY] Purchase order for INKW at $50.0. Total price: 500.0
-2022-01-15 19:51:53.786  INFO 14416 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of INKW
-2022-01-15 19:51:53.787  INFO 14416 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Order #51 has been filled, Duration: 12/ms
-2022-01-15 19:52:00.121  INFO 14416 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for INKW at $10.0. Total price: 100.0
-2022-01-15 19:52:00.157  INFO 14416 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of INKW
-2022-01-15 19:52:00.159  INFO 14416 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #52 has been filled, Duration: 33/ms
-2022-01-15 20:25:44.722  INFO 14416 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 20:25:44.727  INFO 14416 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
-2022-01-15 20:25:44.729  INFO 14416 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
-2022-01-15 20:25:49.264  INFO 8684 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 8684 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
-2022-01-15 20:25:49.267  INFO 8684 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
-2022-01-15 20:25:49.955  INFO 8684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-01-15 20:25:50.007  INFO 8684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 4 JPA repository interfaces.
-2022-01-15 20:25:50.235  INFO 8684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2e3a5237' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 20:25:50.238  INFO 8684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 20:25:50.404  INFO 8684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-01-15 20:25:50.411  INFO 8684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-15 20:25:50.411  INFO 8684 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2022-01-15 20:25:50.498  INFO 8684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-15 20:25:50.498  INFO 8684 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1186 ms
-2022-01-15 20:25:50.524  INFO 8684 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
-2022-01-15 20:25:50.908  INFO 8684 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
-2022-01-15 20:25:50.912  INFO 8684 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
-2022-01-15 20:25:51.030  INFO 8684 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-01-15 20:25:51.075  INFO 8684 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2022-01-15 20:25:51.257  INFO 8684 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-01-15 20:25:51.348  INFO 8684 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2022-01-15 20:25:52.079  INFO 8684 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-01-15 20:25:52.086  INFO 8684 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 20:25:52.392  WARN 8684 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-01-15 20:25:52.577  INFO 8684 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
-2022-01-15 20:25:52.606  INFO 8684 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16c5b50a, org.springframework.security.web.context.SecurityContextPersistenceFilter@5c5f0edc, org.springframework.security.web.header.HeaderWriterFilter@7db791df, org.springframework.web.filter.CorsFilter@4f8659d0, org.springframework.security.web.authentication.logout.LogoutFilter@13cc31ae, com.example.valuepaljava.jwt.JwtAuthenticationFilter@278fe428, com.example.valuepaljava.jwt.JwtTokenVerifier@3b4bd341, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e31062c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3313463c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d4cc7, org.springframework.security.web.session.SessionManagementFilter@1b1e1f02, org.springframework.security.web.access.ExceptionTranslationFilter@7c4d1c7b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a39e554]
-2022-01-15 20:25:52.908  INFO 8684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-01-15 20:25:52.918  INFO 8684 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 4.045 seconds (JVM running for 4.69)
-2022-01-15 20:26:05.843  INFO 8684 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-15 20:26:05.844  INFO 8684 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-15 20:26:05.844  INFO 8684 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-01-15 20:26:05.973  INFO 8684 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for INKW at $70.0. Total price: 700.0
-2022-01-15 20:26:06.239  INFO 8684 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Holding{id=16, wallet=2, ticker='INKW', quantity=40, price=70.0, totalValue=2800.0, avg_purchase_price=42.5}
-2022-01-15 20:26:06.272  INFO 8684 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of INKW
-2022-01-15 20:26:06.283  INFO 8684 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #53 has been filled, Duration: 305/ms
-2022-01-15 20:37:02.653  INFO 8684 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 20:37:02.654  INFO 8684 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
-2022-01-15 20:37:02.655  INFO 8684 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
-2022-01-15 20:37:06.507  INFO 8348 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 8348 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
-2022-01-15 20:37:06.509  INFO 8348 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
-2022-01-15 20:37:07.086  INFO 8348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-01-15 20:37:07.131  INFO 8348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 4 JPA repository interfaces.
-2022-01-15 20:37:07.342  INFO 8348 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6d367020' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 20:37:07.346  INFO 8348 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 20:37:07.522  INFO 8348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-01-15 20:37:07.525  INFO 8348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-15 20:37:07.530  INFO 8348 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2022-01-15 20:37:07.603  INFO 8348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-15 20:37:07.603  INFO 8348 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1055 ms
-2022-01-15 20:37:07.629  INFO 8348 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
-2022-01-15 20:37:08.037  INFO 8348 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
-2022-01-15 20:37:08.038  INFO 8348 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
-2022-01-15 20:37:08.138  INFO 8348 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-01-15 20:37:08.174  INFO 8348 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2022-01-15 20:37:08.310  INFO 8348 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-01-15 20:37:08.381  INFO 8348 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2022-01-15 20:37:09.095  INFO 8348 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-01-15 20:37:09.102  INFO 8348 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 20:37:09.379  WARN 8348 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-01-15 20:37:09.552  INFO 8348 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
-2022-01-15 20:37:09.582  INFO 8348 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d28cdcd, org.springframework.security.web.context.SecurityContextPersistenceFilter@ff03361, org.springframework.security.web.header.HeaderWriterFilter@7893c715, org.springframework.web.filter.CorsFilter@255ed8e4, org.springframework.security.web.authentication.logout.LogoutFilter@62faf77, com.example.valuepaljava.jwt.JwtAuthenticationFilter@406ad6d5, com.example.valuepaljava.jwt.JwtTokenVerifier@2a7bc16b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f935d49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ea75b05, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1186374c, org.springframework.security.web.session.SessionManagementFilter@690df641, org.springframework.security.web.access.ExceptionTranslationFilter@6eed46e9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4f8659d0]
-2022-01-15 20:37:09.868  INFO 8348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-01-15 20:37:09.874  INFO 8348 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 3.68 seconds (JVM running for 4.241)
-2022-01-15 20:37:21.066  INFO 8348 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-15 20:37:21.066  INFO 8348 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-15 20:37:21.067  INFO 8348 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-15 20:37:21.204  INFO 8348 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for INKW at $70.0. Total price: 700.0
-2022-01-15 20:37:21.485  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Holding{id=16, wallet=2, ticker='INKW', quantity=50, price=70.0, totalValue=3500.0, avg_purchase_price=61.66666666666667}
-2022-01-15 20:37:21.517  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of INKW
-2022-01-15 20:37:21.528  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #54 has been filled, Duration: 318/ms
-2022-01-15 20:51:02.746  INFO 8348 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for CELZ at $100.0. Total price: 1000.0
-2022-01-15 20:51:02.758  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 17
-2022-01-15 20:51:02.760  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of CELZ
-2022-01-15 20:51:02.763  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #55 has been filled, Duration: 15/ms
-2022-01-15 20:56:34.722  INFO 8348 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for CELZ at $50.0. Total price: 500.0
-2022-01-15 20:56:34.727  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : Holding{id=17, wallet=2, ticker='CELZ', quantity=20, price=50.0, totalValue=1000.0, avg_purchase_price=100.0}
-2022-01-15 20:56:34.735  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of CELZ
-2022-01-15 20:56:34.737  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #56 has been filled, Duration: 15/ms
-2022-01-15 20:56:41.296  INFO 8348 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for CELZ at $10.0. Total price: 100.0
-2022-01-15 20:56:41.302  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : Holding{id=17, wallet=2, ticker='CELZ', quantity=30, price=10.0, totalValue=300.0, avg_purchase_price=75.0}
-2022-01-15 20:56:41.314  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of CELZ
-2022-01-15 20:56:41.317  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #57 has been filled, Duration: 21/ms
-2022-01-15 20:59:03.045  INFO 8348 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for BBIG at $10.0. Total price: 1000.0
-2022-01-15 20:59:03.055  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 18
-2022-01-15 20:59:03.057  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of BBIG
-2022-01-15 20:59:03.059  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #58 has been filled, Duration: 14/ms
-2022-01-15 20:59:22.205  INFO 8348 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for PPBT at $100.0. Total price: 1000.0
-2022-01-15 20:59:22.216  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 19
-2022-01-15 20:59:22.217  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of PPBT
-2022-01-15 20:59:22.219  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #59 has been filled, Duration: 13/ms
-2022-01-15 20:59:30.648  INFO 8348 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [BUY] Purchase order for PPBT at $50.0. Total price: 500.0
-2022-01-15 20:59:30.653  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Holding{id=19, wallet=2, ticker='PPBT', quantity=20, price=50.0, totalValue=1000.0, avg_purchase_price=100.0}
-2022-01-15 20:59:30.685  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of PPBT
-2022-01-15 20:59:30.687  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Order #60 has been filled, Duration: 39/ms
-2022-01-15 20:59:36.306  INFO 8348 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for PPBT at $10.0. Total price: 100.0
-2022-01-15 20:59:36.311  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : Holding{id=19, wallet=2, ticker='PPBT', quantity=30, price=10.0, totalValue=300.0, avg_purchase_price=66.66666666666667}
-2022-01-15 20:59:36.314  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of PPBT
-2022-01-15 20:59:36.315  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #61 has been filled, Duration: 8/ms
-2022-01-15 21:03:44.022  INFO 8348 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for MTTR at $10.0. Total price: 1000.0
-2022-01-15 21:03:44.032  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 20
-2022-01-15 21:03:44.033  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of MTTR
-2022-01-15 21:03:44.034  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #62 has been filled, Duration: 12/ms
-2022-01-15 21:03:49.699  INFO 8348 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for MTTR at $50.0. Total price: 5000.0
-2022-01-15 21:03:49.704  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : Holding{id=20, wallet=2, ticker='MTTR', quantity=200, price=50.0, totalValue=10000.0, avg_purchase_price=10.0}
-2022-01-15 21:03:49.724  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of MTTR
-2022-01-15 21:03:49.726  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #63 has been filled, Duration: 27/ms
-2022-01-15 21:03:55.129  INFO 8348 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase order for MTTR at $10.0. Total price: 1000.0
-2022-01-15 21:03:55.132  INFO 8348 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Holding{id=20, wallet=2, ticker='MTTR', quantity=300, price=10.0, totalValue=3000.0, avg_purchase_price=36.666666666666664}
-2022-01-15 21:03:55.136  INFO 8348 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of MTTR
-2022-01-15 21:03:55.137  INFO 8348 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #64 has been filled, Duration: 8/ms
-2022-01-15 21:05:16.889  INFO 8348 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for VIZC at $100.0. Total price: 1000.0
-2022-01-15 21:05:16.900  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 21
-2022-01-15 21:05:16.902  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of VIZC
-2022-01-15 21:05:16.904  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #65 has been filled, Duration: 15/ms
-2022-01-15 21:05:26.724  INFO 8348 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [BUY] Purchase order for VIZC at $50.0. Total price: 500.0
-2022-01-15 21:05:26.728  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Holding{id=21, wallet=2, ticker='VIZC', quantity=20, price=50.0, totalValue=1000.0, avg_purchase_price=100.0}
-2022-01-15 21:05:26.735  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of VIZC
-2022-01-15 21:05:26.737  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Order #66 has been filled, Duration: 13/ms
-2022-01-15 21:05:31.858  INFO 8348 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for VIZC at $10.0. Total price: 100.0
-2022-01-15 21:05:31.863  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : Holding{id=21, wallet=2, ticker='VIZC', quantity=30, price=10.0, totalValue=300.0, avg_purchase_price=66.66666666666667}
-2022-01-15 21:05:31.871  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of VIZC
-2022-01-15 21:05:31.872  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #67 has been filled, Duration: 13/ms
-2022-01-15 21:07:43.681  INFO 8348 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for MBII at $100.0. Total price: 1000.0
-2022-01-15 21:07:43.696  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 22
-2022-01-15 21:07:43.697  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of MBII
-2022-01-15 21:07:43.700  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #68 has been filled, Duration: 18/ms
-2022-01-15 21:07:49.002  INFO 8348 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for MBII at $50.0. Total price: 500.0
-2022-01-15 21:07:49.007  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : Holding{id=22, wallet=2, ticker='MBII', quantity=20, price=50.0, totalValue=1000.0, avg_purchase_price=100.0}
-2022-01-15 21:07:49.016  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of MBII
-2022-01-15 21:07:49.018  INFO 8348 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #69 has been filled, Duration: 15/ms
-2022-01-15 21:12:33.101  INFO 8348 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for MBII at $10.0. Total price: 100.0
-2022-01-15 21:12:33.105  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Holding{id=22, wallet=2, ticker='MBII', quantity=30, price=10.0, totalValue=300.0, avg_purchase_price=66.66666666666667}
-2022-01-15 21:12:33.120  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of MBII
-2022-01-15 21:12:33.121  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #70 has been filled, Duration: 20/ms
-2022-01-15 21:16:21.258  INFO 8348 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for ARSMF at $10.0. Total price: 1000.0
-2022-01-15 21:16:21.269  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 23
-2022-01-15 21:16:21.270  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of ARSMF
-2022-01-15 21:16:21.272  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #71 has been filled, Duration: 14/ms
-2022-01-15 21:16:47.313  INFO 8348 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for ECOR at $100.0. Total price: 1000.0
-2022-01-15 21:16:47.323  INFO 8348 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 24
-2022-01-15 21:16:47.325  INFO 8348 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of ECOR
-2022-01-15 21:16:47.326  INFO 8348 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #72 has been filled, Duration: 12/ms
-2022-01-15 21:16:53.687  INFO 8348 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase order for ECOR at $50.0. Total price: 500.0
-2022-01-15 21:16:53.691  INFO 8348 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : Holding{id=24, wallet=2, ticker='ECOR', quantity=20, price=50.0, totalValue=1000.0, avg_purchase_price=100.0}
-2022-01-15 21:16:53.729  INFO 8348 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of ECOR
-2022-01-15 21:16:53.732  INFO 8348 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Order #73 has been filled, Duration: 45/ms
-2022-01-15 21:17:03.407  INFO 8348 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for ECOR at $10.0. Total price: 100.0
-2022-01-15 21:17:03.410  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : Holding{id=24, wallet=2, ticker='ECOR', quantity=30, price=10.0, totalValue=300.0, avg_purchase_price=100.0}
-2022-01-15 21:17:03.420  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of ECOR
-2022-01-15 21:17:03.421  INFO 8348 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #74 has been filled, Duration: 14/ms
-2022-01-15 21:22:14.724  INFO 8348 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for HITI at $100.0. Total price: 1000.0
-2022-01-15 21:22:14.734  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 25
-2022-01-15 21:22:14.735  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of HITI
-2022-01-15 21:22:14.736  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #75 has been filled, Duration: 12/ms
-2022-01-15 21:22:22.680  INFO 8348 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for HITI at $50.0. Total price: 500.0
-2022-01-15 21:22:22.683  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : Holding{id=25, wallet=2, ticker='HITI', quantity=20, price=50.0, totalValue=1000.0, avg_purchase_price=100.0}
-2022-01-15 21:22:22.690  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of HITI
-2022-01-15 21:22:22.691  INFO 8348 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #76 has been filled, Duration: 10/ms
-2022-01-15 21:22:29.452  INFO 8348 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [BUY] Purchase order for HITI at $10.0. Total price: 100.0
-2022-01-15 21:22:29.455  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Holding{id=25, wallet=2, ticker='HITI', quantity=30, price=10.0, totalValue=300.0, avg_purchase_price=100.0}
-2022-01-15 21:22:29.463  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of HITI
-2022-01-15 21:22:29.465  INFO 8348 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Order #77 has been filled, Duration: 13/ms
-2022-01-15 21:23:05.080  INFO 8348 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for NUMI at $100.0. Total price: 1000.0
-2022-01-15 21:23:05.089  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 26
-2022-01-15 21:23:05.091  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of NUMI
-2022-01-15 21:23:05.092  INFO 8348 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #78 has been filled, Duration: 12/ms
-2022-01-15 21:23:11.230  INFO 8348 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for NUMI at $50.0. Total price: 500.0
-2022-01-15 21:23:11.232  INFO 8348 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : Holding{id=26, wallet=2, ticker='NUMI', quantity=20, price=50.0, totalValue=1000.0, avg_purchase_price=100.0}
-2022-01-15 21:23:11.236  INFO 8348 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of NUMI
-2022-01-15 21:23:11.237  INFO 8348 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #79 has been filled, Duration: 7/ms
-2022-01-15 21:23:17.342  INFO 8348 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase order for NUMI at $10.0. Total price: 100.0
-2022-01-15 21:23:17.345  INFO 8348 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : Holding{id=26, wallet=2, ticker='NUMI', quantity=30, price=10.0, totalValue=300.0, avg_purchase_price=50.0}
-2022-01-15 21:23:17.352  INFO 8348 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of NUMI
-2022-01-15 21:23:17.353  INFO 8348 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Order #80 has been filled, Duration: 11/ms
-2022-01-15 21:26:03.380  INFO 8348 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase order for ASTI at $100.0. Total price: 1000.0
-2022-01-15 21:26:03.389  INFO 8348 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 27
-2022-01-15 21:26:03.391  INFO 8348 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of ASTI
-2022-01-15 21:26:03.393  INFO 8348 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #81 has been filled, Duration: 13/ms
-2022-01-15 21:26:11.143  INFO 8348 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [BUY] Purchase order for ASTI at $50.0. Total price: 500.0
-2022-01-15 21:26:11.146  INFO 8348 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : Holding{id=27, wallet=2, ticker='ASTI', quantity=20, price=50.0, totalValue=1000.0, avg_purchase_price=100.0}
-2022-01-15 21:26:11.151  INFO 8348 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of ASTI
-2022-01-15 21:26:11.152  INFO 8348 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Order #82 has been filled, Duration: 8/ms
-2022-01-15 21:26:16.763  INFO 8348 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for ASTI at $10.0. Total price: 100.0
-2022-01-15 21:26:16.766  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Holding{id=27, wallet=2, ticker='ASTI', quantity=30, price=10.0, totalValue=300.0, avg_purchase_price=50.0}
-2022-01-15 21:26:16.769  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of ASTI
-2022-01-15 21:26:16.771  INFO 8348 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #83 has been filled, Duration: 8/ms
-2022-01-15 21:38:00.906  INFO 8348 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 21:38:00.907  INFO 8348 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
-2022-01-15 21:38:00.910  INFO 8348 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
-2022-01-15 21:38:04.676  INFO 19284 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 19284 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
-2022-01-15 21:38:04.679  INFO 19284 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
-2022-01-15 21:38:05.309  INFO 19284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-01-15 21:38:05.360  INFO 19284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 4 JPA repository interfaces.
-2022-01-15 21:38:05.557  INFO 19284 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ac97b84' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 21:38:05.560  INFO 19284 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 21:38:05.707  INFO 19284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-01-15 21:38:05.713  INFO 19284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-15 21:38:05.713  INFO 19284 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2022-01-15 21:38:05.789  INFO 19284 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-15 21:38:05.790  INFO 19284 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1071 ms
-2022-01-15 21:38:05.814  INFO 19284 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
-2022-01-15 21:38:06.060  INFO 19284 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
-2022-01-15 21:38:06.065  INFO 19284 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
-2022-01-15 21:38:06.167  INFO 19284 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-01-15 21:38:06.198  INFO 19284 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2022-01-15 21:38:06.371  INFO 19284 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-01-15 21:38:06.452  INFO 19284 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2022-01-15 21:38:07.181  INFO 19284 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-01-15 21:38:07.187  INFO 19284 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 21:38:07.499  WARN 19284 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-01-15 21:38:07.707  INFO 19284 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
-2022-01-15 21:38:07.738  INFO 19284 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22686ddb, org.springframework.security.web.context.SecurityContextPersistenceFilter@13cc31ae, org.springframework.security.web.header.HeaderWriterFilter@259195fe, org.springframework.web.filter.CorsFilter@2e29f28e, org.springframework.security.web.authentication.logout.LogoutFilter@3611153f, com.example.valuepaljava.jwt.JwtAuthenticationFilter@7bfa1eb5, com.example.valuepaljava.jwt.JwtTokenVerifier@32b46831, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62faf77, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@349312d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5353dd09, org.springframework.security.web.session.SessionManagementFilter@6cd45b6c, org.springframework.security.web.access.ExceptionTranslationFilter@41ece227, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4492b393]
-2022-01-15 21:38:08.060  INFO 19284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-01-15 21:38:08.069  INFO 19284 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 3.719 seconds (JVM running for 4.474)
-2022-01-15 21:38:13.034  INFO 19284 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-15 21:38:13.034  INFO 19284 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-15 21:38:13.035  INFO 19284 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-15 21:38:13.144  INFO 19284 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase order for ASTI at $10.99. Total price: 109.9
-2022-01-15 21:38:13.414  INFO 19284 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [INSUFFICIENT FUNDS] stanTest order failed due to insufficient funds
-2022-01-15 21:38:48.578  INFO 19284 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 21:38:48.580  INFO 19284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
-2022-01-15 21:38:48.581  INFO 19284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
-2022-01-15 21:38:51.927  INFO 1772 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 1772 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
-2022-01-15 21:38:51.930  INFO 1772 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
-2022-01-15 21:38:52.494  INFO 1772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-01-15 21:38:52.543  INFO 1772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 4 JPA repository interfaces.
-2022-01-15 21:38:52.738  INFO 1772 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@35c09b94' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 21:38:52.741  INFO 1772 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 21:38:52.887  INFO 1772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-01-15 21:38:52.892  INFO 1772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-15 21:38:52.893  INFO 1772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2022-01-15 21:38:52.968  INFO 1772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-15 21:38:52.968  INFO 1772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1002 ms
-2022-01-15 21:38:52.993  INFO 1772 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
-2022-01-15 21:38:53.236  INFO 1772 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
-2022-01-15 21:38:53.240  INFO 1772 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
-2022-01-15 21:38:53.349  INFO 1772 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-01-15 21:38:53.377  INFO 1772 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2022-01-15 21:38:53.511  INFO 1772 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-01-15 21:38:53.581  INFO 1772 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2022-01-15 21:38:54.254  INFO 1772 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-01-15 21:38:54.261  INFO 1772 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 21:38:54.548  WARN 1772 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-01-15 21:38:54.716  INFO 1772 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
-2022-01-15 21:38:54.738  INFO 1772 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@731db93f, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ea75b05, org.springframework.security.web.header.HeaderWriterFilter@9c0d0bd, org.springframework.web.filter.CorsFilter@67941d, org.springframework.security.web.authentication.logout.LogoutFilter@47eaf55c, com.example.valuepaljava.jwt.JwtAuthenticationFilter@2ad2b274, com.example.valuepaljava.jwt.JwtTokenVerifier@6fde6f05, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1da745a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a5b7d7e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7114e780, org.springframework.security.web.session.SessionManagementFilter@18e6b72b, org.springframework.security.web.access.ExceptionTranslationFilter@3321291a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20820df0]
-2022-01-15 21:38:55.009  INFO 1772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-01-15 21:38:55.017  INFO 1772 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 3.41 seconds (JVM running for 4.182)
-2022-01-15 21:39:00.061  INFO 1772 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-15 21:39:00.062  INFO 1772 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-15 21:39:00.063  INFO 1772 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-15 21:39:00.187  INFO 1772 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for ASTI at $10.99. Total price: 109.9
-2022-01-15 21:39:00.436  INFO 1772 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : Holding{id=27, wallet=2, ticker='ASTI', quantity=40, price=10.99, totalValue=439.6, avg_purchase_price=50.0}
-2022-01-15 21:39:00.466  INFO 1772 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of ASTI
-2022-01-15 21:39:00.476  INFO 1772 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #84 has been filled, Duration: 283/ms
-2022-01-15 21:39:27.301  INFO 1772 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 21:39:27.303  INFO 1772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
-2022-01-15 21:39:27.304  INFO 1772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
-2022-01-15 21:39:30.988  INFO 3260 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 3260 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
-2022-01-15 21:39:30.992  INFO 3260 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
-2022-01-15 21:39:31.543  INFO 3260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-01-15 21:39:31.602  INFO 3260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 4 JPA repository interfaces.
-2022-01-15 21:39:31.800  INFO 3260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@72ba28ee' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 21:39:31.804  INFO 3260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-15 21:39:31.944  INFO 3260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-01-15 21:39:31.949  INFO 3260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-15 21:39:31.950  INFO 3260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2022-01-15 21:39:32.017  INFO 3260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-15 21:39:32.017  INFO 3260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 983 ms
-2022-01-15 21:39:32.047  INFO 3260 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
-2022-01-15 21:39:32.293  INFO 3260 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
-2022-01-15 21:39:32.297  INFO 3260 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
-2022-01-15 21:39:32.401  INFO 3260 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-01-15 21:39:32.440  INFO 3260 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2022-01-15 21:39:32.610  INFO 3260 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-01-15 21:39:32.684  INFO 3260 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2022-01-15 21:39:33.430  INFO 3260 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-01-15 21:39:33.437  INFO 3260 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-01-15 21:39:33.734  WARN 3260 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-01-15 21:39:33.918  INFO 3260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
-2022-01-15 21:39:33.949  INFO 3260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22686ddb, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a2b7a35, org.springframework.security.web.header.HeaderWriterFilter@3a5b7d7e, org.springframework.web.filter.CorsFilter@2e29f28e, org.springframework.security.web.authentication.logout.LogoutFilter@3611153f, com.example.valuepaljava.jwt.JwtAuthenticationFilter@7bfa1eb5, com.example.valuepaljava.jwt.JwtTokenVerifier@32b46831, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62faf77, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@349312d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5353dd09, org.springframework.security.web.session.SessionManagementFilter@5bb7a59, org.springframework.security.web.access.ExceptionTranslationFilter@34ab26a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4492b393]
-2022-01-15 21:39:34.272  INFO 3260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-01-15 21:39:34.282  INFO 3260 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 3.636 seconds (JVM running for 4.479)
-2022-01-15 21:39:42.291  INFO 3260 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-15 21:39:42.292  INFO 3260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-15 21:39:42.293  INFO 3260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-15 21:39:42.413  INFO 3260 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for ASTI at $14.99. Total price: 149.9
-2022-01-15 21:39:42.685  WARN 3260 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 22021
-2022-01-15 21:39:42.686 ERROR 3260 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: invalid byte sequence for encoding "UTF8": 0x00
-2022-01-15 21:39:42.697  INFO 3260 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [INSUFFICIENT FUNDS] stanTest order failed due to insufficient funds
-2022-01-15 21:40:10.168  INFO 3260 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.UserService     : [REGISTER] User: torbinTest with userId: 3 has been registered
-2022-01-15 21:40:34.811  INFO 3260 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for ASTI at $14.99. Total price: 149.9
-2022-01-15 21:40:34.845  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 3, holding id 28
-2022-01-15 21:40:34.854  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of ASTI
-2022-01-15 21:40:34.855  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #85 has been filled, Duration: 44/ms
-2022-01-15 21:45:16.905  INFO 3260 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for ASTI at $99.99. Total price: 999.9
-2022-01-15 21:45:16.910  INFO 3260 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : Holding{id=28, walletId=3, ticker='ASTI', quantity=20, price=99.99, avg_purchase_price=14.99, change=0.0, totalValue=1999.8, last_cost=999.9}
-2022-01-15 21:45:16.918  INFO 3260 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of ASTI
-2022-01-15 21:45:16.919  INFO 3260 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #86 has been filled, Duration: 14/ms
-2022-01-15 21:47:38.922  INFO 3260 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for JAGX at $100.0. Total price: 1000.0
-2022-01-15 21:47:38.931  INFO 3260 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 3, holding id 29
-2022-01-15 21:47:38.933  INFO 3260 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of JAGX
-2022-01-15 21:47:38.935  INFO 3260 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #87 has been filled, Duration: 13/ms
-2022-01-15 21:48:46.436  INFO 3260 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase order for JAGX at $50.0. Total price: 500.0
-2022-01-15 21:48:46.440  INFO 3260 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : Holding{id=29, walletId=3, ticker='JAGX', quantity=20, price=50.0, avg_purchase_price=100.0, change=0.0, totalValue=1000.0, last_cost=500.0}
-2022-01-15 21:48:46.449  INFO 3260 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of JAGX
-2022-01-15 21:48:46.451  INFO 3260 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #88 has been filled, Duration: 14/ms
-2022-01-15 21:49:03.043  INFO 3260 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for JAGX at $10.0. Total price: 100.0
-2022-01-15 21:49:03.047  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : Holding{id=29, walletId=3, ticker='JAGX', quantity=30, price=10.0, avg_purchase_price=52.5, change=0.0, totalValue=300.0, last_cost=100.0}
-2022-01-15 21:49:03.054  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of JAGX
-2022-01-15 21:49:03.056  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #89 has been filled, Duration: 11/ms
-2022-01-15 21:51:53.624  INFO 3260 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for HDUP at $100.0. Total price: 1000.0
-2022-01-15 21:51:53.634  INFO 3260 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 3, holding id 30
-2022-01-15 21:51:53.637  INFO 3260 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of HDUP
-2022-01-15 21:51:53.639  INFO 3260 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #90 has been filled, Duration: 15/ms
-2022-01-15 21:57:17.539  INFO 3260 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase order for HDUP at $50.0. Total price: 500.0
-2022-01-15 21:57:17.544  INFO 3260 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Holding{id=30, walletId=3, ticker='HDUP', quantity=20, price=50.0, avg_purchase_price=100.0, change=0.0, totalValue=1000.0, last_cost=500.0}
-2022-01-15 21:57:17.553  INFO 3260 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of HDUP
-2022-01-15 21:57:17.555  INFO 3260 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #91 has been filled, Duration: 16/ms
-2022-01-15 21:57:35.555  INFO 3260 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase order for HDUP at $10.0. Total price: 100.0
-2022-01-15 21:57:35.559  INFO 3260 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : Holding{id=30, walletId=3, ticker='HDUP', quantity=30, price=10.0, avg_purchase_price=52.5, change=0.0, totalValue=300.0, last_cost=100.0}
-2022-01-15 21:57:35.567  INFO 3260 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of HDUP
-2022-01-15 21:57:35.569  INFO 3260 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #92 has been filled, Duration: 13/ms
-2022-01-15 22:02:42.734  INFO 3260 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase order for QQQ at $100.0. Total price: 1000.0
-2022-01-15 22:02:42.739  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 3, holding id 31
-2022-01-15 22:02:42.741  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of QQQ
-2022-01-15 22:02:42.743  INFO 3260 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #93 has been filled, Duration: 8/ms
-2022-01-15 22:02:50.303  INFO 3260 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase order for QQQ at $50.0. Total price: 500.0
-2022-01-15 22:02:50.308  INFO 3260 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : Holding{id=31, walletId=3, ticker='QQQ', quantity=20, price=50.0, avg_purchase_price=100.0, change=0.0, totalValue=1000.0, last_cost=500.0}
-2022-01-15 22:02:50.317  INFO 3260 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of QQQ
-2022-01-15 22:02:50.318  INFO 3260 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Order #94 has been filled, Duration: 14/ms
-2022-01-15 22:02:56.322  INFO 3260 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [BUY] Purchase order for QQQ at $10.0. Total price: 100.0
-2022-01-15 22:02:56.326  INFO 3260 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Holding{id=31, walletId=3, ticker='QQQ', quantity=30, price=10.0, avg_purchase_price=75.0, change=0.0, totalValue=300.0, last_cost=100.0}
-2022-01-15 22:02:56.333  INFO 3260 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of QQQ
-2022-01-15 22:02:56.335  INFO 3260 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Order #95 has been filled, Duration: 12/ms
+2022-01-16 20:12:37.954  INFO 15464 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 15464 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-01-16 20:12:37.960  INFO 15464 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-01-16 20:12:38.664  INFO 15464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-16 20:12:38.729  INFO 15464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2022-01-16 20:12:39.030  INFO 15464 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6579c3d9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-16 20:12:39.034  INFO 15464 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-16 20:12:39.208  INFO 15464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 20:12:39.215  INFO 15464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 20:12:39.215  INFO 15464 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-01-16 20:12:39.307  INFO 15464 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 20:12:39.307  INFO 15464 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1304 ms
+2022-01-16 20:12:39.341  INFO 15464 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-01-16 20:12:39.624  INFO 15464 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-01-16 20:12:39.629  INFO 15464 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-01-16 20:12:39.759  INFO 15464 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-16 20:12:39.806  INFO 15464 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-01-16 20:12:40.005  INFO 15464 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-16 20:12:40.085  INFO 15464 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-01-16 20:12:40.892  INFO 15464 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-16 20:12:40.899  INFO 15464 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-16 20:12:41.251  WARN 15464 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-16 20:12:41.479  INFO 15464 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-01-16 20:12:41.511  INFO 15464 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6eabe718, org.springframework.security.web.context.SecurityContextPersistenceFilter@34ab26a, org.springframework.security.web.header.HeaderWriterFilter@4597e6e3, org.springframework.web.filter.CorsFilter@38d525aa, org.springframework.security.web.authentication.logout.LogoutFilter@1fb6b8fb, com.example.valuepaljava.jwt.JwtAuthenticationFilter@f9b8129, com.example.valuepaljava.jwt.JwtTokenVerifier@7530090a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12209826, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f39269d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4492b393, org.springframework.security.web.session.SessionManagementFilter@5e3d2765, org.springframework.security.web.access.ExceptionTranslationFilter@316d30ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6fde6f05]
+2022-01-16 20:12:41.812  INFO 15464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 20:12:41.821  INFO 15464 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 4.286 seconds (JVM running for 5.039)
+2022-01-16 20:14:59.473  INFO 15464 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 20:14:59.474  INFO 15464 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 20:14:59.477  INFO 15464 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-01-16 20:24:53.792  INFO 15464 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-01-16 20:24:53.794  INFO 15464 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-01-16 20:24:53.796  INFO 15464 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2022-01-16 20:24:57.686  INFO 7792 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 7792 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-01-16 20:24:57.689  INFO 7792 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-01-16 20:24:58.317  INFO 7792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-16 20:24:58.369  INFO 7792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
+2022-01-16 20:24:58.584  INFO 7792 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@349d0836' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-16 20:24:58.586  INFO 7792 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-16 20:24:58.743  INFO 7792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 20:24:58.749  INFO 7792 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 20:24:58.749  INFO 7792 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-01-16 20:24:58.824  INFO 7792 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 20:24:58.824  INFO 7792 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1091 ms
+2022-01-16 20:24:58.860  INFO 7792 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-01-16 20:24:59.117  INFO 7792 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-01-16 20:24:59.122  INFO 7792 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-01-16 20:24:59.227  INFO 7792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-16 20:24:59.259  INFO 7792 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-01-16 20:24:59.411  INFO 7792 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-16 20:24:59.487  INFO 7792 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-01-16 20:25:00.224  INFO 7792 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-16 20:25:00.231  INFO 7792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-16 20:25:00.537  WARN 7792 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-16 20:25:00.724  INFO 7792 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-01-16 20:25:00.752  INFO 7792 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6eabe718, org.springframework.security.web.context.SecurityContextPersistenceFilter@34ab26a, org.springframework.security.web.header.HeaderWriterFilter@4597e6e3, org.springframework.web.filter.CorsFilter@38d525aa, org.springframework.security.web.authentication.logout.LogoutFilter@1fb6b8fb, com.example.valuepaljava.jwt.JwtAuthenticationFilter@f9b8129, com.example.valuepaljava.jwt.JwtTokenVerifier@7530090a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12209826, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f39269d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4492b393, org.springframework.security.web.session.SessionManagementFilter@5e3d2765, org.springframework.security.web.access.ExceptionTranslationFilter@316d30ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6fde6f05]
+2022-01-16 20:25:01.053  INFO 7792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 20:25:01.066  INFO 7792 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 3.729 seconds (JVM running for 4.285)
+2022-01-16 20:25:45.276  INFO 7792 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 20:25:45.277  INFO 7792 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 20:25:45.278  INFO 7792 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-16 20:26:22.662  INFO 7792 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-01-16 20:26:22.668  INFO 7792 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
+2022-01-16 20:26:23.160  INFO 7792 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-01-16 20:26:23.162  INFO 7792 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
+2022-01-16 20:26:24.117  INFO 7792 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1455/ms
+2022-01-16 20:26:24.121  INFO 7792 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : Parsed String Quote{symbol='GME', longName='GameStop Corp.', price=116.65, change=-5.83, changePercent=-4.75996, time='1642194002'}
+2022-01-16 20:26:24.122  INFO 7792 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 4/ms
+2022-01-16 20:26:24.856  INFO 7792 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 1695/ms
+2022-01-16 20:26:29.017  INFO 7792 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase order for GME at $116.65. Total price: 1166.5
+2022-01-16 20:26:29.066  INFO 7792 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 3, holding id 32
+2022-01-16 20:26:29.074  INFO 7792 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 3 updated after purchase of GME
+2022-01-16 20:26:29.081  INFO 7792 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #96 has been filled, Duration: 63/ms
