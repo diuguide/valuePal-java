@@ -53,12 +53,14 @@ public class WalletService {
                     logger.info(String.format("[SELL] Entire holding of %s sold and holding entry removed.", order.getTicker()));
                 } else {
                     existingHolding.get().setTotalValue();
+                    existingHolding.get().setTimestamp(new Date());
                     Holding newHolding = holdingRepository.save(existingHolding.get());
                     logger.info(String.format("[SELL] Holding Updated: Wallet ID: %s updated with %s shares of %s", newHolding.getWallet(), newHolding.getQuantity(), newHolding.getTicker()));
                 }
                 currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() + order.getTotalValue());
                 order.setStatus("Filled");
                 order.setOrderType('S');
+                order.setTimestamp(new Date());
                 Order filledOrder = orderRepository.save(order);
                 long endTime = System.currentTimeMillis();
                 duration = endTime - startTime;
@@ -95,6 +97,7 @@ public class WalletService {
                 existingHolding.get().setPrice(order.getPrice());
                 existingHolding.get().setTotalValue();
                 logger.info(existingHolding.get().toString());
+                existingHolding.get().setTimestamp(new Date());
                 holdingRepository.save(existingHolding.get());
             } else {
                 System.out.println("order.price " + order.getPrice());
@@ -116,6 +119,7 @@ public class WalletService {
             order.setStatus("Filled");
             order.setOrderType('B');
             order.setTotal_cost();
+            order.setTimestamp(new Date());
             Order filledOrder = orderRepository.save(order);
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
