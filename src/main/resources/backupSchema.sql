@@ -36,8 +36,10 @@ RETURN v_total_cost / p_quantity;
 END;
 $$
 
-CREATE OR REPLACE FUNCTION valuepaldev.updateavgprice2()
-RETURNS TRIGGER AS $$
+CREATE OR REPLACE FUNCTION valuepal.updateavgprice2()
+ RETURNS trigger
+ LANGUAGE plpgsql
+AS $$
 DECLARE
 rec_count integer;
 BEGIN
@@ -46,13 +48,17 @@ SELECT
 INTO
     rec_count
 FROM
-    valuepaldev.orders
+    valuepal.orders
 WHERE
         ticker = NEW.ticker
   AND wallet_id = NEW.wallet_id;
 
-IF(rec_count > 0) THEN
-		NEW.avg_purchase_price := valuepaldev.calcavgprice(NEW.last_cost,
+IF(rec_count > 0) then
+	IF(new.process_flag = 'U') then
+	return new;
+
+end if;
+		NEW.avg_purchase_price := valuepal.calcavgprice(NEW.last_cost,
 		NEW.wallet_id,
 		NEW.ticker,
 		NEW.quantity);
@@ -63,4 +69,5 @@ ELSE
 RETURN NEW;
 END IF;
 END
-$$ LANGUAGE plpgsql;
+$$
+;
