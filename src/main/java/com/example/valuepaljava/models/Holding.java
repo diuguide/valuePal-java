@@ -34,7 +34,16 @@ public class Holding {
     @Column(name="last_cost", precision=10, scale=2)
     private Double last_cost;
 
+    @Column(name="process_flag")
+    private char process_flag = 'H';
 
+    public char getProcess_flag() {
+        return process_flag;
+    }
+
+    public void setProcess_flag(char process_flag) {
+        this.process_flag = process_flag;
+    }
 
     public Holding() {
     }
