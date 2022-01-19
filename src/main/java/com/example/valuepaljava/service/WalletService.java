@@ -54,6 +54,7 @@ public class WalletService {
                 } else {
                     existingHolding.get().setTotalValue();
                     existingHolding.get().setTimestamp(new Date());
+                    existingHolding.get().setProcess_flag('S');
                     Holding newHolding = holdingRepository.save(existingHolding.get());
                     logger.info(String.format("[SELL] Holding Updated: Wallet ID: %s updated with %s shares of %s", newHolding.getWallet(), newHolding.getQuantity(), newHolding.getTicker()));
                 }
@@ -98,6 +99,7 @@ public class WalletService {
                 existingHolding.get().setTotalValue();
                 logger.info(existingHolding.get().toString());
                 existingHolding.get().setTimestamp(new Date());
+                existingHolding.get().setProcess_flag('B');
                 holdingRepository.save(existingHolding.get());
             } else {
                 System.out.println("order.price " + order.getPrice());
@@ -110,6 +112,7 @@ public class WalletService {
                         order.getPrice()
                 );
                 System.out.println("New Holding: " + newHolding);
+                newHolding.setProcess_flag('B');
                 Holding savedHolding = holdingRepository.save(newHolding);
                 logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWallet(), savedHolding.getId()));
             }
