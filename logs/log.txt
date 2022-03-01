@@ -153,3 +153,6 @@
 2022-01-18 21:46:04.016  INFO 14520 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [SELL] Sell order for GME at $108.91. Has been initiated
 2022-01-18 21:46:04.028  INFO 14520 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [SELL] Holding Updated: Wallet ID: 1 updated with 4 shares of GME
 2022-01-18 21:46:04.036  INFO 14520 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [SELL] Order #7 has been filled.  Duration : 18/ms
+2022-01-18 21:57:13.760  INFO 14520 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-01-18 21:57:13.762  INFO 14520 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-01-18 21:57:13.765  INFO 14520 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
