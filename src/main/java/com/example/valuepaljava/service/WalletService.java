@@ -7,10 +7,12 @@ import com.example.valuepaljava.repos.HoldingRepository;
 import com.example.valuepaljava.repos.OrderRepository;
 import com.example.valuepaljava.repos.UserRepository;
 import com.example.valuepaljava.repos.WalletRepository;
+import com.example.valuepaljava.util.JsonUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +31,16 @@ public class WalletService {
     private final UserRepository userRepository;
     private final OrderRepository orderRepository;
     private final StockService stockService;
+    private final JsonUtil jsonUtil;
 
     @Autowired
-    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository, StockService stockService) {
+    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository, StockService stockService, JsonUtil jsonUtil) {
         this.holdingRepository = holdingRepository;
         this.walletRepository = walletRepository;
         this.userRepository = userRepository;
         this.orderRepository = orderRepository;
         this.stockService = stockService;
+        this.jsonUtil = jsonUtil;
     }
 
     public Order entryPointSell(Order order, String token) throws InsufficientFundsException{
@@ -85,9 +89,10 @@ public class WalletService {
         }
     }
 
-    public Order entryPointBuy(Order order, String token) {
+    public Order entryPointBuy(Order order, String token) throws ParseException {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
+        order.setPrice(jsonUtil.jsonParser(stockService.getTickerData(2, order.getTicker())).iterator().next().getPrice());
         User currentUser = jwtUtility(token);
         order.setWalletId(currentUser.getWallet().getWalletId());
         if(checkExistingBalance(order)) {
