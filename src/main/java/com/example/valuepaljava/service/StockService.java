@@ -42,8 +42,10 @@ public class StockService {
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
             logger.info(String.format("[API] getTickerData called: duration %s/ms", duration));
+            logger.info("API STRING: " + quoteResponse.getBody());
             return quoteResponse.getBody();
         } catch (Exception e) {
+            logger.info("ERROR INSIDE API CALL");
             e.printStackTrace();
         }
         return "An error has occurred!";
