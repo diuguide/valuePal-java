@@ -1,7 +1,9 @@
 package com.example.valuepaljava.controllers;
 
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
+import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.Order;
+import com.example.valuepaljava.service.StockService;
 import com.example.valuepaljava.service.WalletService;
 
 import com.example.valuepaljava.util.JsonUtil;
@@ -21,17 +23,26 @@ public class WalletController {
 
     private final Logger logger = LoggerFactory.getLogger(WalletController.class);
     private final WalletService walletService;
+    private final StockService stockService;
     private final JsonUtil jsonUtil;
 
     @Autowired
-    public WalletController(WalletService walletService, JsonUtil jsonUtil) {
+    public WalletController(WalletService walletService, StockService stockService, JsonUtil jsonUtil) {
         this.walletService = walletService;
+        this.stockService = stockService;
         this.jsonUtil = jsonUtil;
     }
 
     @PostMapping(value="/addStock")
     public ResponseEntity<Object> testStudentRole(@RequestHeader HttpHeaders headers, @RequestBody Order order){
-        logger.info(String.format("[BUY] Purchase order for %s at $%s. Total price: %s", order.getTicker(), order.getPrice(), order.getTotalValue()));
+        logger.info(String.format("[BUY] Purchase received: %s X %s", order.getQuantity(),order.getTicker() ));
+
+        try {
+            order.setPrice(jsonUtil.jsonParser(stockService.getTickerData(2, order.getTicker())).iterator().next().getPrice());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Cannot find stock data");
+        }
+
         if(headers.getFirst("Authorization") != null) {
             try {
                 return ResponseEntity.ok().body(walletService.entryPointBuy(order, headers.getFirst("Authorization")));

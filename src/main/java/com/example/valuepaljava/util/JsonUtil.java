@@ -37,7 +37,6 @@ public class JsonUtil {
                         (double) current.get("regularMarketChangePercent"),
                         (long) current.get("regularMarketTime"));
                 quotes.add(currentQuote);
-                logger.info(String.format("Parsed String %s", currentQuote));
             }
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;

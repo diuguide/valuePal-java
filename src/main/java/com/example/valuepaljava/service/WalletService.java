@@ -92,7 +92,6 @@ public class WalletService {
     public Order entryPointBuy(Order order, String token) throws ParseException {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
-        order.setPrice(jsonUtil.jsonParser(stockService.getTickerData(2, order.getTicker())).iterator().next().getPrice());
         User currentUser = jwtUtility(token);
         order.setWalletId(currentUser.getWallet().getWalletId());
         if(checkExistingBalance(order)) {
@@ -102,12 +101,10 @@ public class WalletService {
                 existingHolding.get().setQuantity(order.getQuantity()+existingHolding.get().getQuantity());
                 existingHolding.get().setPrice(order.getPrice());
                 existingHolding.get().setTotalValue();
-                logger.info(existingHolding.get().toString());
                 existingHolding.get().setTimestamp(new Date());
                 existingHolding.get().setProcess_flag('B');
                 holdingRepository.save(existingHolding.get());
             } else {
-                System.out.println("order.price " + order.getPrice());
                 Holding newHolding = new Holding(
                         order.getWalletId(),
                         order.getTicker(),
@@ -116,7 +113,6 @@ public class WalletService {
                         order.getTotalValue(),
                         order.getPrice()
                 );
-                System.out.println("New Holding: " + newHolding);
                 newHolding.setProcess_flag('B');
                 Holding savedHolding = holdingRepository.save(newHolding);
                 logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWallet(), savedHolding.getId()));
