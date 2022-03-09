@@ -39,7 +39,7 @@ public class UserService {
 
     public User getUserInfo(String token) {
         User userInfo = walletService.jwtUtility(token);
-        Set<Holding> holdings = holdingRepository.findHoldingByWalletId(userInfo.getWallet().getWalletId());
+        Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(userInfo.getWallet().getWalletId());
         if(holdings.size() > 0) {
             userInfo.getWallet().setHoldings(holdings);
         }

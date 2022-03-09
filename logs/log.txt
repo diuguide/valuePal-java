@@ -254,3 +254,111 @@ java.lang.IllegalStateException: Token cannot be trusted!
 2022-03-09 16:20:24.141  INFO 19464 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [SELL] Sell order for GME at $0.0. Has been initiated
 2022-03-09 16:20:24.146  INFO 19464 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [SELL] Holding Updated: Wallet ID: 1 updated with 8 shares of GME
 2022-03-09 16:20:24.148  INFO 19464 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [SELL] Order #25 has been filled.  Duration : 6/ms
+2022-03-09 16:49:58.266  INFO 13044 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 13044 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-03-09 16:49:58.270  INFO 13044 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-03-09 16:49:59.267  INFO 13044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-09 16:49:59.360  INFO 13044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 4 JPA repository interfaces.
+2022-03-09 16:49:59.701  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6d367020' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-09 16:49:59.706  INFO 13044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-09 16:49:59.945  INFO 13044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-09 16:49:59.956  INFO 13044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 16:49:59.956  INFO 13044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-03-09 16:50:00.074  INFO 13044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 16:50:00.074  INFO 13044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1732 ms
+2022-03-09 16:50:00.112  INFO 13044 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-03-09 16:50:00.455  INFO 13044 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-03-09 16:50:00.461  INFO 13044 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-03-09 16:50:00.617  INFO 13044 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-09 16:50:00.668  INFO 13044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-03-09 16:50:00.895  INFO 13044 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-09 16:50:01.024  INFO 13044 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-03-09 16:50:02.087  INFO 13044 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-09 16:50:02.097  INFO 13044 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-09 16:50:02.559  WARN 13044 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-09 16:50:02.899  INFO 13044 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-03-09 16:50:02.940  INFO 13044 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8383a14, org.springframework.security.web.context.SecurityContextPersistenceFilter@3cd46491, org.springframework.security.web.header.HeaderWriterFilter@754de353, org.springframework.web.filter.CorsFilter@4b691611, org.springframework.security.web.authentication.logout.LogoutFilter@6eeb29c0, com.example.valuepaljava.jwt.JwtAuthenticationFilter@395a573c, com.example.valuepaljava.jwt.JwtTokenVerifier@379f9555, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@349312d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1fb6b8fb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e3ee128, org.springframework.security.web.session.SessionManagementFilter@58b97c15, org.springframework.security.web.access.ExceptionTranslationFilter@58186f9f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@320ff86f]
+2022-03-09 16:50:03.385  INFO 13044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-09 16:50:03.400  INFO 13044 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 5.878 seconds (JVM running for 7.061)
+2022-03-09 16:51:03.841  INFO 13044 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-09 16:51:03.844  INFO 13044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-03-09 16:51:03.846  INFO 13044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2022-03-09 17:08:15.245  INFO 18448 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 18448 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-03-09 17:08:15.250  INFO 18448 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-03-09 17:08:16.501  INFO 18448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-09 17:08:16.620  INFO 18448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 4 JPA repository interfaces.
+2022-03-09 17:08:17.025  INFO 18448 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2e3a5237' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-09 17:08:17.030  INFO 18448 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-09 17:08:17.297  INFO 18448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-09 17:08:17.306  INFO 18448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 17:08:17.306  INFO 18448 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-03-09 17:08:17.429  INFO 18448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 17:08:17.430  INFO 18448 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2082 ms
+2022-03-09 17:08:17.475  INFO 18448 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-03-09 17:08:17.869  INFO 18448 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-03-09 17:08:17.877  INFO 18448 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-03-09 17:08:18.061  INFO 18448 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-09 17:08:18.119  INFO 18448 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-03-09 17:08:18.351  INFO 18448 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-09 17:08:18.474  INFO 18448 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-03-09 17:08:19.704  INFO 18448 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-09 17:08:19.717  INFO 18448 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-09 17:08:20.245  WARN 18448 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-09 17:08:20.635  INFO 18448 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-03-09 17:08:20.682  INFO 18448 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68b7bdcb, org.springframework.security.web.context.SecurityContextPersistenceFilter@22ca1242, org.springframework.security.web.header.HeaderWriterFilter@6eeb29c0, org.springframework.web.filter.CorsFilter@d84418a, org.springframework.security.web.authentication.logout.LogoutFilter@5486ee92, com.example.valuepaljava.jwt.JwtAuthenticationFilter@45e11627, com.example.valuepaljava.jwt.JwtTokenVerifier@ec5f944, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78288f83, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44084713, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b4954b2, org.springframework.security.web.session.SessionManagementFilter@6f986501, org.springframework.security.web.access.ExceptionTranslationFilter@3dfe92ef, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19faedcc]
+2022-03-09 17:08:21.197  INFO 18448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-09 17:08:21.213  INFO 18448 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 6.717 seconds (JVM running for 7.778)
+2022-03-09 17:08:38.377  INFO 18448 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 17:08:38.377  INFO 18448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-09 17:08:38.379  INFO 18448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-03-09 17:08:39.094  INFO 18448 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-03-09 17:08:47.447  INFO 18448 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 4 ms
+2022-03-09 17:08:51.074  INFO 18448 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-09 17:10:12.538  INFO 18448 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-09 17:10:12.540  INFO 18448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-03-09 17:10:12.544  INFO 18448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2022-03-09 17:10:36.829  INFO 12420 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 12420 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-03-09 17:10:36.832  INFO 12420 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-03-09 17:10:37.745  INFO 12420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-09 17:10:37.831  INFO 12420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 4 JPA repository interfaces.
+2022-03-09 17:10:38.191  INFO 12420 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@349d0836' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-09 17:10:38.196  INFO 12420 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-09 17:10:38.456  INFO 12420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-09 17:10:38.466  INFO 12420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 17:10:38.466  INFO 12420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-03-09 17:10:38.588  INFO 12420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 17:10:38.588  INFO 12420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1696 ms
+2022-03-09 17:10:38.635  INFO 12420 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-03-09 17:10:39.053  INFO 12420 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-03-09 17:10:39.059  INFO 12420 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-03-09 17:10:39.254  INFO 12420 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-09 17:10:39.335  INFO 12420 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-03-09 17:10:39.646  INFO 12420 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-09 17:10:39.792  INFO 12420 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-03-09 17:10:40.989  INFO 12420 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-09 17:10:41.003  INFO 12420 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-09 17:10:41.481  WARN 12420 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-09 17:10:41.747  INFO 12420 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-03-09 17:10:41.783  INFO 12420 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7dd91ffc, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b9b17ce, org.springframework.security.web.header.HeaderWriterFilter@5238896f, org.springframework.web.filter.CorsFilter@1c2dd89b, org.springframework.security.web.authentication.logout.LogoutFilter@1d4cc7, com.example.valuepaljava.jwt.JwtAuthenticationFilter@3ad847f8, com.example.valuepaljava.jwt.JwtTokenVerifier@19faedcc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@274bae2c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5beb6be2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c6927f0, org.springframework.security.web.session.SessionManagementFilter@4a2e1e52, org.springframework.security.web.access.ExceptionTranslationFilter@2712e8f4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5817f1ca]
+2022-03-09 17:10:42.176  INFO 12420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-09 17:10:42.189  INFO 12420 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 5.974 seconds (JVM running for 7.091)
+2022-03-09 17:10:46.006  INFO 12420 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 17:10:46.006  INFO 12420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-09 17:10:46.008  INFO 12420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-09 17:10:46.341  INFO 12420 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 188 ms
+2022-03-09 17:10:50.496  INFO 12420 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-03-09 17:10:57.912  INFO 12420 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 4 ms
+2022-03-09 17:10:58.729  INFO 12420 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-03-09 17:11:01.396  INFO 12420 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 5 ms
+2022-03-09 17:11:16.868  INFO 12420 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 3 ms
+2022-03-09 17:11:17.941  INFO 12420 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 6 ms
+2022-03-09 17:24:49.473  INFO 12420 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 8 ms
+2022-03-09 17:24:55.800  INFO 12420 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 4 ms
+2022-03-09 17:24:57.125  INFO 12420 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-03-09 17:24:58.275  INFO 12420 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 4 ms
+2022-03-09 17:24:59.429  INFO 12420 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-09 17:25:00.636  INFO 12420 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 4 ms
+2022-03-09 17:25:02.172  INFO 12420 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-09 17:25:06.594  INFO 12420 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 4 ms
+2022-03-09 17:25:59.035  INFO 12420 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-09 17:25:59.037  INFO 12420 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-03-09 17:25:59.040  INFO 12420 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
