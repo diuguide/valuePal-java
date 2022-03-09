@@ -1,6 +1,7 @@
 package com.example.valuepaljava.service;
 
 import com.example.valuepaljava.Yahoo.HeaderConfig;
+import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +37,7 @@ public class StockService {
         for(String el : ticker) {
             uri.append(el).append(",");
         }
-        logger.info(uri.toString());
+        logger.info("[API] " + uri.toString());
         try {
             ResponseEntity<String> quoteResponse = restTemplate.exchange(uri.toString(), HttpMethod.GET, request, String.class, 1);
             long endTime = System.currentTimeMillis();
@@ -44,9 +45,9 @@ public class StockService {
             logger.info(String.format("[API] getTickerData called: duration %s/ms", duration));
             return quoteResponse.getBody();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.info("ERROR INSIDE API CALL");
+            throw new InvalidInputException("An error has occurred, please try again.");
         }
-        return "An error has occurred!";
     }
 
     public String getTickerHistory(int api, String interval, String range, String... ticker) {

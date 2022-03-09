@@ -7,10 +7,12 @@ import com.example.valuepaljava.repos.HoldingRepository;
 import com.example.valuepaljava.repos.OrderRepository;
 import com.example.valuepaljava.repos.UserRepository;
 import com.example.valuepaljava.repos.WalletRepository;
+import com.example.valuepaljava.util.JsonUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +31,16 @@ public class WalletService {
     private final UserRepository userRepository;
     private final OrderRepository orderRepository;
     private final StockService stockService;
+    private final JsonUtil jsonUtil;
 
     @Autowired
-    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository, StockService stockService) {
+    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository, StockService stockService, JsonUtil jsonUtil) {
         this.holdingRepository = holdingRepository;
         this.walletRepository = walletRepository;
         this.userRepository = userRepository;
         this.orderRepository = orderRepository;
         this.stockService = stockService;
+        this.jsonUtil = jsonUtil;
     }
 
     public Order entryPointSell(Order order, String token) throws InsufficientFundsException{
@@ -85,7 +89,7 @@ public class WalletService {
         }
     }
 
-    public Order entryPointBuy(Order order, String token) {
+    public Order entryPointBuy(Order order, String token) throws ParseException {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
         User currentUser = jwtUtility(token);
@@ -97,12 +101,10 @@ public class WalletService {
                 existingHolding.get().setQuantity(order.getQuantity()+existingHolding.get().getQuantity());
                 existingHolding.get().setPrice(order.getPrice());
                 existingHolding.get().setTotalValue();
-                logger.info(existingHolding.get().toString());
                 existingHolding.get().setTimestamp(new Date());
                 existingHolding.get().setProcess_flag('B');
                 holdingRepository.save(existingHolding.get());
             } else {
-                System.out.println("order.price " + order.getPrice());
                 Holding newHolding = new Holding(
                         order.getWalletId(),
                         order.getTicker(),
@@ -111,7 +113,6 @@ public class WalletService {
                         order.getTotalValue(),
                         order.getPrice()
                 );
-                System.out.println("New Holding: " + newHolding);
                 newHolding.setProcess_flag('B');
                 Holding savedHolding = holdingRepository.save(newHolding);
                 logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWallet(), savedHolding.getId()));
