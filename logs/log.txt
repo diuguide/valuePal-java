@@ -172,3 +172,85 @@ java.lang.IllegalStateException: Token cannot be trusted!
 2022-03-09 16:11:36.120  INFO 17412 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-03-09 16:11:36.125  INFO 17412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
 2022-03-09 16:11:36.131  INFO 17412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2022-03-09 16:15:07.426  INFO 19464 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 19464 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-03-09 16:15:07.431  INFO 19464 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-03-09 16:15:08.615  INFO 19464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-09 16:15:08.710  INFO 19464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 4 JPA repository interfaces.
+2022-03-09 16:15:09.071  INFO 19464 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6d367020' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-09 16:15:09.076  INFO 19464 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-09 16:15:09.327  INFO 19464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-09 16:15:09.336  INFO 19464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 16:15:09.337  INFO 19464 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-03-09 16:15:09.466  INFO 19464 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 16:15:09.466  INFO 19464 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1967 ms
+2022-03-09 16:15:09.505  INFO 19464 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-03-09 16:15:09.894  INFO 19464 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-03-09 16:15:09.901  INFO 19464 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-03-09 16:15:10.078  INFO 19464 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-09 16:15:10.131  INFO 19464 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-03-09 16:15:10.319  INFO 19464 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-09 16:15:10.432  INFO 19464 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-03-09 16:15:11.476  INFO 19464 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-09 16:15:11.486  INFO 19464 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-09 16:15:11.927  WARN 19464 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-09 16:15:12.231  INFO 19464 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-03-09 16:15:12.270  INFO 19464 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@166ce247, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e3252, org.springframework.security.web.header.HeaderWriterFilter@349312d5, org.springframework.web.filter.CorsFilter@5d92e8e2, org.springframework.security.web.authentication.logout.LogoutFilter@78288f83, com.example.valuepaljava.jwt.JwtAuthenticationFilter@542c65d9, com.example.valuepaljava.jwt.JwtTokenVerifier@cdbe995, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@671d97bc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44b9c7c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7dd45c93, org.springframework.security.web.session.SessionManagementFilter@47eaf55c, org.springframework.security.web.access.ExceptionTranslationFilter@58b97c15, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@395a573c]
+2022-03-09 16:15:12.740  INFO 19464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-09 16:15:12.763  INFO 19464 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 6.053 seconds (JVM running for 7.305)
+2022-03-09 16:15:25.270  INFO 19464 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 16:15:25.270  INFO 19464 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-09 16:15:25.271  INFO 19464 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-03-09 16:15:37.253  INFO 19464 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,BB,QQQ,FB,FRI,FR,F,GME,PROG,
+2022-03-09 16:15:38.272  INFO 19464 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1028/ms
+2022-03-09 16:15:38.283  INFO 19464 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 11/ms
+2022-03-09 16:15:38.294  INFO 19464 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [UPDATE] Updated holding information.  Updated in 11 ms
+2022-03-09 16:18:49.911  INFO 19464 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-09 16:18:49.913  INFO 19464 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=QQQ,
+2022-03-09 16:18:50.421  INFO 19464 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-03-09 16:18:50.423  INFO 19464 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=QQQ,&interval=1m&range=1d
+2022-03-09 16:18:50.580  INFO 19464 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 668/ms
+2022-03-09 16:18:50.581  INFO 19464 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-09 16:18:50.978  INFO 19464 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 557/ms
+2022-03-09 16:18:56.834  INFO 19464 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [BUY] Purchase received: 2 X QQQ
+2022-03-09 16:18:56.837  INFO 19464 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=QQQ,
+2022-03-09 16:18:57.500  INFO 19464 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 665/ms
+2022-03-09 16:18:57.501  INFO 19464 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-09 16:18:57.536  INFO 19464 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of QQQ
+2022-03-09 16:18:57.547  INFO 19464 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [BUY] Order #22 has been filled, Duration: 46/ms
+2022-03-09 16:19:37.947  INFO 19464 --- [http-nio-8080-exec-5] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-09 16:19:37.949  INFO 19464 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,
+2022-03-09 16:19:38.473  INFO 19464 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-03-09 16:19:38.478  INFO 19464 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=PROG,&interval=1m&range=1d
+2022-03-09 16:19:38.539  INFO 19464 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 591/ms
+2022-03-09 16:19:38.539  INFO 19464 --- [http-nio-8080-exec-5] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-09 16:19:39.038  INFO 19464 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 565/ms
+2022-03-09 16:19:50.830  INFO 19464 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase received: 10 X PROG
+2022-03-09 16:19:50.832  INFO 19464 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,
+2022-03-09 16:19:50.907  INFO 19464 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase received: 0 X PROG
+2022-03-09 16:19:50.909  INFO 19464 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,
+2022-03-09 16:19:51.434  INFO 19464 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 604/ms
+2022-03-09 16:19:51.434  INFO 19464 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-09 16:19:51.443  INFO 19464 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of PROG
+2022-03-09 16:19:51.446  INFO 19464 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #23 has been filled, Duration: 11/ms
+2022-03-09 16:19:51.742  INFO 19464 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 835/ms
+2022-03-09 16:19:51.742  INFO 19464 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-09 16:19:51.753  INFO 19464 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of PROG
+2022-03-09 16:19:51.755  INFO 19464 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [BUY] Order #24 has been filled, Duration: 13/ms
+2022-03-09 16:20:05.433  INFO 19464 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,BB,QQQ,FB,FRI,FR,F,GME,PROG,
+2022-03-09 16:20:06.231  INFO 19464 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 800/ms
+2022-03-09 16:20:06.233  INFO 19464 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-09 16:20:06.240  INFO 19464 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [UPDATE] Updated holding information.  Updated in 6 ms
+2022-03-09 16:20:06.853  INFO 19464 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,BB,QQQ,FB,FRI,FR,F,GME,PROG,
+2022-03-09 16:20:07.569  INFO 19464 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 719/ms
+2022-03-09 16:20:07.572  INFO 19464 --- [http-nio-8080-exec-5] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-09 16:20:07.577  INFO 19464 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [UPDATE] Updated holding information.  Updated in 4 ms
+2022-03-09 16:20:17.570  INFO 19464 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-09 16:20:17.572  INFO 19464 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
+2022-03-09 16:20:18.073  INFO 19464 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-03-09 16:20:18.075  INFO 19464 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
+2022-03-09 16:20:18.573  INFO 19464 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1002/ms
+2022-03-09 16:20:18.573  INFO 19464 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-09 16:20:18.959  INFO 19464 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 886/ms
+2022-03-09 16:20:24.141  INFO 19464 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [SELL] Sell order for GME at $0.0. Has been initiated
+2022-03-09 16:20:24.146  INFO 19464 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [SELL] Holding Updated: Wallet ID: 1 updated with 8 shares of GME
+2022-03-09 16:20:24.148  INFO 19464 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [SELL] Order #25 has been filled.  Duration : 6/ms
