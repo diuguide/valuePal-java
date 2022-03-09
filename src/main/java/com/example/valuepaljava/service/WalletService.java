@@ -207,4 +207,18 @@ public class WalletService {
         throw new InvalidInputException("No orders found!");
     }
 
+    public Set<Holding> getUserHoldings(String token) {
+        long startTime = System.currentTimeMillis();
+        long duration = 0L;
+        User currentUser = jwtUtility(token);
+        long endTime = System.currentTimeMillis();
+        duration = endTime - startTime;
+        Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(currentUser.getWallet().getWalletId());
+        if(holdings.size() > 0) {
+            logger.info(String.format("[DATA] %s retrieved all holdings. Duration %s ms", currentUser.getUsername(), duration));
+            return holdings;
+        }
+        throw new InvalidInputException("No holdings found!");
+    }
+
 }
