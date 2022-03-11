@@ -68,6 +68,13 @@ public class WalletController {
     @PostMapping(value="/sellStock")
     public ResponseEntity<Object> sellHoldingOrder(@RequestHeader HttpHeaders headers, @RequestBody Order order) {
         logger.info(String.format("[SELL] Sell order for %s at $%s. Has been initiated", order.getTicker(), order.getPrice()));
+
+        try {
+            order.setPrice(jsonUtil.jsonParser(stockService.getTickerData(2, order.getTicker())).iterator().next().getPrice());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Cannot find stock data");
+        }
+
         try {
             Order completedOrder = walletService.entryPointSell(order, headers.getFirst("Authorization"));
             return ResponseEntity.ok().body(completedOrder);
