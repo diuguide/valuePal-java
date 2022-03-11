@@ -50,7 +50,7 @@ public class WalletService {
         order.setWalletId(currentUser.getWallet().getWalletId());
         Optional<Holding> existingHolding = checkForHolding(order);
         if(existingHolding.isPresent()) {
-            if(existingHolding.get().getQuantity() >= order.getQuantity()) {
+            if(existingHolding.get().getQuantity() >= (int) order.getQuantity()) {
                 existingHolding.get().setQuantity(existingHolding.get().getQuantity() - order.getQuantity());
                 if(existingHolding.get().getQuantity() == 0) {
                     holdingRepository.delete(existingHolding.get());
@@ -73,6 +73,8 @@ public class WalletService {
                 return filledOrder;
             } else {
                 order.setStatus("Rejected");
+                order.setOrderType('S');
+                order.setTimestamp(new Date());
                 orderRepository.save(order);
                 long endTime = System.currentTimeMillis();
                 duration = endTime - startTime;
