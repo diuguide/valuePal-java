@@ -105,7 +105,6 @@ public class WalletService {
                 existingHolding.get().setTotalValue();
                 existingHolding.get().setTimestamp(new Date());
                 existingHolding.get().setProcess_flag('B');
-                holdingRepository.save(existingHolding.get());
             } else {
                 Holding newHolding = new Holding(
                         order.getWalletId(),
@@ -127,6 +126,7 @@ public class WalletService {
             order.setTotal_cost();
             order.setTimestamp(new Date());
             Order filledOrder = orderRepository.save(order);
+            existingHolding.ifPresent(holdingRepository::save);
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
             logger.info(String.format("[BUY] Order #%s has been filled, Duration: %s/ms", filledOrder.getId(), duration));
