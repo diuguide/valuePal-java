@@ -105,6 +105,7 @@ public class WalletService {
                         order.getTicker(),
                         order.getQuantity()
                 );
+                newHolding.setTimestamp(new Date());
                 Holding savedHolding = holdingRepository.save(newHolding);
                 logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWalletId(), savedHolding.getId()));
             }
@@ -171,18 +172,6 @@ public class WalletService {
             holdingsAsStringArray[index++] = str;
         }
         return stockService.getTickerData(2, holdingsAsStringArray);
-    }
-
-    @Transactional
-    public void updateHoldingsTable(Set<Quote> quotes) {
-        long startTime = System.currentTimeMillis();
-        long duration = 0L;
-        for(Quote q : quotes) {
-            holdingRepository.updateTickerPrices(q.getPrice(), q.getChange(), q.getSymbol());
-        }
-        long endTime = System.currentTimeMillis();
-        duration = endTime - startTime;
-        logger.info(String.format("[UPDATE] Updated holding information.  Updated in %s ms", duration));
     }
 
     public Set<Order> getUserOrders(String token) {

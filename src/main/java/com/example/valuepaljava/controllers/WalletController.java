@@ -54,17 +54,6 @@ public class WalletController {
         return ResponseEntity.badRequest().body("403: Forbidden");
     }
 
-    @GetMapping(value="/updateHoldings")
-    public String updateHoldings() throws ParseException {
-        try {
-            walletService.updateHoldingsTable(jsonUtil.jsonParser(walletService.updateAllHoldings()));
-            return "SUCCESS";
-        } catch (Exception e) {
-            return "Something went wrong...";
-        }
-
-    }
-
     @PostMapping(value="/sellStock")
     public ResponseEntity<Object> sellHoldingOrder(@RequestHeader HttpHeaders headers, @RequestBody Order order) {
         logger.info(String.format("[SELL] Sell order for %s at $%s. Has been initiated", order.getTicker(), order.getPrice()));

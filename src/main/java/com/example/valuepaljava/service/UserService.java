@@ -38,15 +38,15 @@ public class UserService {
         this.holdingRepository = holdingRepository;
     }
 
-    public User getUserInfo(String token) {
+    public UserInfoDTO getUserInfo(String token) {
         User userInfo = walletService.jwtUtility(token);
         Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(userInfo.getWallet().getWalletId());
         UserInfoDTO userInfoDTO = new UserInfoDTO(userInfo.getFirstName(),userInfo.getUsername(), holdings, userInfo.getRole(), userInfo.getWallet().getWalletId());
         if(holdings.size() > 0) {
             userInfoDTO.setHoldings(holdings);
         }
-        userInfo.setPassword(null);
-        return userInfo;
+
+        return userInfoDTO;
     }
 
     public boolean validateUser(User user) {
