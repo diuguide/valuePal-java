@@ -69,7 +69,7 @@ public class UserServiceTest {
 
     @Test
     public void validateUser() {
-        User fullUser = new User(1, "Everett", "ediuguid", "Password1!", "ediuguid@gmail.com", "", "ROLE_STUDENT");
+        User fullUser = new User(1, "Everett", "ediuguid", "Password1!", "ediuguid@gmail.com", "ROLE_STUDENT");
         when(mockUserRepository.findUserByUsername(anyString())).thenReturn(Optional.empty());
         when(mockUserRepository.findUserByEmail(anyString())).thenReturn(Optional.empty());
         assertTrue(sut.validateUser(fullUser));
@@ -91,7 +91,7 @@ public class UserServiceTest {
 
     @Test
     public void saveValidUserTest() {
-        User fullUser = new User(1, "Everett", "ediuguid", "Password1!", "ediuguid@gmail.com", "", "ROLE_STUDENT");
+        User fullUser = new User(1, "Everett", "ediuguid", "Password1!", "ediuguid@gmail.com", "ROLE_STUDENT");
         when(mockUserRepository.findUserByUsername(anyString())).thenReturn(Optional.empty());
         when(mockUserRepository.findUserByEmail(anyString())).thenReturn(Optional.empty());
         when(mockUserRepository.save(any())).thenReturn(fullUser);
@@ -100,7 +100,7 @@ public class UserServiceTest {
 
     @Test(expected = InvalidInputException.class)
     public void saveInvalidUserTest() {
-        User fullUser = new User(1, "Everett!", "ediuguid", "password", "ediuguid@gmail.com", "", "ROLE_STUDENT");
+        User fullUser = new User(1, "Everett!", "ediuguid", "password", "ediuguid@gmail.com", "ROLE_STUDENT");
         when(mockUserRepository.findUserByUsername(anyString())).thenReturn(Optional.empty());
         when(mockUserRepository.findUserByEmail(anyString())).thenReturn(Optional.empty());
         sut.saveUser(fullUser);

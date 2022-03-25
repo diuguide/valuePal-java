@@ -3,6 +3,7 @@ package com.example.valuepaljava.service;
 import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.Holding;
 import com.example.valuepaljava.models.User;
+import com.example.valuepaljava.models.UserInfoDTO;
 import com.example.valuepaljava.models.Wallet;
 import com.example.valuepaljava.repos.HoldingRepository;
 import com.example.valuepaljava.repos.UserRepository;
@@ -40,8 +41,9 @@ public class UserService {
     public User getUserInfo(String token) {
         User userInfo = walletService.jwtUtility(token);
         Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(userInfo.getWallet().getWalletId());
+        UserInfoDTO userInfoDTO = new UserInfoDTO(userInfo.getFirstName(),userInfo.getUsername(), holdings, userInfo.getRole(), userInfo.getWallet().getWalletId());
         if(holdings.size() > 0) {
-            userInfo.getWallet().setHoldings(holdings);
+            userInfoDTO.setHoldings(holdings);
         }
         userInfo.setPassword(null);
         return userInfo;

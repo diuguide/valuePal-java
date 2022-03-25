@@ -105,6 +105,10 @@ public class Order {
         this.id = id;
     }
 
+    public double getTotalValue() {
+        return price * quantity;
+    }
+
     @Override
     public String toString() {
         return "Order{" +

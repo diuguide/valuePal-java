@@ -26,7 +26,7 @@ public class Holding {
     public Holding() {
     }
 
-    public Holding(int walletId, String ticker, int quantity, double price, double totalValue, Double avg_purchase_price) {
+    public Holding(int walletId, String ticker, int quantity) {
         this.walletId = walletId;
         this.ticker = ticker;
         this.quantity = quantity;
@@ -62,6 +62,14 @@ public class Holding {
 
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public int getWalletId() {
+        return walletId;
+    }
+
+    public void setWalletId(int walletId) {
+        this.walletId = walletId;
     }
 
     @Override
