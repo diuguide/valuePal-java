@@ -71,11 +71,7 @@ public class Holding {
                 ", walletId=" + walletId +
                 ", ticker='" + ticker + '\'' +
                 ", quantity=" + quantity +
-                ", price=" + price +
-                ", avg_purchase_price=" + avg_purchase_price +
-                ", change=" + change +
-                ", totalValue=" + totalValue +
-                ", last_cost=" + last_cost +
+                ", timestamp=" + timestamp +
                 '}';
     }
 }
