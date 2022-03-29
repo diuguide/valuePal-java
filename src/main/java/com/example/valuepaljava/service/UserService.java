@@ -7,6 +7,7 @@ import com.example.valuepaljava.models.UserInfoDTO;
 import com.example.valuepaljava.models.Wallet;
 import com.example.valuepaljava.repos.HoldingRepository;
 import com.example.valuepaljava.repos.UserRepository;
+import com.example.valuepaljava.repos.WalletRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,17 +26,19 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final WalletService walletService;
     private final HoldingRepository holdingRepository;
+    private final WalletRepository walletRepository;
     private final Pattern nameValidation = Pattern.compile("^[a-zA-z]+$");
     private final Pattern userNamePattern = Pattern.compile("[A-Za-z0-9_]+");
     private final Pattern passwordPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
     private final Pattern emailPattern = Pattern.compile("^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
 
     @Autowired
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, WalletService walletService, HoldingRepository holdingRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, WalletService walletService, HoldingRepository holdingRepository, WalletRepository walletRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.walletService = walletService;
         this.holdingRepository = holdingRepository;
+        this.walletRepository = walletRepository;
     }
 
     public UserInfoDTO getUserInfo(String token) {
@@ -47,6 +50,12 @@ public class UserService {
         }
 
         return userInfoDTO;
+    }
+
+    public Wallet getTotalCash(String token) {
+        User userCash = walletService.jwtUtility(token);
+        Wallet resultSet = walletRepository.getToTalCashByWalletId(userCash.getWallet().getWalletId());
+        return walletRepository.getToTalCashByWalletId(userCash.getWallet().getWalletId());
     }
 
     public boolean validateUser(User user) {
