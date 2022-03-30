@@ -201,6 +201,7 @@ public class WalletService {
             logger.info(String.format("[DATA] %s retrieved all holdings. Duration %s ms", currentUser.getUsername(), duration));
             return holdings;
         }
+
         throw new InvalidInputException("No holdings found!");
     }
 

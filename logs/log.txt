@@ -419,3 +419,422 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2022-03-29 16:27:07.740  INFO 15616 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-03-29 16:27:07.741  INFO 15616 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-03-29 16:27:07.742  INFO 15616 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-29 16:33:04.911  WARN 15616 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-03-29 16:33:09.949  INFO 15616 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [BUY] Purchase received: 10 X INFY
+2022-03-29 16:33:09.955  INFO 15616 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=INFY,
+2022-03-29 16:33:10.040  INFO 15616 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : ERROR INSIDE API CALL
+2022-03-29 16:33:32.840  INFO 15616 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [BUY] Purchase received: 10 X INFY
+2022-03-29 16:33:32.843  INFO 15616 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=INFY,
+2022-03-29 16:33:34.137  INFO 15616 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1297/ms
+2022-03-29 16:33:34.142  INFO 15616 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 4/ms
+2022-03-29 16:33:34.204  INFO 15616 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of INFY
+2022-03-29 16:33:34.222  INFO 15616 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [BUY] Order #8 has been filled, Duration: 79/ms
+2022-03-29 16:34:22.202  INFO 15616 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [SELL] Sell order for INFY at $0.0. Has been initiated
+2022-03-29 16:34:22.205  INFO 15616 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=INFY,
+2022-03-29 16:34:22.205  INFO 15616 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : ERROR INSIDE API CALL
+2022-03-29 16:34:38.342  INFO 15616 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [SELL] Sell order for INFY at $0.0. Has been initiated
+2022-03-29 16:34:38.345  INFO 15616 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=INFY,
+2022-03-29 16:34:39.334  INFO 15616 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 992/ms
+2022-03-29 16:34:39.338  INFO 15616 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 16:34:39.358  INFO 15616 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [SELL] Holding Updated: Wallet ID: 1 updated with 10 shares of INFY
+2022-03-29 16:34:39.363  INFO 15616 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [SELL] Order #9 has been filled.  Duration : 25/ms
+2022-03-29 16:36:52.524  INFO 15616 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 16:36:52.526  INFO 15616 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-03-29 16:36:52.527  INFO 15616 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2022-03-29 16:38:04.755  INFO 11116 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 11116 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-03-29 16:38:04.763  INFO 11116 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-03-29 16:38:06.154  INFO 11116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-29 16:38:06.217  INFO 11116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 4 JPA repository interfaces.
+2022-03-29 16:38:06.571  INFO 11116 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@65327f5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-29 16:38:06.574  INFO 11116 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-29 16:38:06.953  INFO 11116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-29 16:38:06.970  INFO 11116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-29 16:38:06.971  INFO 11116 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-03-29 16:38:07.120  INFO 11116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-29 16:38:07.120  INFO 11116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2268 ms
+2022-03-29 16:38:07.155  INFO 11116 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-03-29 16:38:07.542  INFO 11116 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-03-29 16:38:07.548  INFO 11116 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-03-29 16:38:07.776  INFO 11116 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-29 16:38:07.844  INFO 11116 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-03-29 16:38:08.081  INFO 11116 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-29 16:38:08.204  INFO 11116 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-03-29 16:38:09.253  INFO 11116 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-29 16:38:09.263  INFO 11116 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 16:38:09.651  WARN 11116 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-29 16:38:09.953  INFO 11116 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-03-29 16:38:10.003  INFO 11116 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@628ba266, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a7ebe07, org.springframework.security.web.header.HeaderWriterFilter@43deba42, org.springframework.web.filter.CorsFilter@1231a1be, org.springframework.security.web.authentication.logout.LogoutFilter@67a8bcbb, com.example.valuepaljava.jwt.JwtAuthenticationFilter@1d77746b, com.example.valuepaljava.jwt.JwtTokenVerifier@4ced17f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5eeee124, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a9e8da1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@734a149a, org.springframework.security.web.session.SessionManagementFilter@38c10190, org.springframework.security.web.access.ExceptionTranslationFilter@6133e20b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a9869a8]
+2022-03-29 16:38:10.508  INFO 11116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 16:38:10.525  INFO 11116 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 6.445 seconds (JVM running for 7.504)
+2022-03-29 16:38:47.256  INFO 11116 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 16:38:47.256  INFO 11116 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-29 16:38:47.257  INFO 11116 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-29 16:38:47.457  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 102 ms
+2022-03-29 16:38:55.388  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 5 ms
+2022-03-29 16:41:08.019  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-03-29 16:42:16.357  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-03-29 16:46:06.914  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-03-29 16:46:13.038  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:46:29.441  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:46:56.643  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 5 ms
+2022-03-29 16:46:59.352  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:47:06.213  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:47:10.296  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:47:20.687  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:47:40.881  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 3 ms
+2022-03-29 16:47:49.104  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:47:52.139  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 4 ms
+2022-03-29 16:47:54.345  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:50:41.897  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 5 ms
+2022-03-29 16:51:30.402  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:51:40.500  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:51:44.944  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-03-29 16:51:45.724  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:52:02.346  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 16:52:02.353  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,
+2022-03-29 16:52:02.429  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : ERROR INSIDE API CALL
+2022-03-29 16:52:02.847  INFO 11116 --- [http-nio-8080-exec-1] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-03-29 16:52:02.850  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=PROG,&interval=1m&range=1d
+2022-03-29 16:54:08.760  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 2 ms
+2022-03-29 16:54:37.252  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.UserService     : [REGISTER] User: frankTheTank with userId: 2 has been registered
+2022-03-29 16:56:23.510  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 2 ms
+2022-03-29 16:56:37.337  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 16:56:38.345  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 2 ms
+2022-03-29 16:57:02.459  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-03-29 17:01:58.334  INFO 11116 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:01:58.339  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
+2022-03-29 17:01:58.863  INFO 11116 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-03-29 17:01:58.867  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
+2022-03-29 17:02:00.030  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1695/ms
+2022-03-29 17:02:00.039  INFO 11116 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 7/ms
+2022-03-29 17:02:00.115  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 1251/ms
+2022-03-29 17:02:04.149  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [BUY] Purchase received: 10 X GME
+2022-03-29 17:02:04.151  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
+2022-03-29 17:02:05.145  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 995/ms
+2022-03-29 17:02:05.149  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 17:02:05.195  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 4
+2022-03-29 17:02:05.206  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of GME
+2022-03-29 17:02:05.210  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [BUY] Order #10 has been filled, Duration: 61/ms
+2022-03-29 17:02:11.176  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:02:11.181  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,
+2022-03-29 17:02:11.682  INFO 11116 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-03-29 17:02:11.685  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=PROG,&interval=1m&range=1d
+2022-03-29 17:02:12.112  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 934/ms
+2022-03-29 17:02:12.114  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:02:13.247  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 1564/ms
+2022-03-29 17:02:16.839  INFO 11116 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [BUY] Purchase received: 1000 X PROG
+2022-03-29 17:02:16.840  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,
+2022-03-29 17:02:17.879  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1040/ms
+2022-03-29 17:02:17.879  INFO 11116 --- [http-nio-8080-exec-5] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 17:02:17.885  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 5
+2022-03-29 17:02:17.889  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of PROG
+2022-03-29 17:02:17.890  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [BUY] Order #11 has been filled, Duration: 10/ms
+2022-03-29 17:02:27.512  INFO 11116 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:02:27.515  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=HD,
+2022-03-29 17:02:28.015  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-03-29 17:02:28.016  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=HD,&interval=1m&range=1d
+2022-03-29 17:02:28.386  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 873/ms
+2022-03-29 17:02:28.388  INFO 11116 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 17:02:28.842  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 827/ms
+2022-03-29 17:02:38.891  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [BUY] Purchase received: 5 X HD
+2022-03-29 17:02:38.894  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=HD,
+2022-03-29 17:02:40.122  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1231/ms
+2022-03-29 17:02:40.122  INFO 11116 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 17:02:40.129  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 2, holding id 6
+2022-03-29 17:02:40.133  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 2 updated after purchase of HD
+2022-03-29 17:02:40.135  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [BUY] Order #12 has been filled, Duration: 13/ms
+2022-03-29 17:03:12.001  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:17:49.672  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 8 ms
+2022-03-29 17:17:51.186  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:17:52.822  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:21:33.668  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 6 ms
+2022-03-29 17:23:13.533  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:27:37.057  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:27:37.068  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:27:37.070  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:27:38.598  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1530/ms
+2022-03-29 17:27:38.600  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:29:39.025  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 4 ms
+2022-03-29 17:29:39.040  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:29:39.042  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:29:40.646  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1606/ms
+2022-03-29 17:29:40.650  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 3/ms
+2022-03-29 17:31:10.228  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:31:10.236  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:31:10.240  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:31:11.541  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1305/ms
+2022-03-29 17:31:11.545  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 3/ms
+2022-03-29 17:31:34.817  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 5 ms
+2022-03-29 17:31:34.829  INFO 11116 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:31:34.833  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:31:36.175  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1345/ms
+2022-03-29 17:31:36.176  INFO 11116 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:31:39.970  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:31:39.978  INFO 11116 --- [http-nio-8080-exec-5] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:31:39.980  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:31:40.868  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 890/ms
+2022-03-29 17:31:40.870  INFO 11116 --- [http-nio-8080-exec-5] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 17:33:06.828  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:33:06.838  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:33:06.842  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:33:08.279  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1440/ms
+2022-03-29 17:33:08.280  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:33:11.330  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:33:11.336  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:33:11.339  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:33:12.480  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1143/ms
+2022-03-29 17:33:12.485  INFO 11116 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 4/ms
+2022-03-29 17:33:22.076  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:33:22.083  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:33:22.085  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:33:23.405  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1322/ms
+2022-03-29 17:33:23.405  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 17:33:34.356  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:33:34.363  INFO 11116 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:33:34.365  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:33:35.546  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1183/ms
+2022-03-29 17:33:35.549  INFO 11116 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:34:10.036  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 4 ms
+2022-03-29 17:34:10.044  INFO 11116 --- [http-nio-8080-exec-1] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:34:10.047  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:34:11.422  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1378/ms
+2022-03-29 17:34:11.424  INFO 11116 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:34:17.106  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 4 ms
+2022-03-29 17:34:17.114  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:34:17.117  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:34:18.651  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1536/ms
+2022-03-29 17:34:18.654  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 17:35:28.859  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:35:28.867  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:35:28.870  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:35:30.213  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1346/ms
+2022-03-29 17:35:30.214  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:35:34.327  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 1 ms
+2022-03-29 17:35:34.336  INFO 11116 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:35:34.339  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:35:35.333  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 996/ms
+2022-03-29 17:35:35.334  INFO 11116 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:35:38.752  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:35:38.763  INFO 11116 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:35:38.766  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:35:39.825  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1062/ms
+2022-03-29 17:35:39.826  INFO 11116 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:35:49.358  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:35:49.368  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:35:49.373  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:35:50.716  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1347/ms
+2022-03-29 17:35:50.718  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 17:35:57.185  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:35:57.204  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:35:57.208  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:35:58.389  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1185/ms
+2022-03-29 17:35:58.390  INFO 11116 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:36:06.437  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:36:06.444  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:36:06.446  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:36:07.486  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1042/ms
+2022-03-29 17:36:07.488  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 17:36:09.181  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:36:09.188  INFO 11116 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:36:09.191  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:36:10.218  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1029/ms
+2022-03-29 17:36:10.222  INFO 11116 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 4/ms
+2022-03-29 17:36:12.275  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:36:12.283  INFO 11116 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:36:12.286  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:36:13.712  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1429/ms
+2022-03-29 17:36:13.713  INFO 11116 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:36:37.326  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:36:37.333  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:36:37.337  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:36:39.025  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1692/ms
+2022-03-29 17:36:39.026  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:36:50.346  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 5 ms
+2022-03-29 17:36:50.357  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:36:50.361  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:36:51.522  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1165/ms
+2022-03-29 17:36:51.523  INFO 11116 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:37:09.991  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:37:09.997  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:37:09.999  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:37:11.594  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1596/ms
+2022-03-29 17:37:11.601  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 5/ms
+2022-03-29 17:37:29.260  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 6 ms
+2022-03-29 17:37:29.268  INFO 11116 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:37:29.270  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:37:30.588  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1320/ms
+2022-03-29 17:37:30.589  INFO 11116 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:37:37.368  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:37:37.383  INFO 11116 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:37:37.387  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:37:38.630  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1247/ms
+2022-03-29 17:37:38.634  INFO 11116 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 3/ms
+2022-03-29 17:37:57.966  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 4 ms
+2022-03-29 17:37:57.972  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:37:57.974  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:37:59.288  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1316/ms
+2022-03-29 17:37:59.292  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 4/ms
+2022-03-29 17:38:04.084  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:38:04.089  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:38:04.091  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:38:05.358  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1269/ms
+2022-03-29 17:38:05.362  INFO 11116 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 4/ms
+2022-03-29 17:41:23.389  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:41:23.400  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:41:23.403  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:41:24.956  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1556/ms
+2022-03-29 17:41:24.960  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 3/ms
+2022-03-29 17:43:42.023  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 4 ms
+2022-03-29 17:43:42.033  INFO 11116 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:43:42.037  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:43:43.838  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1805/ms
+2022-03-29 17:43:43.842  INFO 11116 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 17:44:42.425  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:44:42.440  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:44:42.443  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:44:43.495  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1055/ms
+2022-03-29 17:44:43.496  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 17:46:13.798  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 5 ms
+2022-03-29 17:46:13.825  INFO 11116 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:46:13.831  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:46:15.568  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1743/ms
+2022-03-29 17:46:15.570  INFO 11116 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:46:33.930  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:46:33.995  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:46:34.000  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:46:35.177  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1181/ms
+2022-03-29 17:46:35.177  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 17:48:00.660  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:48:00.668  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:48:00.670  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:48:02.559  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1889/ms
+2022-03-29 17:48:02.560  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 17:48:04.706  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:48:04.713  INFO 11116 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:48:04.714  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:48:05.847  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1134/ms
+2022-03-29 17:48:05.850  INFO 11116 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 17:48:16.624  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all orders. Duration 3 ms
+2022-03-29 17:48:18.655  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:48:18.663  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:48:18.665  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:48:20.118  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1454/ms
+2022-03-29 17:48:20.120  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:48:53.798  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:48:53.805  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:48:53.808  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:48:55.012  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1207/ms
+2022-03-29 17:48:55.014  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:55:01.955  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:55:01.994  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:55:01.998  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:55:03.630  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1636/ms
+2022-03-29 17:55:03.631  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 17:55:35.491  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 17:55:35.533  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:55:35.536  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:55:37.047  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1514/ms
+2022-03-29 17:55:37.047  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 17:55:52.136  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 17:55:52.212  INFO 11116 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 17:55:52.216  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 17:55:53.544  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1331/ms
+2022-03-29 17:55:53.546  INFO 11116 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 18:00:46.677  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:00:46.686  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:00:46.690  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:00:48.363  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1676/ms
+2022-03-29 18:00:48.366  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 18:02:53.714  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:02:53.722  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:02:53.726  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:02:54.845  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1123/ms
+2022-03-29 18:02:54.849  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 3/ms
+2022-03-29 18:06:14.231  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:06:14.244  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:06:14.247  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:06:15.705  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1461/ms
+2022-03-29 18:06:15.706  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:06:52.103  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:06:52.114  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:06:52.118  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:06:53.276  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1161/ms
+2022-03-29 18:06:53.277  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 18:08:02.275  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 18:08:02.303  INFO 11116 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:08:02.306  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:08:03.853  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1550/ms
+2022-03-29 18:08:03.855  INFO 11116 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 18:08:05.265  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:08:05.297  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:08:05.302  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:08:06.393  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1095/ms
+2022-03-29 18:08:06.394  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:08:22.616  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 18:08:22.632  INFO 11116 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:08:22.636  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:08:24.018  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1386/ms
+2022-03-29 18:08:24.019  INFO 11116 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:09:15.445  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:09:15.473  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:09:15.477  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:09:16.788  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1315/ms
+2022-03-29 18:09:16.791  INFO 11116 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 18:09:42.849  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 18:09:42.880  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:09:42.883  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:09:44.012  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1131/ms
+2022-03-29 18:09:44.013  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:10:08.987  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 18:10:09.004  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:10:09.008  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:10:10.458  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1454/ms
+2022-03-29 18:10:10.459  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 18:11:35.584  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 18:11:35.624  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:11:35.628  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:11:36.883  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1259/ms
+2022-03-29 18:11:36.885  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:12:03.038  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:12:03.058  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:12:03.063  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:12:04.425  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1367/ms
+2022-03-29 18:12:04.426  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-03-29 18:13:02.302  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:13:02.338  INFO 11116 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:13:02.342  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:13:03.774  INFO 11116 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1436/ms
+2022-03-29 18:13:03.775  INFO 11116 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:13:05.576  INFO 11116 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:13:05.605  INFO 11116 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:13:05.608  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:13:06.618  INFO 11116 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1013/ms
+2022-03-29 18:13:06.620  INFO 11116 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:13:22.176  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 18:13:22.200  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:13:22.205  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:13:23.880  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1679/ms
+2022-03-29 18:13:23.881  INFO 11116 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:13:40.886  INFO 11116 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 2 ms
+2022-03-29 18:13:40.893  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:13:40.896  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:13:42.160  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1267/ms
+2022-03-29 18:13:42.161  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:14:44.925  INFO 11116 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 18:14:44.956  INFO 11116 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:14:44.959  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:14:46.373  INFO 11116 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1416/ms
+2022-03-29 18:14:46.375  INFO 11116 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-03-29 18:14:53.077  INFO 11116 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 3 ms
+2022-03-29 18:14:53.112  INFO 11116 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:14:53.115  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:14:54.353  INFO 11116 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1241/ms
+2022-03-29 18:14:54.354  INFO 11116 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:15:09.736  INFO 11116 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] frankTheTank retrieved all holdings. Duration 1 ms
+2022-03-29 18:15:09.759  INFO 11116 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-03-29 18:15:09.763  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,GME,HD,
+2022-03-29 18:15:11.006  INFO 11116 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1247/ms
+2022-03-29 18:15:11.008  INFO 11116 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-03-29 18:23:38.022  INFO 11116 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 18:23:38.026  INFO 11116 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-03-29 18:23:38.030  INFO 11116 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
