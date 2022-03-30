@@ -29,9 +29,6 @@ public class Order {
     @Column(name="type")
     private char orderType;
 
-    @Column(name="total_cost", precision=10, scale=2)
-    private double total_cost;
-
     @Column(name="timestamp")
     private Date timestamp;
 
@@ -42,14 +39,6 @@ public class Order {
         this.quantity = quantity;
     }
     public Order() {
-    }
-
-    public double getTotal_cost() {
-        return total_cost;
-    }
-
-    public void setTotal_cost(double total_cost) {
-        this.total_cost = total_cost;
     }
 
     public Date getTimestamp() {
@@ -96,12 +85,6 @@ public class Order {
         return price;
     }
 
-    public double getTotalValue() {
-        return price * quantity;
-    }
-
-    public void setTotal_cost() { this.total_cost = price * quantity;}
-
     public void setPrice(double price) {
         this.price = price;
     }
@@ -122,6 +105,10 @@ public class Order {
         this.id = id;
     }
 
+    public double getTotalValue() {
+        return price * quantity;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -132,7 +119,7 @@ public class Order {
                 ", quantity=" + quantity +
                 ", status='" + status + '\'' +
                 ", orderType=" + orderType +
-                ", total_cost=" + total_cost +
+                ", timestamp=" + timestamp +
                 '}';
     }
 }

@@ -25,9 +25,6 @@ public class User {
     @Column(name="email")
     private String email;
 
-    @Column(name="watchlist")
-    private String watchlist;
-
     @Column(name="role")
     private String role;
 
@@ -35,13 +32,12 @@ public class User {
     @JoinColumn(name="walletId", referencedColumnName = "id")
     private Wallet wallet;
 
-    public User(Integer userId, String firstName, String username, String password, String email, String watchlist, String role) {
+    public User(Integer userId, String firstName, String username, String password, String email, String role) {
         this.userId = userId;
         this.firstName = firstName;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.watchlist = watchlist;
         this.role = role;
     }
 
@@ -85,14 +81,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getWatchlist() {
-        return watchlist;
-    }
-
-    public void setWatchlist(String watchlist) {
-        this.watchlist = watchlist;
     }
 
     public String getRole() {

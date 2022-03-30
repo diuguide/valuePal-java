@@ -2,6 +2,7 @@ package com.example.valuepaljava.controllers;
 
 import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.User;
+import com.example.valuepaljava.models.Wallet;
 import com.example.valuepaljava.service.UserService;
 import com.example.valuepaljava.service.WalletService;
 import org.slf4j.Logger;
@@ -79,5 +80,18 @@ public class UserController {
         }
         return ResponseEntity.status(403).body("403: Forbidden");
 
+    }
+
+    @GetMapping(value="/getUserCash")
+    public ResponseEntity<?> getUserCash(@RequestHeader HttpHeaders headers) {
+        if(headers.getFirst("Authorization") != null) {
+            try {
+                return ResponseEntity.ok().body(userService.getTotalCash(Objects.requireNonNull(headers.getFirst("Authorization"))));
+            } catch (Exception e) {
+                logger.info(e.toString());
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
+        }
+        return ResponseEntity.status(403).body("403: Forbidden");
     }
 }

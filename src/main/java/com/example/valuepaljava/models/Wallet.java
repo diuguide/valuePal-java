@@ -15,12 +15,6 @@ public class Wallet {
     @Column(name="total_cash", precision=10, scale=2)
     private double totalCash = 0;
 
-    @Column(name="totalValue", precision=10, scale=2)
-    private double totalValue;
-
-    @Transient
-    private Set<Holding> holdings;
-
     public Wallet() {
     }
 
@@ -31,7 +25,6 @@ public class Wallet {
     public Wallet(int walletId, double totalCash, double totalValue) {
         this.walletId = walletId;
         this.totalCash = totalCash;
-        this.totalValue = totalValue;
     }
 
     public int getWalletId() {
@@ -50,29 +43,11 @@ public class Wallet {
         this.totalCash = totalCash;
     }
 
-    public double getTotalValue() {
-        return totalValue;
-    }
-
-    public void setTotalValue(double totalValue) {
-        this.totalValue = totalValue;
-    }
-
-    public Set<Holding> getHoldings() {
-        return holdings;
-    }
-
-    public void setHoldings(Set<Holding> holdings) {
-        this.holdings = holdings;
-    }
-
     @Override
     public String toString() {
         return "Wallet{" +
                 "walletId=" + walletId +
                 ", totalCash=" + totalCash +
-                ", totalValue=" + totalValue +
-                ", holdings=" + holdings +
                 '}';
     }
 }

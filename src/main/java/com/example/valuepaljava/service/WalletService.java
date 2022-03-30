@@ -50,17 +50,15 @@ public class WalletService {
         order.setWalletId(currentUser.getWallet().getWalletId());
         Optional<Holding> existingHolding = checkForHolding(order);
         if(existingHolding.isPresent()) {
-            if(existingHolding.get().getQuantity() >= (int) order.getQuantity()) {
+            if(existingHolding.get().getQuantity() >= order.getQuantity()) {
                 existingHolding.get().setQuantity(existingHolding.get().getQuantity() - order.getQuantity());
                 if(existingHolding.get().getQuantity() == 0) {
                     holdingRepository.delete(existingHolding.get());
                     logger.info(String.format("[SELL] Entire holding of %s sold and holding entry removed.", order.getTicker()));
                 } else {
-                    existingHolding.get().setTotalValue();
                     existingHolding.get().setTimestamp(new Date());
-                    existingHolding.get().setProcess_flag('S');
                     Holding newHolding = holdingRepository.save(existingHolding.get());
-                    logger.info(String.format("[SELL] Holding Updated: Wallet ID: %s updated with %s shares of %s", newHolding.getWallet(), newHolding.getQuantity(), newHolding.getTicker()));
+                    logger.info(String.format("[SELL] Holding Updated: Wallet ID: %s updated with %s shares of %s", newHolding.getWalletId(), newHolding.getQuantity(), newHolding.getTicker()));
                 }
                 currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() + order.getTotalValue());
                 order.setStatus("Filled");
@@ -83,6 +81,8 @@ public class WalletService {
             }
         } else {
             order.setStatus("Rejected");
+            order.setTimestamp(new Date());
+            order.setOrderType('S');
             orderRepository.save(order);
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
@@ -99,31 +99,23 @@ public class WalletService {
         if(checkExistingBalance(order)) {
             Optional<Holding> existingHolding = checkForHolding(order);
             if(existingHolding.isPresent()) {
-                existingHolding.get().setLast_cost(order.getPrice(), order.getQuantity());
                 existingHolding.get().setQuantity(order.getQuantity()+existingHolding.get().getQuantity());
-                existingHolding.get().setPrice(order.getPrice());
-                existingHolding.get().setTotalValue();
                 existingHolding.get().setTimestamp(new Date());
-                existingHolding.get().setProcess_flag('B');
             } else {
                 Holding newHolding = new Holding(
                         order.getWalletId(),
                         order.getTicker(),
-                        order.getQuantity(),
-                        order.getPrice(),
-                        order.getTotalValue(),
-                        order.getPrice()
+                        order.getQuantity()
                 );
-                newHolding.setProcess_flag('B');
+                newHolding.setTimestamp(new Date());
                 Holding savedHolding = holdingRepository.save(newHolding);
-                logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWallet(), savedHolding.getId()));
+                logger.info(String.format("[BUY] New Holding created in wallet %s, holding id %s", savedHolding.getWalletId(), savedHolding.getId()));
             }
             currentUser.getWallet().setTotalCash(currentUser.getWallet().getTotalCash() - order.getTotalValue());
             Wallet newWallet = walletRepository.save(currentUser.getWallet());
             logger.info(String.format("[BUY] Wallet ID: %s updated after purchase of %s", newWallet.getWalletId(), order.getTicker()));
             order.setStatus("Filled");
             order.setOrderType('B');
-            order.setTotal_cost();
             order.setTimestamp(new Date());
             Order filledOrder = orderRepository.save(order);
             existingHolding.ifPresent(holdingRepository::save);
@@ -184,18 +176,6 @@ public class WalletService {
         return stockService.getTickerData(2, holdingsAsStringArray);
     }
 
-    @Transactional
-    public void updateHoldingsTable(Set<Quote> quotes) {
-        long startTime = System.currentTimeMillis();
-        long duration = 0L;
-        for(Quote q : quotes) {
-            holdingRepository.updateTickerPrices(q.getPrice(), q.getChange(), q.getSymbol());
-        }
-        long endTime = System.currentTimeMillis();
-        duration = endTime - startTime;
-        logger.info(String.format("[UPDATE] Updated holding information.  Updated in %s ms", duration));
-    }
-
     public Set<Order> getUserOrders(String token) {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
@@ -221,6 +201,7 @@ public class WalletService {
             logger.info(String.format("[DATA] %s retrieved all holdings. Duration %s ms", currentUser.getUsername(), duration));
             return holdings;
         }
+
         throw new InvalidInputException("No holdings found!");
     }
 
