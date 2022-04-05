@@ -72,5 +72,16 @@ public class WalletController {
         }
     }
 
+    @PostMapping(value="/avgPrice")
+    public ResponseEntity<Object> getAvgPurchasePrice(@RequestHeader HttpHeaders headers, @RequestBody String ticker) {
+        logger.info("[API] calls/avgPrice called");
+        logger.info(String.format("ticker: %s", ticker.toString()));
+        try {
+            return ResponseEntity.ok().body(walletService.getAvgPurchasePrice(headers.getFirst("Authorization"), ticker));
+        } catch (Exception e) {
+            System.out.println(e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 
 }
