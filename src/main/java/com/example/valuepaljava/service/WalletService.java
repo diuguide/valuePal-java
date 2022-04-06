@@ -176,6 +176,15 @@ public class WalletService {
         return stockService.getTickerData(2, holdingsAsStringArray);
     }
 
+    public double getAvgPurchasePrice(String token, String ticker) {
+        logger.info(token);
+        logger.info(String.format("theTicker: %s", ticker  ));
+        User newUser = jwtUtility(token);
+        Double avgPurchasePrice = orderRepository.getAvgPurchasePrice(ticker, newUser.getWallet().getWalletId());
+        logger.info(String.format("avg purchase price: %s", avgPurchasePrice));
+        return avgPurchasePrice;
+    }
+
     public Set<Order> getUserOrders(String token) {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
