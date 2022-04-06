@@ -1,39 +1,495 @@
-2022-04-05 14:45:28.658  INFO 15252 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 15252 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
-2022-04-05 14:45:28.668  INFO 15252 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
-2022-04-05 14:45:29.907  INFO 15252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-04-05 14:45:30.072  INFO 15252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 140 ms. Found 4 JPA repository interfaces.
-2022-04-05 14:45:30.518  INFO 15252 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@35c09b94' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-05 14:45:30.525  INFO 15252 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-05 14:45:30.841  INFO 15252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 14:45:30.849  INFO 15252 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 14:45:30.851  INFO 15252 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2022-04-05 14:45:30.999  INFO 15252 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 14:45:31.000  INFO 15252 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2259 ms
-2022-04-05 14:45:31.054  INFO 15252 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
-2022-04-05 14:45:31.586  INFO 15252 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
-2022-04-05 14:45:31.593  INFO 15252 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
-2022-04-05 14:45:31.824  INFO 15252 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-04-05 14:45:31.903  INFO 15252 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2022-04-05 14:45:32.208  INFO 15252 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-04-05 14:45:32.363  INFO 15252 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2022-04-05 14:45:33.799  INFO 15252 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-04-05 14:45:33.814  INFO 15252 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-04-05 14:45:34.583  WARN 15252 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-04-05 14:45:35.088  INFO 15252 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
-2022-04-05 14:45:35.160  INFO 15252 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7910f355, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d226f27, org.springframework.security.web.header.HeaderWriterFilter@7cca31fc, org.springframework.web.filter.CorsFilter@34ab26a, org.springframework.security.web.authentication.logout.LogoutFilter@6a51ae7c, com.example.valuepaljava.jwt.JwtAuthenticationFilter@259195fe, com.example.valuepaljava.jwt.JwtTokenVerifier@12209826, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c3c453b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@994544, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6cd45b6c, org.springframework.security.web.session.SessionManagementFilter@29090809, org.springframework.security.web.access.ExceptionTranslationFilter@2fc7fa6e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1da745a2]
-2022-04-05 14:45:35.944  INFO 15252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 14:45:35.968  INFO 15252 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 8.189 seconds (JVM running for 9.402)
-2022-04-05 14:45:57.203  INFO 15252 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 14:45:57.203  INFO 15252 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 14:45:57.206  INFO 15252 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-04-05 14:45:57.640  INFO 15252 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 219 ms
-2022-04-05 14:45:57.925  INFO 15252 --- [http-nio-8080-exec-5] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-04-05 14:45:57.940  INFO 15252 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
-2022-04-05 14:45:59.516  INFO 15252 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1591/ms
-2022-04-05 14:45:59.530  INFO 15252 --- [http-nio-8080-exec-5] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 13/ms
-2022-04-05 14:45:59.566  INFO 15252 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
-2022-04-05 14:45:59.567  INFO 15252 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : ticker: "GME"
-2022-04-05 14:45:59.568  INFO 15252 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ4OTQ5NTE1LCJleHAiOjE2NTAxNTM2MDB9.HNHm1lysl4uqE7s-lo4-0ENumMaD_Ke6YuZ33cYWNPPvrayq52OnrSq3OCl73zxpuJuo8kvXdyQMYoRLhKxkWw
-2022-04-05 14:45:59.639  WARN 15252 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 22012
-2022-04-05 14:45:59.639 ERROR 15252 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: division by zero
-  Where: PL/pgSQL function getavgpurchaseprice(character varying,integer) line 20 at RETURN
+2022-04-06 15:49:08.318  INFO 13160 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 13160 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-04-06 15:49:08.325  INFO 13160 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-04-06 15:49:09.032  INFO 13160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-06 15:49:09.100  INFO 13160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2022-04-06 15:49:09.482  INFO 13160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ac97b84' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-06 15:49:09.487  INFO 13160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-06 15:49:09.713  INFO 13160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-06 15:49:09.721  INFO 13160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 15:49:09.721  INFO 13160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-04-06 15:49:09.828  INFO 13160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 15:49:09.828  INFO 13160 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1459 ms
+2022-04-06 15:49:09.856  INFO 13160 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-04-06 15:49:10.157  INFO 13160 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-04-06 15:49:10.162  INFO 13160 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-04-06 15:49:10.307  INFO 13160 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-06 15:49:10.375  INFO 13160 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-04-06 15:49:10.629  INFO 13160 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-06 15:49:10.742  INFO 13160 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-04-06 15:49:11.752  INFO 13160 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-06 15:49:11.762  INFO 13160 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-06 15:49:12.120  WARN 13160 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-06 15:49:12.347  INFO 13160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-04-06 15:49:12.378  INFO 13160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13cc31ae, org.springframework.security.web.context.SecurityContextPersistenceFilter@29090809, org.springframework.security.web.header.HeaderWriterFilter@273dec10, org.springframework.web.filter.CorsFilter@5bb7a59, org.springframework.security.web.authentication.logout.LogoutFilter@58e03769, com.example.valuepaljava.jwt.JwtAuthenticationFilter@4bfa5eb9, com.example.valuepaljava.jwt.JwtTokenVerifier@2a2b7a35, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d226f27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7548e1fb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58186f9f, org.springframework.security.web.session.SessionManagementFilter@7cca31fc, org.springframework.security.web.access.ExceptionTranslationFilter@26ffd2c0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ea75b05]
+2022-04-06 15:49:12.729  INFO 13160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-06 15:49:12.742  INFO 13160 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 4.85 seconds (JVM running for 5.654)
+2022-04-06 15:49:36.367  INFO 13160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 15:49:36.367  INFO 13160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 15:49:36.370  INFO 13160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-06 15:49:36.669  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 167 ms
+2022-04-06 15:49:36.894  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 15:49:36.905  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 15:49:38.122  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1227/ms
+2022-04-06 15:49:38.133  INFO 13160 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 11/ms
+2022-04-06 15:49:38.155  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:49:38.156  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 15:49:38.156  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : PROG
+2022-04-06 15:49:38.156  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ4OTQ5NTE1LCJleHAiOjE2NTAxNTM2MDB9.HNHm1lysl4uqE7s-lo4-0ENumMaD_Ke6YuZ33cYWNPPvrayq52OnrSq3OCl73zxpuJuo8kvXdyQMYoRLhKxkWw
+2022-04-06 15:49:38.156  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 15:49:38.189  WARN 13160 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 2F005
+2022-04-06 15:49:38.190 ERROR 13160 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: control reached end of function without RETURN
+  Where: PL/pgSQL function getavgpurchaseprice(character varying,integer)
+2022-04-06 15:50:24.107  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 5 ms
+2022-04-06 15:50:24.138  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 15:50:24.141  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 15:50:24.964  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 826/ms
+2022-04-06 15:50:24.966  INFO 13160 --- [http-nio-8080-exec-5] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 15:50:24.978  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:50:24.979  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 15:50:24.979  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : PROG
+2022-04-06 15:50:24.979  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ4OTQ5NTE1LCJleHAiOjE2NTAxNTM2MDB9.HNHm1lysl4uqE7s-lo4-0ENumMaD_Ke6YuZ33cYWNPPvrayq52OnrSq3OCl73zxpuJuo8kvXdyQMYoRLhKxkWw
+2022-04-06 15:50:24.979  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 15:50:24.985  WARN 13160 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 2F005
+2022-04-06 15:50:24.985 ERROR 13160 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: control reached end of function without RETURN
+  Where: PL/pgSQL function getavgpurchaseprice(character varying,integer)
+2022-04-06 15:51:36.004  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-04-06 15:51:36.013  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 15:51:36.014  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 15:51:36.638  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 625/ms
+2022-04-06 15:51:36.639  INFO 13160 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 15:51:36.650  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:51:36.650  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 15:51:36.650  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : PROG
+2022-04-06 15:51:36.650  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 15:51:36.651  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 15:51:36.655  WARN 13160 --- [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 2F005
+2022-04-06 15:51:36.655 ERROR 13160 --- [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: control reached end of function without RETURN
+  Where: PL/pgSQL function getavgpurchaseprice(character varying,integer)
+2022-04-06 15:52:43.702  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 2 ms
+2022-04-06 15:52:43.728  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 15:52:43.732  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 15:52:44.764  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1036/ms
+2022-04-06 15:52:44.765  INFO 13160 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 15:52:44.774  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:52:44.774  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 15:52:44.774  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : PROG
+2022-04-06 15:52:44.775  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 15:52:44.775  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 15:52:44.823  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.422644694533762
+2022-04-06 15:54:41.600  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-04-06 15:54:41.610  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 15:54:41.613  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 15:54:42.756  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1145/ms
+2022-04-06 15:54:42.757  INFO 13160 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-04-06 15:54:42.768  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:54:42.769  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 15:54:42.769  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : PROG
+2022-04-06 15:54:42.769  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 15:54:42.769  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 15:54:42.770  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:54:42.770  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 15:54:42.770  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : INFY
+2022-04-06 15:54:42.770  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 15:54:42.770  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 15:54:42.771  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:54:42.771  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 15:54:42.771  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 15:54:42.771  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 15:54:42.771  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 15:54:42.793  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.422644694533762
+2022-04-06 15:54:42.795  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 15:54:42.796  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 15:56:14.296  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 2 ms
+2022-04-06 15:56:14.307  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 15:56:14.309  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 15:56:15.135  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 828/ms
+2022-04-06 15:56:15.136  INFO 13160 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-04-06 15:56:15.150  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:56:15.150  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 15:56:15.151  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : PROG
+2022-04-06 15:56:15.151  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 15:56:15.151  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 15:56:15.152  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:56:15.152  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 15:56:15.152  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : INFY
+2022-04-06 15:56:15.152  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 15:56:15.152  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 15:56:15.154  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 15:56:15.154  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 15:56:15.154  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 15:56:15.154  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 15:56:15.154  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 15:56:15.163  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 15:56:15.167  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 15:56:15.173  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.422644694533762
+2022-04-06 15:58:32.929  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-04-06 15:58:32.942  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 15:58:32.944  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 15:58:34.009  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1067/ms
+2022-04-06 15:58:34.010  INFO 13160 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:07:06.232  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:07:06.234  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,
+2022-04-06 16:07:06.750  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-04-06 16:07:06.753  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=PROG,&interval=1m&range=1d
+2022-04-06 16:07:06.971  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 739/ms
+2022-04-06 16:07:06.972  INFO 13160 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-04-06 16:07:07.338  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 588/ms
+2022-04-06 16:07:13.448  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase received: 1000 X PROG
+2022-04-06 16:07:13.450  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,
+2022-04-06 16:07:15.843  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 2394/ms
+2022-04-06 16:07:15.844  INFO 13160 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-04-06 16:07:15.875  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of PROG
+2022-04-06 16:07:15.890  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #20 has been filled, Duration: 46/ms
+2022-04-06 16:07:16.882  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 3 ms
+2022-04-06 16:07:48.980  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-04-06 16:07:48.989  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:07:48.991  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 16:07:49.811  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 816/ms
+2022-04-06 16:07:49.812  INFO 13160 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:07:58.475  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:07:58.477  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=INFY,
+2022-04-06 16:07:58.983  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-04-06 16:07:58.986  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=INFY,&interval=1m&range=1d
+2022-04-06 16:07:59.083  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 607/ms
+2022-04-06 16:07:59.083  INFO 13160 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-04-06 16:07:59.790  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 807/ms
+2022-04-06 16:15:23.472  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-04-06 16:15:23.482  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:15:23.486  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 16:15:24.378  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 895/ms
+2022-04-06 16:15:24.379  INFO 13160 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:15:24.389  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:15:24.389  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:15:24.389  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:15:24.389  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:15:24.389  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:15:24.390  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:15:24.392  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:15:24.392  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:15:24.392  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:15:24.392  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:15:24.392  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:15:24.394  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:15:24.394  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:15:24.394  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:15:24.394  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:15:24.394  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:15:24.395  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:15:24.395  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:15:24.395  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:15:24.395  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:15:24.395  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:15:24.399  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:15:24.406  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:15:24.417  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:15:24.420  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:15:24.426  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:15:24.435  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:17:31.349  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 5 ms
+2022-04-06 16:17:31.372  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:17:31.377  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 16:17:32.199  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 827/ms
+2022-04-06 16:17:32.201  INFO 13160 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:17:32.215  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:32.215  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:17:32.215  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:17:32.215  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:32.216  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:17:32.216  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:17:32.216  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:32.216  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:17:32.215  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:32.217  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:17:32.219  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:32.219  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:32.219  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:17:32.219  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:17:32.219  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:17:32.220  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:32.220  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:17:32.220  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:17:32.220  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:32.220  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:17:32.230  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:17:32.235  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:17:32.251  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:17:32.256  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:17:43.200  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-04-06 16:17:43.213  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:17:43.216  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 16:17:43.871  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 658/ms
+2022-04-06 16:17:43.872  INFO 13160 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:17:43.885  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:43.886  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:17:43.886  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:17:43.886  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:43.886  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:17:43.887  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:43.887  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:17:43.887  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:17:43.887  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:43.887  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:17:43.890  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:43.890  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:17:43.891  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:17:43.891  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:43.892  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:17:43.892  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:43.892  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:17:43.892  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:17:43.892  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:43.892  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:17:43.901  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:17:43.906  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:17:43.922  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:17:43.930  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:17:49.777  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-04-06 16:17:49.851  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:17:49.854  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 16:17:50.663  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 812/ms
+2022-04-06 16:17:50.665  INFO 13160 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
+2022-04-06 16:17:50.680  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:50.680  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:17:50.680  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:17:50.680  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:50.680  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:50.681  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:17:50.681  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:17:50.681  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:17:50.681  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:50.681  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:17:50.685  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:50.685  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:17:50.685  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:17:50.685  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:17:50.685  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:17:50.685  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:50.685  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:17:50.686  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:17:50.686  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:17:50.686  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:17:50.696  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:17:50.701  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:17:50.717  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:17:50.722  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:18:01.835  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 4 ms
+2022-04-06 16:18:01.866  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:18:01.870  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 16:18:02.670  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 803/ms
+2022-04-06 16:18:02.671  INFO 13160 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:18:02.685  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:18:02.686  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:18:02.686  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:18:02.686  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:18:02.687  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:18:02.688  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:18:02.688  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:18:02.688  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:18:02.688  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:18:02.688  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:18:02.690  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:18:02.690  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:18:02.691  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:18:02.691  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:18:02.691  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:18:02.691  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:18:02.691  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:18:02.691  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:18:02.691  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:18:02.691  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:18:02.699  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:18:02.704  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:18:02.720  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:18:02.723  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:19:23.915  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 5 ms
+2022-04-06 16:19:23.930  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:19:23.934  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 16:19:25.284  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1354/ms
+2022-04-06 16:19:25.285  INFO 13160 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:19:25.304  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:19:25.304  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:19:25.304  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:19:25.303  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:19:25.304  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:19:25.304  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:19:25.304  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:19:25.305  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:19:25.305  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:19:25.305  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:19:25.305  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:19:25.305  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:19:25.349  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:19:25.353  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:19:25.362  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:19:25.374  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:19:55.183  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-04-06 16:19:55.219  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:19:55.224  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,INFY,GOOG,
+2022-04-06 16:19:56.119  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 899/ms
+2022-04-06 16:19:56.120  INFO 13160 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:19:56.135  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:19:56.135  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:19:56.135  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:19:56.135  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:19:56.135  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:19:56.136  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:19:56.136  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:19:56.136  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:19:56.136  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:19:56.136  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:19:56.137  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:19:56.137  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:19:56.137  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:19:56.137  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:19:56.137  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:19:56.147  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:19:56.157  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:19:56.173  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:31:50.645  INFO 13160 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:31:50.648  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=TLRY,
+2022-04-06 16:31:51.162  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-04-06 16:31:51.168  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=TLRY,&interval=1m&range=1d
+2022-04-06 16:31:51.656  INFO 13160 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1011/ms
+2022-04-06 16:31:51.656  INFO 13160 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-04-06 16:31:52.229  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 1067/ms
+2022-04-06 16:31:55.596  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [BUY] Purchase received: 20 X TLRY
+2022-04-06 16:31:55.599  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=TLRY,
+2022-04-06 16:31:56.220  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 623/ms
+2022-04-06 16:31:56.220  INFO 13160 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-04-06 16:31:56.255  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 10
+2022-04-06 16:31:56.256  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of TLRY
+2022-04-06 16:31:56.259  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [BUY] Order #21 has been filled, Duration: 38/ms
+2022-04-06 16:31:59.720  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:31:59.723  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=MSFT,
+2022-04-06 16:32:00.225  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-04-06 16:32:00.227  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=MSFT,&interval=1m&range=1d
+2022-04-06 16:32:00.507  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 787/ms
+2022-04-06 16:32:00.508  INFO 13160 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:32:00.923  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 698/ms
+2022-04-06 16:32:04.639  INFO 13160 --- [http-nio-8080-exec-4] c.e.v.controllers.WalletController       : [BUY] Purchase received: 10 X MSFT
+2022-04-06 16:32:04.641  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=MSFT,
+2022-04-06 16:32:05.521  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 882/ms
+2022-04-06 16:32:05.524  INFO 13160 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:32:05.541  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 11
+2022-04-06 16:32:05.544  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of MSFT
+2022-04-06 16:32:05.547  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [BUY] Order #22 has been filled, Duration: 23/ms
+2022-04-06 16:32:07.427  INFO 13160 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:32:07.430  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=BB,
+2022-04-06 16:32:07.940  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker history api called
+2022-04-06 16:32:07.944  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=BB,&interval=1m&range=1d
+2022-04-06 16:32:08.499  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1071/ms
+2022-04-06 16:32:08.499  INFO 13160 --- [http-nio-8080-exec-2] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
+2022-04-06 16:32:08.816  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 875/ms
+2022-04-06 16:32:15.343  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [BUY] Purchase received: 100 X BB
+2022-04-06 16:32:15.345  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=BB,
+2022-04-06 16:32:16.190  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 847/ms
+2022-04-06 16:32:16.193  INFO 13160 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:32:16.212  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] New Holding created in wallet 1, holding id 12
+2022-04-06 16:32:16.214  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of BB
+2022-04-06 16:32:16.216  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [BUY] Order #23 has been filled, Duration: 23/ms
+2022-04-06 16:32:32.043  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [BUY] Purchase received: 500 X BB
+2022-04-06 16:32:32.046  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=BB,
+2022-04-06 16:32:32.815  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 771/ms
+2022-04-06 16:32:32.816  INFO 13160 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
+2022-04-06 16:32:32.829  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Wallet ID: 1 updated after purchase of BB
+2022-04-06 16:32:32.832  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : [BUY] Order #24 has been filled, Duration: 15/ms
+2022-04-06 16:32:34.149  INFO 13160 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all orders. Duration 3 ms
+2022-04-06 16:32:35.538  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 2 ms
+2022-04-06 16:32:35.545  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:32:35.547  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,BB,TLRY,INFY,MSFT,GOOG,
+2022-04-06 16:32:36.272  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 727/ms
+2022-04-06 16:32:36.280  INFO 13160 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 7/ms
+2022-04-06 16:32:36.296  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:32:36.296  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:32:36.296  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:32:36.296  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:32:36.296  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:32:36.297  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:32:36.297  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : ticker: "BB"
+2022-04-06 16:32:36.297  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : BB
+2022-04-06 16:32:36.297  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:32:36.297  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : theTicker: BB
+2022-04-06 16:32:36.298  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:32:36.298  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : ticker: "TLRY"
+2022-04-06 16:32:36.298  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : TLRY
+2022-04-06 16:32:36.298  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:32:36.298  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : theTicker: TLRY
+2022-04-06 16:32:36.299  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:32:36.299  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:32:36.299  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:32:36.300  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:32:36.300  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:32:36.300  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:32:36.300  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : ticker: "MSFT"
+2022-04-06 16:32:36.300  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : MSFT
+2022-04-06 16:32:36.300  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:32:36.300  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : theTicker: MSFT
+2022-04-06 16:32:36.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:32:36.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:32:36.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:32:36.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:32:36.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:32:36.306  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : avg purchase price: 7.25
+2022-04-06 16:32:36.308  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : avg purchase price: 6.92
+2022-04-06 16:32:36.313  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:32:36.320  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233
+2022-04-06 16:32:36.322  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : avg purchase price: 299.5
+2022-04-06 16:32:36.325  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:33:04.454  INFO 13160 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 3 ms
+2022-04-06 16:33:04.466  INFO 13160 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
+2022-04-06 16:33:04.469  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=PROG,BB,TLRY,INFY,MSFT,GOOG,
+2022-04-06 16:33:05.267  INFO 13160 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 801/ms
+2022-04-06 16:33:05.271  INFO 13160 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 4/ms
+2022-04-06 16:33:05.288  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:33:05.288  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : ticker: "PROG"
+2022-04-06 16:33:05.288  INFO 13160 --- [http-nio-8080-exec-6] c.e.v.controllers.WalletController       : PROG
+2022-04-06 16:33:05.288  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:33:05.288  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : theTicker: PROG
+2022-04-06 16:33:05.288  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:33:05.289  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : ticker: "BB"
+2022-04-06 16:33:05.289  INFO 13160 --- [http-nio-8080-exec-1] c.e.v.controllers.WalletController       : BB
+2022-04-06 16:33:05.289  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:33:05.290  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : theTicker: BB
+2022-04-06 16:33:05.290  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:33:05.291  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : ticker: "TLRY"
+2022-04-06 16:33:05.291  INFO 13160 --- [http-nio-8080-exec-10] c.e.v.controllers.WalletController       : TLRY
+2022-04-06 16:33:05.291  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:33:05.291  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : theTicker: TLRY
+2022-04-06 16:33:05.293  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:33:05.293  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : ticker: "GOOG"
+2022-04-06 16:33:05.293  INFO 13160 --- [http-nio-8080-exec-3] c.e.v.controllers.WalletController       : GOOG
+2022-04-06 16:33:05.294  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:33:05.294  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : theTicker: GOOG
+2022-04-06 16:33:05.295  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:33:05.295  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : ticker: "MSFT"
+2022-04-06 16:33:05.295  INFO 13160 --- [http-nio-8080-exec-8] c.e.v.controllers.WalletController       : MSFT
+2022-04-06 16:33:05.295  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:33:05.295  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : theTicker: MSFT
+2022-04-06 16:33:05.293  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : [API] calls/avgPrice called
+2022-04-06 16:33:05.300  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : ticker: "INFY"
+2022-04-06 16:33:05.300  INFO 13160 --- [http-nio-8080-exec-5] c.e.v.controllers.WalletController       : INFY
+2022-04-06 16:33:05.300  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXVndWlkIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjQ5Mjc0Njk1LCJleHAiOjE2NTA0MjcyMDB9.WNG6or-wRItosKh5ui2g9kBkfoVwjy0wDYVjDD1UIVHOdbNuYB16aG0R2mqToAucT9W3E9KhyftuDj1FlU95gQ
+2022-04-06 16:33:05.300  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : theTicker: INFY
+2022-04-06 16:33:05.302  INFO 13160 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : avg purchase price: 6.92
+2022-04-06 16:33:05.303  INFO 13160 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.WalletService   : avg purchase price: 7.25
+2022-04-06 16:33:05.303  INFO 13160 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.WalletService   : avg purchase price: 2830.43
+2022-04-06 16:33:05.306  INFO 13160 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.WalletService   : avg purchase price: 299.5
+2022-04-06 16:33:05.312  INFO 13160 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.WalletService   : avg purchase price: 24.85666666666667
+2022-04-06 16:33:05.314  INFO 13160 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : avg purchase price: 1.3931925207756233

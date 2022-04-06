@@ -178,6 +178,7 @@ public class WalletService {
 
     public double getAvgPurchasePrice(String token, String ticker) {
         logger.info(token);
+        logger.info(String.format("theTicker: %s", ticker  ));
         User newUser = jwtUtility(token);
         Double avgPurchasePrice = orderRepository.getAvgPurchasePrice(ticker, newUser.getWallet().getWalletId());
         logger.info(String.format("avg purchase price: %s", avgPurchasePrice));
