@@ -32,7 +32,7 @@ public interface HoldingRepository extends JpaRepository<Holding, Integer> {
     Integer updateAvgPrice();
 
     @Query(value="SELECT createHoldingRow(:ticker, :wallet_id)", nativeQuery = true)
-    HoldingRecord createHoldingRow(@Param("ticker") String ticker, @Param("wallet_id") int wallet_id);
+    String createHoldingRow(@Param("ticker") String ticker, @Param("wallet_id") int wallet_id);
 
 
 

@@ -205,7 +205,7 @@ public class WalletService {
         User currentUser = jwtUtility(token);
         long endTime = System.currentTimeMillis();
         duration = endTime - startTime;
-        logger.info(String.format("Holding: %", holdingRepository.createHoldingRow("PROG", 1)));
+        logger.info(String.format("Holding: %s", holdingRepository.createHoldingRow("PROG", 1)));
         Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(currentUser.getWallet().getWalletId());
         if(holdings.size() > 0) {
             logger.info(String.format("[DATA] %s retrieved all holdings. Duration %s ms", currentUser.getUsername(), duration));
