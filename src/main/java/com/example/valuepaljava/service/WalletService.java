@@ -3,10 +3,7 @@ package com.example.valuepaljava.service;
 import com.example.valuepaljava.exceptions.InsufficientFundsException;
 import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.*;
-import com.example.valuepaljava.repos.HoldingRepository;
-import com.example.valuepaljava.repos.OrderRepository;
-import com.example.valuepaljava.repos.UserRepository;
-import com.example.valuepaljava.repos.WalletRepository;
+import com.example.valuepaljava.repos.*;
 import com.example.valuepaljava.util.JsonUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -18,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -30,15 +26,17 @@ public class WalletService {
     private final WalletRepository walletRepository;
     private final UserRepository userRepository;
     private final OrderRepository orderRepository;
+    private final HoldingRecordRepository holdingRecordRepository;
     private final StockService stockService;
     private final JsonUtil jsonUtil;
 
     @Autowired
-    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository, StockService stockService, JsonUtil jsonUtil) {
+    public WalletService(HoldingRepository holdingRepository, WalletRepository walletRepository, UserRepository userRepository, OrderRepository orderRepository, HoldingRecordRepository holdingRecordRepository, StockService stockService, JsonUtil jsonUtil) {
         this.holdingRepository = holdingRepository;
         this.walletRepository = walletRepository;
         this.userRepository = userRepository;
         this.orderRepository = orderRepository;
+        this.holdingRecordRepository = holdingRecordRepository;
         this.stockService = stockService;
         this.jsonUtil = jsonUtil;
     }
@@ -177,11 +175,10 @@ public class WalletService {
     }
 
     public double getAvgPurchasePrice(String token, String ticker) {
-        logger.info(token);
-        logger.info(String.format("theTicker: %s", ticker  ));
+
         User newUser = jwtUtility(token);
         Double avgPurchasePrice = orderRepository.getAvgPurchasePrice(ticker, newUser.getWallet().getWalletId());
-        logger.info(String.format("avg purchase price: %s", avgPurchasePrice));
+
         return avgPurchasePrice;
     }
 
@@ -199,17 +196,21 @@ public class WalletService {
         throw new InvalidInputException("No orders found!");
     }
 
-    public Set<Holding> getUserHoldings(String token) {
+    public Set<HoldingRecord> getUserHoldings(String token) {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
         User currentUser = jwtUtility(token);
+
+
         long endTime = System.currentTimeMillis();
         duration = endTime - startTime;
-        logger.info(String.format("Holding: %s", holdingRepository.createHoldingRow("PROG", 1)));
-        Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(currentUser.getWallet().getWalletId());
-        if(holdings.size() > 0) {
+
+        Set<HoldingRecord> withAvg = holdingRecordRepository.createHoldingRow("PROG", 1);
+
+        // Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(currentUser.getWallet().getWalletId());
+        if(withAvg.size() > 0) {
             logger.info(String.format("[DATA] %s retrieved all holdings. Duration %s ms", currentUser.getUsername(), duration));
-            return holdings;
+            return withAvg;
         }
 
         throw new InvalidInputException("No holdings found!");

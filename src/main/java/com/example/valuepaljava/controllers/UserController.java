@@ -2,7 +2,6 @@ package com.example.valuepaljava.controllers;
 
 import com.example.valuepaljava.exceptions.InvalidInputException;
 import com.example.valuepaljava.models.User;
-import com.example.valuepaljava.models.Wallet;
 import com.example.valuepaljava.service.UserService;
 import com.example.valuepaljava.service.WalletService;
 import org.slf4j.Logger;

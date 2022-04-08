@@ -74,11 +74,8 @@ public class WalletController {
 
     @PostMapping(value="/avgPrice")
     public ResponseEntity<Object> getAvgPurchasePrice(@RequestHeader HttpHeaders headers, @RequestBody String ticker) {
-        logger.info("[API] calls/avgPrice called");
-        logger.info(String.format("ticker: %s", ticker.toString()));
         String theTicker = ticker.toString();
         String newTicker = theTicker.substring(1,theTicker.length() - 1);
-        logger.info(theTicker.substring(1,theTicker.length() - 1));
         try {
             return ResponseEntity.ok().body(walletService.getAvgPurchasePrice(headers.getFirst("Authorization"), newTicker));
         } catch (Exception e) {
