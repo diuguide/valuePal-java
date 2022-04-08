@@ -205,7 +205,7 @@ public class WalletService {
         long endTime = System.currentTimeMillis();
         duration = endTime - startTime;
 
-        Set<HoldingRecord> withAvg = holdingRecordRepository.createHoldingRow("PROG", 1);
+        Set<HoldingRecord> withAvg = holdingRecordRepository.createHoldingRow("PROG", currentUser.getWallet().getWalletId());
 
         // Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(currentUser.getWallet().getWalletId());
         if(withAvg.size() > 0) {
