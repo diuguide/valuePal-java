@@ -1,6 +1,7 @@
 package com.example.valuepaljava.repos;
 
 import com.example.valuepaljava.models.Holding;
+import com.example.valuepaljava.models.HoldingRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -29,6 +30,9 @@ public interface HoldingRepository extends JpaRepository<Holding, Integer> {
 
     @Query(value="SELECT updateavgprice1()", nativeQuery = true)
     Integer updateAvgPrice();
+
+    @Query(value="SELECT createHoldingRow(:ticker, :wallet_id)", nativeQuery = true)
+    HoldingRecord createHoldingRow(@Param("ticker") String ticker, @Param("wallet_id") int wallet_id);
 
 
 
