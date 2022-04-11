@@ -200,15 +200,12 @@ public class WalletService {
         long startTime = System.currentTimeMillis();
         long duration = 0L;
         User currentUser = jwtUtility(token);
-
-
-        long endTime = System.currentTimeMillis();
-        duration = endTime - startTime;
-
+        
         Set<HoldingRecord> withAvg = holdingRecordRepository.createHoldingRow("PROG", currentUser.getWallet().getWalletId());
 
-        // Set<Holding> holdings = holdingRepository.findHoldingByWalletIdOrderByQuantityDesc(currentUser.getWallet().getWalletId());
         if(withAvg.size() > 0) {
+            long endTime = System.currentTimeMillis();
+            duration = endTime - startTime;
             logger.info(String.format("[DATA] %s retrieved all holdings. Duration %s ms", currentUser.getUsername(), duration));
             return withAvg;
         }
