@@ -84,4 +84,13 @@ public class WalletController {
         }
     }
 
+    @PostMapping(value="/confirm")
+    public ResponseEntity<Object> confirmOrder(@RequestHeader HttpHeaders headers, Order order) {
+        try {
+            order.setPrice(jsonUtil.jsonParser(stockService.getTickerData(2, order.getTicker())).iterator().next().getPrice());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Cannot find stock data");
+        }
+    }
+
 }
