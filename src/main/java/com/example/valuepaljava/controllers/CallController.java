@@ -1,7 +1,7 @@
 package com.example.valuepaljava.controllers;
 
 import com.example.valuepaljava.exceptions.InvalidInputException;
-import com.example.valuepaljava.models.Quote;
+import com.example.valuepaljava.service.AutoCompleteService;
 import com.example.valuepaljava.service.StockService;
 import com.example.valuepaljava.util.JsonUtil;
 import org.json.simple.parser.ParseException;
@@ -12,8 +12,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.ws.Response;
-
 
 @RestController
 @RequestMapping("/calls")
@@ -21,11 +19,13 @@ public class CallController {
 
     private final Logger logger = LoggerFactory.getLogger(CallController.class);
     private final StockService stockService;
+    private final AutoCompleteService autoCompleteService;
     private final JsonUtil jsonUtil;
 
     @Autowired
-    public CallController(StockService stockService, JsonUtil jsonUtil) {
+    public CallController(StockService stockService, AutoCompleteService autoCompleteService, JsonUtil jsonUtil) {
         this.stockService = stockService;
+        this.autoCompleteService = autoCompleteService;
         this.jsonUtil = jsonUtil;
     }
 
@@ -54,6 +54,16 @@ public class CallController {
         logger.info("[API] Ticker history api called");
         try {
             return ResponseEntity.ok().body(stockService.getTickerHistory(api, interval, range, ticker));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @GetMapping(value="/autoComplete")
+    public ResponseEntity<Object> getAutoComplete(@RequestParam String input) {
+        logger.info("[API] autoComplete Called");
+        try {
+            return ResponseEntity.ok().body(autoCompleteService.getAutoCompleteResponse(input));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
