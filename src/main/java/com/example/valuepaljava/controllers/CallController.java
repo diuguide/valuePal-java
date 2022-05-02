@@ -59,6 +59,16 @@ public class CallController {
         }
     }
 
+    @GetMapping(value="/autoComplete")
+    public ResponseEntity<Object> getAutoComplete(@RequestParam String input) {
+        logger.info("[API] autoComplete Called");
+        try {
+            return ResponseEntity.ok().body("test");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
 
 
 }
