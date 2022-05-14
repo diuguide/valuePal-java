@@ -124,6 +124,7 @@ public class WalletService {
         } else {
             order.setStatus("Rejected");
             order.setOrderType('B');
+            order.setTimestamp(new Date());
             orderRepository.save(order);
             long endTime = System.currentTimeMillis();
             duration = endTime - startTime;
