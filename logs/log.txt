@@ -1,155 +1,56 @@
-2022-05-14 20:20:41.694  INFO 2044 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 2044 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
-2022-05-14 20:20:41.748  INFO 2044 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
-2022-05-14 20:20:43.302  INFO 2044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-05-14 20:20:43.435  INFO 2044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 5 JPA repository interfaces.
-2022-05-14 20:20:43.977  INFO 2044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2b87581' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-05-14 20:20:43.986  INFO 2044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-05-14 20:20:44.493  INFO 2044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-05-14 20:20:44.506  INFO 2044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-05-14 20:20:44.507  INFO 2044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2022-05-14 20:20:44.721  INFO 2044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-05-14 20:20:44.722  INFO 2044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2743 ms
-2022-05-14 20:20:44.806  INFO 2044 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
-2022-05-14 20:20:45.326  INFO 2044 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
-2022-05-14 20:20:45.334  INFO 2044 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
-2022-05-14 20:20:45.533  INFO 2044 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-05-14 20:20:45.604  INFO 2044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2022-05-14 20:20:45.876  INFO 2044 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-05-14 20:20:46.020  INFO 2044 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2022-05-14 20:20:47.588  INFO 2044 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-05-14 20:20:47.602  INFO 2044 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-05-14 20:20:48.199  WARN 2044 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-05-14 20:20:48.615  INFO 2044 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
-2022-05-14 20:20:48.669  INFO 2044 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1584c019, org.springframework.security.web.context.SecurityContextPersistenceFilter@774f2992, org.springframework.security.web.header.HeaderWriterFilter@2c0798bd, org.springframework.web.filter.CorsFilter@3688baab, org.springframework.security.web.authentication.logout.LogoutFilter@5a39e554, com.example.valuepaljava.jwt.JwtAuthenticationFilter@4fe2dd02, com.example.valuepaljava.jwt.JwtTokenVerifier@6ba060af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1fb6b8fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5835e24a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5817f1ca, org.springframework.security.web.session.SessionManagementFilter@77cddc0c, org.springframework.security.web.access.ExceptionTranslationFilter@27d98bef, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53ba1175]
-2022-05-14 20:20:49.193  INFO 2044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-05-14 20:20:49.210  INFO 2044 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 9.034 seconds (JVM running for 10.425)
-2022-05-14 20:20:55.690  INFO 2044 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-05-14 20:20:55.691  INFO 2044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-05-14 20:20:55.692  INFO 2044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-05-14 20:21:12.169  INFO 2044 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 127 ms
-2022-05-14 20:21:12.186  INFO 2044 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:21:12.191  INFO 2044 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,INFY,MSFT,BB,PROG,TLRY,GME,
-2022-05-14 20:21:13.776  INFO 2044 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1590/ms
-2022-05-14 20:21:13.788  INFO 2044 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 11/ms
-2022-05-14 20:21:20.732  INFO 2044 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:21:20.736  INFO 2044 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,
-2022-05-14 20:21:21.242  INFO 2044 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 20:21:21.247  INFO 2044 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GOOG,&interval=1m&range=1d
-2022-05-14 20:21:21.508  INFO 2044 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 775/ms
-2022-05-14 20:21:21.509  INFO 2044 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
-2022-05-14 20:21:22.199  INFO 2044 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 956/ms
-2022-05-14 20:44:50.909  INFO 2044 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:44:50.915  INFO 2044 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 20:44:51.432  INFO 2044 --- [http-nio-8080-exec-5] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 20:44:51.437  INFO 2044 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 20:44:51.913  INFO 2044 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1003/ms
-2022-05-14 20:44:51.915  INFO 2044 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
-2022-05-14 20:44:52.101  INFO 2044 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 668/ms
-2022-05-14 20:46:34.928  INFO 2044 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:46:34.933  INFO 2044 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 20:46:35.443  INFO 2044 --- [http-nio-8080-exec-1] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 20:46:35.444  INFO 2044 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 20:46:35.851  INFO 2044 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 922/ms
-2022-05-14 20:46:35.852  INFO 2044 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
-2022-05-14 20:46:36.219  INFO 2044 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 775/ms
-2022-05-14 20:49:59.035  INFO 2044 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 64 ms
-2022-05-14 20:49:59.043  INFO 2044 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:49:59.045  INFO 2044 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,INFY,MSFT,BB,PROG,TLRY,GME,
-2022-05-14 20:50:00.120  INFO 2044 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1077/ms
-2022-05-14 20:50:00.122  INFO 2044 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
-2022-05-14 20:50:02.953  INFO 2044 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:50:02.956  INFO 2044 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 20:50:03.462  INFO 2044 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 20:50:03.471  INFO 2044 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 20:50:03.706  INFO 2044 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 753/ms
-2022-05-14 20:50:03.707  INFO 2044 --- [http-nio-8080-exec-7] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
-2022-05-14 20:50:04.491  INFO 2044 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 1028/ms
-2022-05-14 20:51:01.084  INFO 2044 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:51:01.088  INFO 2044 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 20:51:01.599  INFO 2044 --- [http-nio-8080-exec-5] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 20:51:01.601  INFO 2044 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 20:51:01.921  INFO 2044 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 836/ms
-2022-05-14 20:51:01.922  INFO 2044 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
-2022-05-14 20:51:02.574  INFO 2044 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 975/ms
-2022-05-14 20:56:30.979  INFO 2044 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:56:30.982  INFO 2044 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 20:56:31.491  INFO 2044 --- [http-nio-8080-exec-1] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 20:56:31.494  INFO 2044 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 20:56:32.013  INFO 2044 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1034/ms
-2022-05-14 20:56:32.014  INFO 2044 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
-2022-05-14 20:56:32.166  INFO 2044 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 675/ms
-2022-05-14 20:58:30.355  INFO 2044 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 20:58:30.358  INFO 2044 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 20:58:30.863  INFO 2044 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 20:58:30.866  INFO 2044 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 20:58:31.441  INFO 2044 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1086/ms
-2022-05-14 20:58:31.441  INFO 2044 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
-2022-05-14 20:58:31.925  INFO 2044 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 1061/ms
-2022-05-14 21:00:04.439  INFO 2044 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 21:00:04.442  INFO 2044 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 21:00:04.948  INFO 2044 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 21:00:04.950  INFO 2044 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 21:00:05.522  INFO 2044 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1083/ms
-2022-05-14 21:00:05.523  INFO 2044 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
-2022-05-14 21:00:05.570  INFO 2044 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 622/ms
-2022-05-14 22:28:44.737  WARN 2044 --- [valuepal housekeeper] com.zaxxer.hikari.pool.HikariPool        : valuepal - Thread starvation or clock leap detected (housekeeper delta=30m57s708ms40µs300ns).
-2022-05-14 22:49:58.040  INFO 2044 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 22:49:58.046  INFO 2044 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 22:49:58.549  INFO 2044 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 22:49:58.553  INFO 2044 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 22:49:58.908  INFO 2044 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 867/ms
-2022-05-14 22:49:58.909  INFO 2044 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
-2022-05-14 22:49:59.318  INFO 2044 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 769/ms
-2022-05-14 22:52:52.157  INFO 2044 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 128 ms
-2022-05-14 22:52:52.169  INFO 2044 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 22:52:52.173  INFO 2044 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,INFY,MSFT,BB,PROG,TLRY,GME,
-2022-05-14 22:52:54.786  INFO 2044 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 2617/ms
-2022-05-14 22:52:54.789  INFO 2044 --- [http-nio-8080-exec-10] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 3/ms
-2022-05-14 22:53:03.128  INFO 2044 --- [http-nio-8080-exec-1] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 22:53:03.132  INFO 2044 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 22:53:03.636  INFO 2044 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 22:53:03.639  INFO 2044 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 22:53:04.092  INFO 2044 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 964/ms
-2022-05-14 22:53:04.092  INFO 2044 --- [http-nio-8080-exec-1] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
-2022-05-14 22:53:04.600  INFO 2044 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 964/ms
-2022-05-14 23:05:45.132  INFO 2044 --- [http-nio-8080-exec-9] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 23:05:45.136  INFO 2044 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GME,
-2022-05-14 23:05:45.643  INFO 2044 --- [http-nio-8080-exec-10] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 23:05:45.645  INFO 2044 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GME,&interval=1m&range=1d
-2022-05-14 23:05:45.982  INFO 2044 --- [http-nio-8080-exec-9] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 849/ms
-2022-05-14 23:05:45.983  INFO 2044 --- [http-nio-8080-exec-9] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
-2022-05-14 23:05:46.533  INFO 2044 --- [http-nio-8080-exec-10] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 890/ms
-2022-05-14 23:07:20.864  INFO 2044 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 141 ms
-2022-05-14 23:07:20.873  INFO 2044 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 23:07:20.877  INFO 2044 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,INFY,MSFT,BB,PROG,TLRY,GME,
-2022-05-14 23:07:21.993  INFO 2044 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 1119/ms
-2022-05-14 23:07:21.996  INFO 2044 --- [http-nio-8080-exec-6] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 3/ms
-2022-05-14 23:07:27.684  INFO 2044 --- [http-nio-8080-exec-8] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 23:07:27.687  INFO 2044 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,
-2022-05-14 23:07:28.191  INFO 2044 --- [http-nio-8080-exec-7] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 23:07:28.194  INFO 2044 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GOOG,&interval=1m&range=1d
-2022-05-14 23:07:28.571  INFO 2044 --- [http-nio-8080-exec-8] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 887/ms
-2022-05-14 23:07:28.572  INFO 2044 --- [http-nio-8080-exec-8] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
-2022-05-14 23:07:29.165  INFO 2044 --- [http-nio-8080-exec-7] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 974/ms
-2022-05-14 23:08:06.072  INFO 2044 --- [http-nio-8080-exec-1] c.e.valuepaljava.service.WalletService   : [DATA] diuguid retrieved all holdings. Duration 152 ms
-2022-05-14 23:08:06.083  INFO 2044 --- [http-nio-8080-exec-3] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 23:08:06.087  INFO 2044 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,INFY,MSFT,BB,PROG,TLRY,GME,
-2022-05-14 23:08:07.066  INFO 2044 --- [http-nio-8080-exec-3] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 982/ms
-2022-05-14 23:08:07.069  INFO 2044 --- [http-nio-8080-exec-3] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 2/ms
-2022-05-14 23:08:08.303  INFO 2044 --- [http-nio-8080-exec-5] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 23:08:08.306  INFO 2044 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=INFY,
-2022-05-14 23:08:08.805  INFO 2044 --- [http-nio-8080-exec-2] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 23:08:08.808  INFO 2044 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=INFY,&interval=1m&range=1d
-2022-05-14 23:08:09.042  INFO 2044 --- [http-nio-8080-exec-5] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 739/ms
-2022-05-14 23:08:09.043  INFO 2044 --- [http-nio-8080-exec-5] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 0/ms
-2022-05-14 23:08:09.644  INFO 2044 --- [http-nio-8080-exec-2] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 838/ms
-2022-05-14 23:08:15.382  INFO 2044 --- [http-nio-8080-exec-4] c.e.v.controllers.CallController         : [API] Ticker api called - YH Finance - /market/getQuote
-2022-05-14 23:08:15.387  INFO 2044 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=GOOG,
-2022-05-14 23:08:15.889  INFO 2044 --- [http-nio-8080-exec-6] c.e.v.controllers.CallController         : [API] Ticker history api called
-2022-05-14 23:08:15.891  INFO 2044 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : https://yh-finance.p.rapidapi.com/market/get-spark?symbols=GOOG,&interval=1m&range=1d
-2022-05-14 23:08:16.066  INFO 2044 --- [http-nio-8080-exec-4] c.e.valuepaljava.service.StockService    : [API] getTickerData called: duration 683/ms
-2022-05-14 23:08:16.067  INFO 2044 --- [http-nio-8080-exec-4] com.example.valuepaljava.util.JsonUtil   : [PARSE] JSON String parsed, duration 1/ms
-2022-05-14 23:08:16.607  INFO 2044 --- [http-nio-8080-exec-6] c.e.valuepaljava.service.StockService    : [API] getTickerHistory called: duration 718/ms
-2022-05-14 23:35:04.475  INFO 2044 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-05-14 23:35:04.480  INFO 2044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
-2022-05-14 23:35:04.484  INFO 2044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2022-06-03 22:14:52.432  INFO 14812 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 14812 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-06-03 22:14:52.438  INFO 14812 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-06-03 22:14:53.118  INFO 14812 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-03 22:14:53.172  INFO 14812 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2022-06-03 22:14:53.378  INFO 14812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5432050b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-03 22:14:53.382  INFO 14812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-03 22:14:53.535  INFO 14812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-03 22:14:53.538  INFO 14812 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-03 22:14:53.538  INFO 14812 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-06-03 22:14:53.634  INFO 14812 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-03 22:14:53.634  INFO 14812 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1155 ms
+2022-06-03 22:14:53.656  INFO 14812 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-06-03 22:14:53.957  INFO 14812 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-06-03 22:14:53.959  INFO 14812 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-06-03 22:14:54.056  INFO 14812 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-03 22:14:54.097  INFO 14812 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-06-03 22:14:54.274  INFO 14812 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-03 22:14:54.353  INFO 14812 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-06-03 22:14:55.098  INFO 14812 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-03 22:14:55.100  INFO 14812 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-03 22:14:55.394  WARN 14812 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-03 22:14:55.618  INFO 14812 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-06-03 22:14:55.648  INFO 14812 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@266da047, org.springframework.security.web.context.SecurityContextPersistenceFilter@15d88c10, org.springframework.security.web.header.HeaderWriterFilter@274bae2c, org.springframework.web.filter.CorsFilter@68b7bdcb, org.springframework.security.web.authentication.logout.LogoutFilter@42cc5460, com.example.valuepaljava.jwt.JwtAuthenticationFilter@d84418a, com.example.valuepaljava.jwt.JwtTokenVerifier@45e11627, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54b44879, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b544732, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ec5f944, org.springframework.security.web.session.SessionManagementFilter@1d3d76b4, org.springframework.security.web.access.ExceptionTranslationFilter@4a2e1e52, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ad847f8]
+2022-06-03 22:14:55.941  INFO 14812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-03 22:14:55.946  INFO 14812 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 3.88 seconds (JVM running for 4.537)
+2022-06-03 22:29:11.675  INFO 14812 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-03 22:29:11.677  INFO 14812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-06-03 22:29:11.679  INFO 14812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
+2022-06-03 22:29:15.456  INFO 9536 --- [main] c.e.v.ValuePalJavaApplication            : Starting ValuePalJavaApplication using Java 1.8.0_291 on DESKTOP-GSR5OPN with PID 9536 (C:\Users\evere\Desktop\webDev\valuePal-java\target\classes started by evere in C:\Users\evere\Desktop\webDev\valuePal-java)
+2022-06-03 22:29:15.458  INFO 9536 --- [main] c.e.v.ValuePalJavaApplication            : No active profile set, falling back to default profiles: default
+2022-06-03 22:29:16.023  INFO 9536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-03 22:29:16.080  INFO 9536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2022-06-03 22:29:16.287  INFO 9536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3e134896' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-03 22:29:16.290  INFO 9536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-03 22:29:16.442  INFO 9536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-03 22:29:16.446  INFO 9536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-03 22:29:16.446  INFO 9536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2022-06-03 22:29:16.534  INFO 9536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-03 22:29:16.534  INFO 9536 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1042 ms
+2022-06-03 22:29:16.555  INFO 9536 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Starting...
+2022-06-03 22:29:16.786  INFO 9536 --- [main] com.zaxxer.hikari.HikariDataSource       : valuepal - Start completed.
+2022-06-03 22:29:16.792  INFO 9536 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/postgres?currentSchema=valuepaldev'
+2022-06-03 22:29:16.885  INFO 9536 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-03 22:29:16.924  INFO 9536 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-06-03 22:29:17.061  INFO 9536 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-03 22:29:17.138  INFO 9536 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-06-03 22:29:17.878  INFO 9536 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-03 22:29:17.884  INFO 9536 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-03 22:29:18.160  WARN 9536 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-03 22:29:18.355  INFO 9536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2022-06-03 22:29:18.386  INFO 9536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c9a4f3b, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b395581, org.springframework.security.web.header.HeaderWriterFilter@3688baab, org.springframework.web.filter.CorsFilter@2bb0e277, org.springframework.security.web.authentication.logout.LogoutFilter@5fd18419, com.example.valuepaljava.jwt.JwtAuthenticationFilter@6f24ce45, com.example.valuepaljava.jwt.JwtTokenVerifier@e881e46, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a2724d3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d84418a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@657b3b, org.springframework.security.web.session.SessionManagementFilter@6ba060af, org.springframework.security.web.access.ExceptionTranslationFilter@cd5ff55, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@78128dd0]
+2022-06-03 22:29:18.667  INFO 9536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-03 22:29:18.674  INFO 9536 --- [main] c.e.v.ValuePalJavaApplication            : Started ValuePalJavaApplication in 3.559 seconds (JVM running for 4.35)
+2022-06-03 22:31:44.561  INFO 9536 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-03 22:31:44.572  INFO 9536 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown initiated...
+2022-06-03 22:31:44.574  INFO 9536 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : valuepal - Shutdown completed.
